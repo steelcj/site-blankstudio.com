@@ -10,6 +10,8 @@ Repository versions are independent of the document versions under
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-08-10
+
 ### Added
 
 - Locale-first content model. Content lives under `src/content/<locale>/…` with

@@ -1,0 +1,136 @@
+---
+routeKey: about
+pageKey: about
+css: ["home", "about"]
+footerMuted: true
+ctaId: "contact"
+---
+{% extends "layouts/base.njk" %}
+
+{% block body %}
+    <!-- ============ HERO + PHILOSOPHY ============ -->
+    <section class="hero hero--page" id="hero">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <span class="eyebrow reveal">{{ t.about.hero.eyebrow | safe }}</span>
+            <h1 class="h-xl hero__title">
+{% for line in t.about.hero.titleLines %}              <span class="line"><span>{{ line | safe }}</span></span>
+{% endfor %}            </h1>
+            <p class="page-sub reveal" data-delay="1">
+              {{ t.about.hero.sub | safe }}
+            </p>
+            <p class="page-body reveal" data-delay="2">
+              {{ t.about.hero.body | safe }}
+            </p>
+            <div class="hero__cta reveal" data-delay="3">
+              <a href="{{ urls.contact }}" class="btn btn--primary btn--lg">{{ t.about.hero.ctaPrimary | safe }}</a>
+              <a href="{{ urls.services }}" class="btn btn--outline btn--lg">{{ t.about.hero.ctaSecondary | safe }}</a>
+            </div>
+          </div>
+
+          <div class="hero__media reveal" data-delay="2">
+            <figure>
+              <img src="/assets/about-work.jpg" alt="{{ t.about.hero.imageAlt | safe }}" />
+              <figcaption><span>{{ t.about.hero.figCaptionLabel | safe }}</span><b>{{ t.about.hero.figCaptionValue | safe }}</b></figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="stat-row reveal" data-delay="3">
+          <div class="stat"><b>{{ t.about.stats.brandsValue | safe }}</b><span>{{ t.about.stats.brandsLabel | safe }}</span></div>
+          <div class="stat"><b>{{ t.about.stats.growthValue | safe }}</b><span>{{ t.about.stats.growthLabel | safe }}</span></div>
+          <div class="stat"><b>{{ t.about.stats.regionsValue | safe }}</b><span>{{ t.about.stats.regionsLabel | safe }}</span></div>
+          <div class="stat"><b>{{ t.about.stats.responseValue | safe }}</b><span>{{ t.about.stats.responseLabel | safe }}</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY WE STARTED ============ -->
+    <section class="sec section--warm" id="story">
+      <div class="container split">
+        <div class="split__head">
+          <span class="eyebrow reveal">{{ t.about.story.eyebrow | safe }}</span>
+          <h2 class="section-title reveal" data-delay="1">{{ t.about.story.heading | safe }}</h2>
+          <a href="{{ urls.services }}" class="link-arrow reveal" data-delay="1">{{ t.about.story.link | safe }} <span>&rarr;</span></a>
+        </div>
+        <div class="split__body reveal" data-delay="1">
+          <p>{{ t.about.story.p1 | safe }}</p>
+          <p>{{ t.about.story.p2 | safe }}</p>
+          <p>{{ t.about.story.p3 | safe }}</p>
+          <p>{{ t.about.story.p4 | safe }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW WE THINK (dark) ============ -->
+    <section class="sec sec--dark on-dark why" id="principles">
+      <div class="container why__grid">
+        <div class="why__intro">
+          <span class="eyebrow reveal">{{ t.about.principles.eyebrow | safe }}</span>
+          <h2 class="section-title reveal" data-delay="1">{{ t.about.principles.heading | safe }}</h2>
+          <p class="reveal" data-delay="2">{{ t.about.principles.body | safe }}</p>
+          <a href="{{ urls.contact }}" class="btn btn--outline reveal" data-delay="2">{{ t.about.principles.cta | safe }}</a>
+        </div>
+        <div class="why__list">
+          <div class="pillar reveal">
+            <span class="pillar__no">P/01</span>
+            <h3>{{ t.about.principles.p1Title | safe }}</h3>
+            <p>{{ t.about.principles.p1Body | safe }}</p>
+          </div>
+          <div class="pillar reveal" data-delay="1">
+            <span class="pillar__no">P/02</span>
+            <h3>{{ t.about.principles.p2Title | safe }}</h3>
+            <p>{{ t.about.principles.p2Body | safe }}</p>
+          </div>
+          <div class="pillar reveal" data-delay="2">
+            <span class="pillar__no">P/03</span>
+            <h3>{{ t.about.principles.p3Title | safe }}</h3>
+            <p>{{ t.about.principles.p3Body | safe }}</p>
+          </div>
+          <div class="pillar reveal" data-delay="3">
+            <span class="pillar__no">P/04</span>
+            <h3>{{ t.about.principles.p4Title | safe }}</h3>
+            <p>{{ t.about.principles.p4Body | safe }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHO WE WORK WITH ============ -->
+    <section class="sec" id="fit">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head__main">
+            <span class="eyebrow reveal">{{ t.about.fit.eyebrow | safe }}</span>
+            <h2 class="section-title reveal" data-delay="1">{{ t.about.fit.heading | safe }}</h2>
+          </div>
+        </div>
+
+        <div class="fit-grid">
+          <div class="fit-card fit-card--yes reveal">
+            <p class="fit-card__label">{{ t.about.fit.yesLabel | safe }}</p>
+            <ul>
+              <li>{{ t.about.fit.yes1 | safe }}</li>
+              <li>{{ t.about.fit.yes2 | safe }}</li>
+              <li>{{ t.about.fit.yes3 | safe }}</li>
+              <li>{{ t.about.fit.yes4 | safe }}</li>
+              <li>{{ t.about.fit.yes5 | safe }}</li>
+            </ul>
+          </div>
+          <div class="fit-card fit-card--no reveal" data-delay="1">
+            <p class="fit-card__label">{{ t.about.fit.noLabel | safe }}</p>
+            <ul>
+              <li>{{ t.about.fit.no1 | safe }}</li>
+              <li>{{ t.about.fit.no2 | safe }}</li>
+              <li>{{ t.about.fit.no3 | safe }}</li>
+              <li>{{ t.about.fit.no4 | safe }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% include "partials/final-cta.njk" %}
+{% endblock %}

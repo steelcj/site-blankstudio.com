@@ -1,0 +1,61 @@
+# fonts.yaml — single source of truth for the website's self-hosted webfonts.
+#
+# The site's type used to load from Google Fonts on every page (a request to
+# fonts.googleapis.com for the CSS, then fonts.gstatic.com for each file). That
+# is bandwidth we pay for on someone else's uptime: if Google is unreachable the
+# page renders in a fallback face. Self-hosting removes both the third-party
+# request and the outage exposure.
+#
+# This file declares WHAT the site needs — families, weights, styles, character
+# subsets. `scripts/fetch-fonts.py` reads it, downloads the matching woff2 files
+# into `output.fonts_dir`, and generates the @font-face stylesheet at
+# `output.css_file`. Change a weight here, re-run the script, commit the result.
+#
+# Kept deliberately separate from the Infusion accessibility add-on, whose own
+# fonts live under assets/vendor/infusion/ and assets/lib/. These are the fonts
+# for the website as a whole; those belong to the add-on.
+
+# Where the fonts come from. Only "google" (Google Fonts CSS2 API) is supported.
+provider: google
+
+# font-display strategy written into every generated @font-face rule. "swap"
+# matches the site's prior behaviour: show fallback text immediately, swap in
+# the webfont when it arrives — no invisible-text flash.
+display: swap
+
+# Character subsets to download and keep. Google slices each family into named
+# ranges; we only ship the ones the site's languages need.
+#   latin      — English and standard French accents (é à ç ê î ô û ë ï ü …)
+#   latin-ext  — additional Western/Central European glyphs, headroom for future
+#                locales without re-running with a wider net.
+# A future non-Latin locale adds its subset here (e.g. "devanagari") rather than
+# editing every page.
+subsets:
+  - latin
+  - latin-ext
+
+# Where the downloaded files and the generated stylesheet land. src/assets and
+# src/css are already Eleventy passthrough-copy targets, so anything written
+# here is served verbatim at the matching URL — no config change needed.
+output:
+  fonts_dir: src/assets/fonts   # woff2 files; served at /assets/fonts/
+  css_file: src/css/fonts.css   # generated @font-face sheet; served at /css/fonts.css
+  css_href: /assets/fonts       # URL prefix the @font-face `src:` points at
+
+# The families the site actually uses, mirroring the CSS custom properties in
+# home.css:
+#   --font-head  "Inter Tight"   --font-body  "Inter"   --font-mono  "Space Mono"
+# `weights` and `styles` are the exact permutations requested — nothing more is
+# downloaded, so the payload stays minimal.
+families:
+  - name: Inter Tight
+    weights: [400, 500, 600, 700, 800]
+    styles: [normal]
+
+  - name: Inter
+    weights: [400, 500, 600]
+    styles: [normal]
+
+  - name: Space Mono
+    weights: [400, 700]
+    styles: [normal]

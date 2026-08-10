@@ -1,0 +1,286 @@
+---
+routeKey: "home"
+pageKey: "home"
+css: ["home"]
+googleSiteVerification: "E1ojOyOAwzY02OeZX0solvhGJo3qiDmmokRvUWfXC1w"
+footerMuted: true
+ctaId: "contact"
+---
+{% extends "layouts/base.njk" %}
+
+{% block body %}
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="eyebrow reveal">{{ t.home.hero.eyebrow | safe }}</span>
+          <h1 class="h-xl hero__title">
+{% for line in t.home.hero.titleLines %}              <span class="line"><span>{{ line | safe }}</span></span>
+{% endfor %}            </h1>
+          <p class="hero__sub reveal" data-delay="1">
+            {{ t.home.hero.sub | safe }}
+          </p>
+          <p class="hero__body reveal" data-delay="2">
+            {{ t.home.hero.body | safe }}
+          </p>
+          <div class="hero__cta reveal" data-delay="3">
+            <a href="{{ urls.contact }}" class="btn btn--primary btn--lg">{{ t.home.hero.ctaPrimary | safe }}</a>
+            <a href="{{ urls.freeAudit }}" class="btn btn--outline btn--lg">{{ t.home.hero.ctaSecondary | safe }}</a>
+          </div>
+          <p class="hero__micro reveal" data-delay="4">{{ t.home.hero.micro | safe }}</p>
+        </div>
+
+        <!-- Spec panel -->
+        <dl class="spec reveal" data-delay="2">
+          <div class="spec__head"><span>BLNK Studio</span><span>{{ t.home.spec.version | safe }}</span></div>
+          <div class="spec__row"><dt>{{ t.home.spec.statusKey | safe }}</dt><dd class="ok">{{ t.home.spec.statusValue | safe }}</dd></div>
+          <div class="spec__row"><dt>{{ t.home.spec.basedKey | safe }}</dt><dd>{{ t.home.spec.basedValue | safe }}</dd></div>
+          <div class="spec__row"><dt>{{ t.home.spec.workingKey | safe }}</dt><dd>{{ t.home.spec.workingValue | safe }}</dd></div>
+          <div class="spec__row"><dt>{{ t.home.spec.responseKey | safe }}</dt><dd>{{ t.home.spec.responseValue | safe }}</dd></div>
+          <div class="spec__ship">
+            <p class="spec__ship-label">{{ t.home.spec.shippingKey | safe }}</p>
+            <ul>
+              <li>{{ t.home.spec.shipping1 | safe }}</li>
+              <li>{{ t.home.spec.shipping2 | safe }}</li>
+              <li>{{ t.home.spec.shipping3 | safe }}</li>
+            </ul>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ PROOF BAND ============ -->
+    <section class="proof" id="proof">
+      <div class="container">
+        <div class="proof__top">
+          <p class="proof__label reveal">{{ t.home.logos.heading | safe }}</p>
+          <div class="proof__metrics reveal" data-delay="1">
+            <div class="proof__metric">
+              <b><span class="count" data-target="25" data-prefix="+" data-suffix="%">+0%</span></b>
+              <span>{{ t.home.stats.growthLabel | safe }}</span>
+            </div>
+            <div class="proof__metric">
+              <b><span class="count" data-target="40" data-suffix="+">0+</span></b>
+              <span>{{ t.home.stats.brandsLabel | safe }}</span>
+            </div>
+            <div class="proof__metric">
+              <b>{{ t.home.stats.allInOne | safe }}</b>
+              <span>{{ t.home.stats.oneStudio | safe }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="marquee reveal" data-delay="1">
+          <div class="marquee__track">
+            <div class="logo-tile"><img src="/assets/logos/bbk.png" alt="{{ t.home.logos.bbkAlt | safe }}" /></div>
+            <div class="logo-tile"><img src="/assets/logos/fenesta.png" alt="{{ t.home.logos.fenestaAlt | safe }}" /></div>
+            <div class="logo-tile"><img src="/assets/logos/goila.png" alt="{{ t.home.logos.goilaAlt | safe }}" /></div>
+            <div class="logo-tile"><img src="/assets/logos/myhome.png" alt="{{ t.home.logos.myhomeAlt | safe }}" /></div>
+            <div class="logo-tile"><img src="/assets/logos/naisha.png" alt="{{ t.home.logos.naishaAlt | safe }}" /></div>
+            <div class="logo-tile"><img src="/assets/logos/ziggy.png" alt="{{ t.home.logos.ziggyAlt | safe }}" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/bbk.png" alt="" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/fenesta.png" alt="" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/goila.png" alt="" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/myhome.png" alt="" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/naisha.png" alt="" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/ziggy.png" alt="" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="sec services" id="services">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head__main">
+            <span class="eyebrow reveal">{{ t.home.services.eyebrow | safe }}</span>
+            <h2 class="section-title reveal" data-delay="1">{{ t.home.services.titleLine1 | safe }} <em>{{ t.home.services.titleEm | safe }}</em> {{ t.home.services.titleLine2 | safe }}</h2>
+          </div>
+          <a href="{{ urls.services }}" class="link-arrow reveal" data-delay="1">{{ t.home.services.exploreLink | safe }} <span>&rarr;</span></a>
+        </div>
+
+        <div class="grid-table">
+          <div class="services__grid">
+            <article class="s-card reveal">
+              <span class="s-card__no">01 / 07</span>
+              <h3>{{ t.home.services.c1Title | safe }}</h3>
+              <p>{{ t.home.services.c1Body | safe }}</p>
+              <a href="{{ site.contact.whatsapp }}" class="s-card__link">{{ t.home.services.enquire | safe }} <span>&rarr;</span></a>
+            </article>
+            <article class="s-card reveal" data-delay="1">
+              <span class="s-card__no">02 / 07</span>
+              <h3>{{ t.home.services.c2Title | safe }}</h3>
+              <p>{{ t.home.services.c2Body | safe }}</p>
+              <a href="{{ site.contact.whatsapp }}" class="s-card__link">{{ t.home.services.enquire | safe }} <span>&rarr;</span></a>
+            </article>
+            <article class="s-card reveal" data-delay="2">
+              <span class="s-card__no">03 / 07</span>
+              <h3>{{ t.home.services.c3Title | safe }}</h3>
+              <p>{{ t.home.services.c3Body | safe }}</p>
+              <a href="{{ site.contact.whatsapp }}" class="s-card__link">{{ t.home.services.enquire | safe }} <span>&rarr;</span></a>
+            </article>
+            <article class="s-card reveal">
+              <span class="s-card__no">04 / 07</span>
+              <h3>{{ t.home.services.c4Title | safe }}</h3>
+              <p>{{ t.home.services.c4Body | safe }}</p>
+              <a href="{{ site.contact.whatsapp }}" class="s-card__link">{{ t.home.services.enquire | safe }} <span>&rarr;</span></a>
+            </article>
+            <article class="s-card reveal" data-delay="1">
+              <span class="s-card__no">05 / 07</span>
+              <h3>{{ t.home.services.c5Title | safe }}</h3>
+              <p>{{ t.home.services.c5Body | safe }}</p>
+              <a href="{{ site.contact.whatsapp }}" class="s-card__link">{{ t.home.services.enquire | safe }} <span>&rarr;</span></a>
+            </article>
+            <article class="s-card reveal" data-delay="2">
+              <span class="s-card__no">06 / 07</span>
+              <h3>{{ t.home.services.c6Title | safe }}</h3>
+              <p>{{ t.home.services.c6Body | safe }}</p>
+              <a href="{{ site.contact.whatsapp }}" class="s-card__link">{{ t.home.services.enquire | safe }} <span>&rarr;</span></a>
+            </article>
+            <article class="s-card s-card--wide reveal">
+              <span class="s-card__no">07 / 07</span>
+              <div class="s-card__inner">
+                <h3>{{ t.home.services.c7Title | safe }}</h3>
+                <p>{{ t.home.services.c7Body | safe }}</p>
+                <a href="{{ site.contact.whatsapp }}" class="s-card__link">{{ t.home.services.enquire | safe }} <span>&rarr;</span></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY BLNK (dark) ============ -->
+    <section class="sec sec--dark on-dark why" id="about">
+      <div class="container why__grid">
+        <div class="why__intro">
+          <span class="eyebrow reveal">{{ t.home.why.eyebrow | safe }}</span>
+          <h2 class="section-title reveal" data-delay="1">{{ t.home.why.titleLine1 | safe }} <em>{{ t.home.why.titleEm | safe }}</em></h2>
+          <p class="reveal" data-delay="2">{{ t.home.why.body | safe }}</p>
+          <a href="{{ urls.freeAudit }}" class="btn btn--outline reveal" data-delay="2">{{ t.home.why.cta | safe }}</a>
+        </div>
+        <div class="why__list">
+          <div class="pillar reveal">
+            <span class="pillar__no">P/01</span>
+            <h3>{{ t.home.why.p1Title | safe }}</h3>
+            <p>{{ t.home.why.p1Body | safe }}</p>
+          </div>
+          <div class="pillar reveal" data-delay="1">
+            <span class="pillar__no">P/02</span>
+            <h3>{{ t.home.why.p2Title | safe }}</h3>
+            <p>{{ t.home.why.p2Body | safe }}</p>
+          </div>
+          <div class="pillar reveal" data-delay="2">
+            <span class="pillar__no">P/03</span>
+            <h3>{{ t.home.why.p3Title | safe }}</h3>
+            <p>{{ t.home.why.p3Body | safe }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="sec process" id="work">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head__main">
+            <span class="eyebrow reveal">{{ t.home.process.eyebrow | safe }}</span>
+            <h2 class="section-title reveal" data-delay="1">{{ t.home.process.heading | safe }}</h2>
+          </div>
+        </div>
+
+        <div class="grid-table">
+          <div class="steps">
+            <div class="step reveal">
+              <span class="step__no">01</span>
+              <h3>{{ t.home.process.s1Title | safe }}</h3>
+              <p>{{ t.home.process.s1Body | safe }}</p>
+              <span class="step__time">{{ t.home.process.s1Time | safe }}</span>
+            </div>
+            <div class="step reveal" data-delay="1">
+              <span class="step__no">02</span>
+              <h3>{{ t.home.process.s2Title | safe }}</h3>
+              <p>{{ t.home.process.s2Body | safe }}</p>
+              <span class="step__time">{{ t.home.process.s2Time | safe }}</span>
+            </div>
+            <div class="step reveal" data-delay="2">
+              <span class="step__no">03</span>
+              <h3>{{ t.home.process.s3Title | safe }}</h3>
+              <p>{{ t.home.process.s3Body | safe }}</p>
+              <span class="step__time">{{ t.home.process.s3Time | safe }}</span>
+            </div>
+            <div class="step reveal" data-delay="3">
+              <span class="step__no">04</span>
+              <h3>{{ t.home.process.s4Title | safe }}</h3>
+              <p>{{ t.home.process.s4Body | safe }}</p>
+              <span class="step__time">{{ t.home.process.s4Time | safe }}</span>
+            </div>
+            <div class="step reveal" data-delay="4">
+              <span class="step__no">05</span>
+              <h3>{{ t.home.process.s5Title | safe }}</h3>
+              <p>{{ t.home.process.s5Body | safe }}</p>
+              <span class="step__time">{{ t.home.process.s5Time | safe }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-foot"><a href="#contact" class="link-arrow reveal">{{ t.home.process.link | safe }} <span>&rarr;</span></a></div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIAL ============ -->
+    <section class="sec testimonial">
+      <div class="container">
+        <span class="eyebrow reveal">{{ t.home.testimonial.eyebrow | safe }}</span>
+        <blockquote class="testimonial__quote reveal" data-delay="1">
+          {{ t.home.testimonial.quote | safe }}
+        </blockquote>
+        <div class="testimonial__by reveal" data-delay="2">
+          <span class="testimonial__avatar" aria-hidden="true"></span>
+          <div>
+            <div class="testimonial__name">{{ t.home.testimonial.role | safe }}</div>
+            <div class="testimonial__role">{{ t.home.testimonial.company | safe }}</div>
+          </div>
+        </div>
+        <p class="testimonial__proof reveal" data-delay="3">{{ t.home.testimonial.micro | safe }}</p>
+      </div>
+    </section>
+
+    <!-- ============ INSIGHTS ============ -->
+    <section class="sec insights" id="insights">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head__main">
+            <span class="eyebrow reveal">{{ t.home.blog.eyebrow | safe }}</span>
+            <h2 class="section-title reveal" data-delay="1">{{ t.home.blog.heading | safe }}</h2>
+          </div>
+          <a href="{{ urls.blog }}" class="link-arrow reveal" data-delay="1">{{ t.home.blog.link | safe }} <span>&rarr;</span></a>
+        </div>
+
+        <div class="insights__grid">
+          <article class="i-card reveal">
+            <span class="i-card__tag">{{ t.home.blog.c1Tag | safe }}</span>
+            <h3>{{ t.home.blog.c1Title | safe }}</h3>
+            <p>{{ t.home.blog.c1Body | safe }}</p>
+            <a href="/blog/website-views-but-no-leads/" class="s-card__link">{{ t.home.blog.readArticle | safe }} <span>&rarr;</span></a>
+          </article>
+          <article class="i-card reveal" data-delay="1">
+            <span class="i-card__tag">{{ t.home.blog.c2Tag | safe }}</span>
+            <h3>{{ t.home.blog.c2Title | safe }}</h3>
+            <p>{{ t.home.blog.c2Body | safe }}</p>
+            <a href="/blog/social-media-strategy-mistake/" class="s-card__link">{{ t.home.blog.readArticle | safe }} <span>&rarr;</span></a>
+          </article>
+          <article class="i-card reveal" data-delay="2">
+            <span class="i-card__tag">{{ t.home.blog.c3Tag | safe }}</span>
+            <h3>{{ t.home.blog.c3Title | safe }}</h3>
+            <p>{{ t.home.blog.c3Body | safe }}</p>
+            <a href="/blog/seo-for-service-businesses/" class="s-card__link">{{ t.home.blog.readArticle | safe }} <span>&rarr;</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+{% include "partials/final-cta.njk" %}
+{% endblock %}

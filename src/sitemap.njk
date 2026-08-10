@@ -1,0 +1,38 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+{#
+  Generated sitemap, replacing the hand-maintained sitemap.xml.
+
+  Every locale variant of a page is its own <url> entry and each one declares
+  the full alternate set including itself, which is what the spec requires —
+  hreflang annotations must be reciprocal, so a partial list on one side
+  invalidates the pair. Both this file and the <head> block in base.njk read
+  the same `alternates` value, so they cannot drift apart.
+
+  Blog posts carry no alternates yet (single locale until Phase 4) and are
+  emitted without annotations rather than with a self-referencing one.
+#}<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- for item in collections.all %}
+{#- /admin/ is the Sveltia CMS dashboard: a private tool, not site content. #}
+{%- if item.url and not item.data.noindex and not item.data.locale.pseudo and "/admin/" not in item.url %}
+  <url>
+    <loc>{{ site.url }}{{ item.url }}</loc>
+{%- if item.data.alternates and item.data.alternates.length > 1 %}
+{%- for alt in item.data.alternates %}
+    <xhtml:link rel="alternate" hreflang="{{ alt.hreflang }}" href="{{ site.url }}{{ alt.url }}" />
+{%- endfor %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ item.data.xDefault }}" />
+{%- endif %}
+{%- if item.data.changefreq %}
+    <changefreq>{{ item.data.changefreq }}</changefreq>
+{%- endif %}
+{%- if item.data.priority %}
+    <priority>{{ item.data.priority }}</priority>
+{%- endif %}
+  </url>
+{%- endif %}
+{%- endfor %}
+</urlset>

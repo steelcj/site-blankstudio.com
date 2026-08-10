@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Eleventy build output (Netlify rebuilds this)
+_site/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+
+# Source/working files that should NOT be published to the web
+site/
+*.xlsx
+*.zip
+
+# Loose source images in the project root (the used ones live in src/assets/)
+/*.webp
+/*.jpeg
+/*.jpg
+/*.png
+
+# Legacy working copies — superseded by src/ (the Eleventy source of truth).
+# Kept on disk as a backup, but NOT part of the repo or the published site.
+/index.html
+/about.html
+/services.html
+/contact.html
+/blog.html
+/free-audit.html
+/assets/
+/css/
+/js/

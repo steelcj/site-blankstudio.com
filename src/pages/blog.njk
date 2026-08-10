@@ -1,0 +1,149 @@
+---
+routeKey: "blog"
+pageKey: "blog"
+css: ["home", "blog"]
+footerMuted: false
+ctaId: "contact"
+ctaBtn2Route: "services"
+---
+{% extends "layouts/base.njk" %}
+
+{% block body %}
+    <!-- ============ HERO ============ -->
+    <section class="hero hero--page hero--blog" id="hero">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero__inner">
+          <span class="eyebrow reveal">{{ t.blog.hero.eyebrow | safe }}</span>
+          <h1 class="h-xl hero__title reveal" data-delay="1">{{ t.blog.hero.title | safe }}</h1>
+          <p class="page-sub reveal" data-delay="2">
+            {{ t.blog.hero.sub | safe }}
+          </p>
+          <div class="filters reveal" data-delay="3" role="tablist" aria-label="{{ t.blog.filters.aria | safe }}">
+            <button class="filter is-active" data-filter="all">{{ t.blog.filters.all | safe }}</button>
+            <button class="filter" data-filter="branding">{{ t.blog.filters.branding | safe }}</button>
+            <button class="filter" data-filter="websites">{{ t.blog.filters.websites | safe }}</button>
+            <button class="filter" data-filter="seo">{{ t.blog.filters.seo | safe }}</button>
+            <button class="filter" data-filter="social">{{ t.blog.filters.social | safe }}</button>
+            <button class="filter" data-filter="growth">{{ t.blog.filters.growth | safe }}</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% set localePosts = collections["posts_" + locale.code] %}
+    {% set featured = localePosts | pickFeatured %}
+
+    {% if featured %}
+    <!-- ============ FEATURED ARTICLE ============ -->
+    <section class="featured" aria-label="{{ t.blog.featured.sectionAria | safe }}">
+      <div class="container">
+        <article class="feat-card reveal">
+          <div class="feat-card__media">
+            <span class="feat-badge">{{ t.blog.featured.badge | safe }}</span>
+            <img src="{{ featured.data.image or '/assets/blog-featured.jpg' }}" alt="{{ featured.data.title }}" />
+          </div>
+          <div class="feat-card__body">
+            <span class="feat-card__tag">{{ t.blog.filters[featured.data.category] | safe }}</span>
+            <h2 class="feat-card__title">{{ featured.data.title }}</h2>
+            <p class="feat-card__desc">{{ featured.data.excerpt }}</p>
+            <a href="{{ featured.url }}" class="link-arrow">{{ t.blog.featured.readLink | safe }} <span>&rarr;</span></a>
+            {% if featured.data.readtime %}<p class="feat-card__meta">{{ featured.data.readtime }}</p>{% endif %}
+          </div>
+        </article>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- ============ ARTICLE GRID ============ -->
+    <section class="sec" id="archive" style="padding-top: clamp(56px, 7vw, 90px);">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head__main">
+            <span class="eyebrow reveal">{{ t.blog.latest.eyebrow | safe }}</span>
+            <h2 class="section-title reveal" data-delay="1">{{ t.blog.latest.heading | safe }}</h2>
+          </div>
+        </div>
+
+        <div class="insights__grid">
+          {% for post in localePosts %}
+            {% if not featured or post.url != featured.url %}
+          <a class="i-card reveal" data-cat="{{ post.data.category }}" href="{{ post.url }}">
+            <span class="i-card__tag">{{ t.blog.filters[post.data.category] | safe }}</span>
+            <h3>{{ post.data.title }}</h3>
+            <p>{{ post.data.excerpt }}</p>
+            <div class="i-card__meta"><span>{{ post.data.readtime or t.blog.latest.readtimeFallback }}</span><span>{{ t.blog.latest.readLink | safe }}</span></div>
+          </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <p class="grid-empty">{{ t.blog.latest.empty | safe }}</p>
+      </div>
+    </section>
+
+    <!-- ============ SUBSCRIBE ============ -->
+    <section class="subscribe" id="subscribe">
+      <div class="container">
+        <h2 class="subscribe__title reveal">{{ t.blog.subscribe.heading | safe }}</h2>
+        <p class="subscribe__sub reveal" data-delay="1">{{ t.blog.subscribe.sub | safe }}</p>
+        <form class="subscribe__form reveal" data-delay="2" id="subForm" name="subscribe" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="subscribe" />
+            <input type="hidden" name="locale" value="{{ locale.code }}" />
+          <p hidden aria-hidden="true"><label>{{ t.blog.subscribe.honeypotLabel | safe }} <input name="bot-field" /></label></p>
+          <input type="email" name="subemail" placeholder="{{ t.blog.subscribe.emailPlaceholder | safe }}" aria-label="{{ t.blog.subscribe.emailAria | safe }}" required />
+          <button type="submit" class="btn btn--primary btn--lg">{{ t.blog.subscribe.button | safe }}</button>
+        </form>
+        <p class="subscribe__micro reveal" data-delay="3" id="subMicro">{{ t.blog.subscribe.micro | safe }}</p>
+      </div>
+    </section>
+
+{% include "partials/final-cta.njk" %}
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    (function () {
+      /* Category filter */
+      var chips = Array.prototype.slice.call(document.querySelectorAll(".filter"));
+      var cards = Array.prototype.slice.call(document.querySelectorAll(".i-card[data-cat]"));
+      var empty = document.querySelector(".grid-empty");
+      chips.forEach(function (chip) {
+        chip.addEventListener("click", function () {
+          chips.forEach(function (c) { c.classList.remove("is-active"); });
+          chip.classList.add("is-active");
+          var f = chip.getAttribute("data-filter");
+          var any = false;
+          cards.forEach(function (card) {
+            var show = f === "all" || card.getAttribute("data-cat") === f;
+            card.classList.toggle("is-hidden", !show);
+            if (show) any = true;
+          });
+          if (empty) empty.style.display = any ? "none" : "block";
+        });
+      });
+
+      /* Subscribe -> Netlify Forms (AJAX, inline thank-you) */
+      var sf = document.getElementById("subForm");
+      if (sf) {
+        sf.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var el = sf.elements["subemail"];
+          var v = el ? el.value.trim() : "";
+          if (!v) { if (el) el.style.borderColor = "#e0564f"; return; }
+          fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(new FormData(sf)).toString()
+          }).then(function (r) {
+            if (!r.ok) throw new Error("submit failed");
+            sf.style.display = "none";
+            var m = document.getElementById("subMicro");
+            if (m) m.textContent = {{ t.blog.subscribe.thanks | dump | safe }};
+          }).catch(function () {
+            if (el) el.style.borderColor = "#e0564f";
+          });
+        });
+      }
+    })();
+  </script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{
+  "name": "blank-studio-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Blank Studio — client-site template (Eleventy static site with Sveltia CMS blog).",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "check:i18n": "node scripts/check-untranslated.js",
+    "build:brand": "python3 scripts/branding/build-brand.py",
+    "build:fonts": "python3 scripts/branding/fetch-fonts.py",
+    "check:brand": "python3 scripts/branding/check-brand.py",
+    "new-client": "python3 scripts/branding/new-client.py",
+    "prebuild": "python3 scripts/branding/build-brand.py && python3 scripts/branding/check-brand.py",
+    "build:pseudo": "PSEUDO=1 eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "dependencies": {
+    "infusion": "^4.8.0"
+  }
+}

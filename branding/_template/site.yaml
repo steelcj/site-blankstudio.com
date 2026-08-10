@@ -1,0 +1,33 @@
+# site.yaml — client-owned site configuration (template default).
+#
+# scripts/branding/new-client.js copies this directory to branding/<client>/;
+# edit the copy, not this file. build-brand.py reads the active client's
+# site.yaml and generates src/_data/site.json. Run `npm run build:brand` after
+# changing a value, and commit the regenerated site.json (never edit it by hand).
+#
+# `contact` holds the direct-contact facts the templates read. `social` is a
+# map of accounts; the footer renders a link for each one present, so adding a
+# network (github, facebook, linkedin, x, youtube, …) makes it appear with no
+# template change. Each social entry is { url, label }.
+
+url: "https://www.example.com"            # TODO: the client's canonical site URL
+publicationTimeZone: "America/Toronto"    # TODO: the client's publication timezone
+
+# Optional — override the logo/favicon paths (any filename or format: SVG, PNG,
+# …). Defaults to the .png slots below if omitted. Files live in this client's
+# assets/ directory.
+# logos:
+#   dark: "/assets/logo-lockup-dark.png"     # dark mark, light backgrounds
+#   light: "/assets/logo-lockup.png"         # light mark, dark footer
+#   favicon: "/assets/favicon.png"
+
+contact:
+  email: "hello@example.com"              # TODO
+  phoneDisplay: "+1 555 000 0000"         # TODO: human-readable phone
+  phoneHref: "tel:+15550000000"           # TODO: dialable phone (tel: URL)
+
+social:
+  # Add or remove networks; each present entry becomes a footer link.
+  instagram:
+    url: "https://instagram.com/example"  # TODO
+    label: "@example"                     # TODO

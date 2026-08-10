@@ -1,0 +1,81 @@
+---
+routeKey: "privacy"
+pageKey: "privacy"
+css: ["home", "about"]
+footerMuted: true
+# The only page without the loading animation, and the only one with its own
+# styles. Both preserved verbatim from the original hand-built page.
+showLoader: false
+---
+{% extends "layouts/base.njk" %}
+
+{% block head %}
+  <style>
+    .privacy-content { max-width: 800px; margin: 0 auto; padding: 120px 20px 80px; }
+    .privacy-content h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .privacy-content h2 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .privacy-content p { margin-bottom: 1rem; line-height: 1.6; color: var(--text-muted); }
+    .privacy-content ul { margin-bottom: 1rem; padding-left: 1.5rem; color: var(--text-muted); }
+    .privacy-content li { margin-bottom: 0.5rem; }
+  </style>
+{% endblock %}
+
+{% block body %}
+    <section class="privacy-content">
+      <h1>{{ t.privacy.title | safe }}</h1>
+      <p>{{ t.privacy.intro | safe }}</p>
+
+      <h2>{{ t.privacy.collect.heading | safe }}</h2>
+      <p>{{ t.privacy.collect.lead | safe }}</p>
+      <ul>
+        <li>{{ t.privacy.collect.item1 | safe }}</li>
+        <li>{{ t.privacy.collect.item2 | safe }}</li>
+        <li>{{ t.privacy.collect.item3 | safe }}</li>
+        <li>{{ t.privacy.collect.item4 | safe }}</li>
+        <li>{{ t.privacy.collect.item5 | safe }}</li>
+      </ul>
+      <p>{{ t.privacy.collect.note | safe }}</p>
+
+      <h2>{{ t.privacy.use.heading | safe }}</h2>
+      <p>{{ t.privacy.use.lead | safe }}</p>
+      <ul>
+        <li>{{ t.privacy.use.item1 | safe }}</li>
+        <li>{{ t.privacy.use.item2 | safe }}</li>
+        <li>{{ t.privacy.use.item3 | safe }}</li>
+        <li>{{ t.privacy.use.item4 | safe }}</li>
+      </ul>
+      <p>{{ t.privacy.use.note | safe }}</p>
+
+      <h2>{{ t.privacy.sharing.heading | safe }}</h2>
+      <p>{{ t.privacy.sharing.lead | safe }}</p>
+      <ul>
+        <li>{{ t.privacy.sharing.item1 | safe }}</li>
+        <li>{{ t.privacy.sharing.item2 | safe }}</li>
+        <li>{{ t.privacy.sharing.item3 | safe }}</li>
+      </ul>
+
+      <h2>{{ t.privacy.security.heading | safe }}</h2>
+      <p>{{ t.privacy.security.body | safe }}</p>
+
+      <h2>{{ t.privacy.rights.heading | safe }}</h2>
+      <p>{{ t.privacy.rights.lead | safe }}</p>
+      <ul>
+        <li>{{ t.privacy.rights.item1 | safe }}</li>
+        <li>{{ t.privacy.rights.item2 | safe }}</li>
+        <li>{{ t.privacy.rights.item3 | safe }}</li>
+      </ul>
+      <p>{{ t.privacy.rights.contactPrefix | safe }}<a href="{{ urls.contact }}">{{ site.contact.email }}</a></p>
+
+      <h2>{{ t.privacy.thirdParty.heading | safe }}</h2>
+      <p>{{ t.privacy.thirdParty.body | safe }}</p>
+
+      <h2>{{ t.privacy.updates.heading | safe }}</h2>
+      <p>{{ t.privacy.updates.body | safe }}</p>
+
+      <h2>{{ t.privacy.a11y.heading | safe }}</h2>
+      <p>{{ t.privacy.a11y.body | safe }}</p>
+
+      <h2>{{ t.privacy.contact.heading | safe }}</h2>
+      <p>{{ t.privacy.contact.lead | safe }}<a href="{{ urls.contact }}">{{ site.contact.email }}</a></p>
+    </section>
+{% endblock %}

@@ -1,0 +1,29 @@
+# Netlify redirect rules, copied verbatim into _site/ at build time.
+#
+# Every page moved from a flat URL to a locale-prefixed one in the multilingual
+# migration. These 301s preserve the existing search rankings and any inbound
+# links; without them the old URLs 404.
+#
+# Order matters: Netlify applies the FIRST matching rule, so the specific
+# /blog/:slug/ rule has to sit above anything broader.
+#
+# Deliberately NOT doing Accept-Language negotiation on "/". Google discourages
+# automatic language redirects, and they trap a reader who wants the other
+# language. "/" goes to the default locale and the language switcher does the
+# rest.
+
+# --- Blog posts (most specific first) ---
+/blog/:slug/         /en-ca/blog/:slug/    301
+/blog/:slug          /en-ca/blog/:slug/    301
+
+# --- Top-level pages ---
+/index.html          /en-ca/               301
+/about.html          /en-ca/about/         301
+/services.html       /en-ca/services/      301
+/contact.html        /en-ca/contact/       301
+/free-audit.html     /en-ca/free-audit/    301
+/blog.html           /en-ca/blog/          301
+/privacy.html        /en-ca/privacy/       301
+
+# --- Root ---
+/                    /en-ca/               301

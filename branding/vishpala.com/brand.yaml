@@ -1,0 +1,36 @@
+# brand.yaml — the site's brand colour palette (client: vishpala.com).
+#
+# A De Stijl / Mondrian theme, reinterpreting this template's semantic tokens
+# through the primary-colour palette from vishpala.com: pure black and white,
+# red, blue, and yellow, with strong black divisions. Edit values here, run
+# `npm run build:brand`, and commit the regenerated src/css/brand.css.
+
+colors:
+  # Brand — the three De Stijl primaries mapped onto the accent tokens.
+  brand:
+    blue: "#0033cc"        # primary accent: links, buttons, eyebrows
+    blue-bright: "#d00000" # secondary accent: red for emphasis/hover
+    beige: "#f2c200"       # warm accent: Mondrian yellow
+
+  # Surfaces
+  surfaces:
+    bg: "#ffffff"          # pure white base
+    bg-band: "#f2c200"     # a bold yellow block for banded sections
+    ink: "#000000"         # pure black dark sections
+    ink-2: "#000000"       # black footer
+    card: "#ffffff"        # white cards
+
+  # Text
+  text:
+    text: "#000000"        # black body text
+    text-dim: "#595959"    # muted grey
+    text-mut: "#595959"    # mono labels
+    on-dark: "#ffffff"     # white on black sections
+    on-dark-dim: "#cfcfcf"
+    on-dark-mut: "#9a9a9a"
+
+  # Lines — strong black divisions, the De Stijl grid.
+  lines:
+    line: "#000000"
+    line-2: "#000000"
+    line-dark: "rgba(255, 255, 255, 0.35)"

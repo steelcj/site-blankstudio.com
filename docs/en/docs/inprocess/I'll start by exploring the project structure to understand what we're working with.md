@@ -1,0 +1,18 @@
+I'll start by exploring the project structure to understand what we're working with.The shell isn't available, so I'll use file tools directly.It's an Eleventy site. Let me look at the source structure and how fonts are currently used.Now let me find how fonts are currently referenced (external Google Fonts, etc.) and check the main CSS and base layout.Let me read the key files: how fonts are wired in (locales.js, base layout, 404.html).Let me look at the Eleventy config, package.json, and where infusion's fonts live.Let me read the root config files directly.This is a nicely-architected Eleventy site. The website fonts (Inter, Inter Tight, Space Mono) currently load from Google Fonts — the URL lives in `src/_data/locales.js` and is injected in `base.njk` and `404.html`. Infusion's own fonts already sit separately under `assets/vendor/infusion/` and `assets/lib/`, so "website fonts as a whole" want their own home.
+
+Two decisions before I build:Full self-hosting, latin + latin-ext. Let me set up the task list and check a couple more files (404.html and how the `LATIN` const flows) before building.The site references a `scripts/` dir already (`scripts/check-untranslated.js`). Let me confirm its contents and check the .gitignore.I have everything I need. Creating the task list, then building.Now rewiring the templates. First `locales.js`:Now `base.njk` — remove the Google preconnects, keep the local stylesheet link:Now `404.html` — it's a standalone file (can't use `locale.fonts`), so point it directly at the local stylesheet:Verifying no Google Fonts references remain and nothing else references the old URL:Let me try running the script's dry-run to validate it end-to-end, in case the sandbox is available now.The Linux sandbox isn't available on this device, so I verified statically: the constructed CSS2 URL reproduces the exact working Google Fonts URL, the `@font-face` parser matches Google's `/* subset */`-prefixed output, subset filtering and `unicode-range` preservation are correct, and every path resolves through Eleventy's existing passthrough copy (`src/assets/fonts` → `/assets/fonts`, `src/css/fonts.css` → `/css/fonts.css`). No Google Fonts references remain in `src/`.Done. The font strategy is implemented as a declaration-plus-script pair, with the site rewired to self-host.
+
+**`fonts.yaml`** (repo root) is the single source of truth: provider, the three families with their exact weights/styles, the `latin` + `latin-ext` subsets, and output paths. Change a weight here, re-run, commit.
+
+**`scripts/fetch-fonts.py`** reads that file, requests the families from Google Fonts as woff2, keeps only the declared subsets, writes the files into `src/assets/fonts/`, and generates `src/css/fonts.css` (`@font-face` rules with `unicode-range` preserved so browsers still only fetch what a page needs).
+
+I also rewired the site to load local fonts: `locales.js` now points `LATIN` at `/css/fonts.css` (keeping the per-locale override architecture intact), and I dropped the Google `preconnect`/stylesheet links from `base.njk` and `404.html`. This keeps website fonts under `assets/fonts/`, distinct from Infusion's fonts under `assets/vendor/infusion/`.
+
+To generate the files (I couldn't run it here — no Linux sandbox on this device):
+
+```
+pip install pyyaml
+python3 scripts/fetch-fonts.py            # or --dry-run to preview
+```
+
+One thing to confirm: run it once and check `src/css/fonts.css` populated before building, since until it runs, `/css/fonts.css` won't exist yet. Want me to add an npm `fonts` script to `package.json` so it's `npm run fonts`?

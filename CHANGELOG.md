@@ -10,6 +10,52 @@ Repository versions are independent of the document versions under
 
 ## [Unreleased]
 
+### Added
+
+- Locale-first content model. Content lives under `src/content/<locale>/…` with
+  the file path mirroring the URL. A shared directory-data factory
+  (`src/content/_localeTree.js`) supplies each language root, a build-time index
+  (`src/_data/contentWorkIndex.js`) pairs translations by their `sat:work` UUID
+  read off disk, and `src/_includes/layouts/page.njk` renders the markdown.
+  Translations are mirrored — localized paths connected by identity, not by
+  matching paths — driving the language switcher and `hreflang`.
+- Legal section, the first content built to that model:
+  `src/content/en-ca/legal/` (privacy, terms, cookies, accessibility, index)
+  with its French mirror `src/content/fr-ca/mentions-legales/` (confidentialite,
+  conditions, cookies, accessibilite, index), paired by shared `sat:work` UUIDs
+  and switchable both ways.
+- Site configuration consolidated into `branding/<client>/site.yaml` (URL,
+  timezone, a `contact` block, and a `social` map);
+  `scripts/branding/build-brand.py` generates `src/_data/site.json` from it
+  alongside `src/css/brand.css`.
+- Logo and favicon paths parameterized: a `logos` block in `site.yaml` (dark,
+  light, favicon — any format) flows into `site.json`, and the templates read
+  `site.logos.*` instead of hardcoded `/assets/…png`, defaulting to the `.png`
+  slots. A client can now ship SVG marks.
+- `check:brand` validator (`scripts/branding/check-brand.py`), run in a
+  `prebuild` step: fails the build on missing required config (the colour
+  tokens, `url`, `publicationTimeZone`, `contact.email`) or leftover
+  `TODO`/`example` placeholders, and warns on missing asset slots.
+- `new-client` scaffold (`scripts/branding/new-client.py`) that stamps
+  `branding/<client>/` from `branding/_template/`, and `branding/README.md`
+  documenting the template-owned / client-owned boundary.
+- Reference specifications under `docs/en/docs/reference/`: the multilingual
+  content-structure vocabulary, the publishing-vector content-format
+  specification, and the content-ingress specification.
+- Release runbook at
+  `docs/en/docs/guides/devops/runbook--cutting-and-publishing-releases-v0-1-0.md`,
+  covering first-time setup and the recurring cut, push, and publish ceremony.
+- Vishpala test client (`branding/vishpala.com/`): a De Stijl / Mondrian theme
+  with SVG logo lockups, favicon, and a composition, exercising the branding and
+  logo-path systems end to end.
+
+### Changed
+
+- The footer's contact links route to the contact page's method sections
+  (`#email`, `#phone`, `#whatsapp`, `#instagram`) rather than duplicating direct
+  `tel:`/`wa.me`/external links; the contact page gained matching anchors.
+  `nav.njk` and the final-CTA buttons still read the flat `site.contact` keys.
+
 ## [0.1.0] - 2026-08-10
 
 ### Added

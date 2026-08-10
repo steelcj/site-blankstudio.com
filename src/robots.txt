@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# The Sveltia CMS dashboard is a private tool, not site content.
+Disallow: /admin/
+
+# Once your domain is live, add your sitemap here, e.g.:
+Sitemap: https://www.theblnkstudio.com/sitemap.xml

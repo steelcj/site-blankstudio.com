@@ -1,0 +1,9 @@
+# Netlify build settings for the BLNK Studio site.
+# When the GitHub repo is connected, Netlify runs this automatically on every push.
+
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "20"

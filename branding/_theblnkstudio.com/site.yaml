@@ -1,0 +1,27 @@
+# site.yaml — client-owned site configuration (client: theblnkstudio.com).
+#
+# scripts/branding/build-brand.py reads this and generates src/_data/site.json,
+# the data file Eleventy and the templates consume. Edit values here, run
+# `npm run build:brand`, and commit the regenerated site.json. Do not edit
+# site.json by hand — it is generated.
+#
+# `contact` holds the direct-contact facts the templates read. `social` is a
+# map of accounts; the footer renders a link for each one present, so adding a
+# network here (github, facebook, linkedin, x, youtube, …) makes it appear with
+# no template change. Each social entry is { url, label }.
+
+url: "https://www.theblnkstudio.com"
+publicationTimeZone: "America/Toronto"
+
+contact:
+  email: "hello@theblnkstudio.com"
+  phoneDisplay: "+91 93806 62078"
+  phoneHref: "tel:+919380662078"
+
+social:
+  whatsapp:
+    url: "https://wa.me/919380662078"
+    label: "WhatsApp"
+  instagram:
+    url: "https://instagram.com/blnk.mediaa"
+    label: "@blnk.mediaa"

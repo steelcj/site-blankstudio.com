@@ -1,0 +1,22 @@
+{
+  "url": "https://vishpala.com",
+  "publicationTimeZone": "America/Toronto",
+  "logos": {
+    "dark": "/assets/logo-lockup-dark.svg",
+    "light": "/assets/logo-lockup.svg",
+    "favicon": "/assets/favicon.svg"
+  },
+  "contact": {
+    "email": "hello@vishpala.com",
+    "phoneDisplay": "+1 416 555 0142",
+    "phoneHref": "tel:+14165550142",
+    "instagram": "https://instagram.com/vishpala",
+    "instagramHandle": "@vishpala"
+  },
+  "social": {
+    "instagram": {
+      "url": "https://instagram.com/vishpala",
+      "label": "@vishpala"
+    }
+  }
+}

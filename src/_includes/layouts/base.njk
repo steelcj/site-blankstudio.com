@@ -1,0 +1,107 @@
+{#
+  The page shell every locale-paginated page renders into.
+
+  Pages extend this and fill {% block body %}. Anything a page needs at the end
+  of <body> — its inline scripts — goes in {% block scripts %} so it still
+  lands after the footer, exactly where it sat before the refactor.
+
+  lang/dir come from the locale registry rather than being hardcoded, which is
+  what lets a right-to-left locale be added later as a config entry.
+#}<!DOCTYPE html>
+<html lang="{{ locale.htmlLang }}" dir="{{ locale.dir }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{#
+  Copy fields render with | safe because they hold the exact HTML fragment
+  from the source — "SEO &amp; Content", "you'll know what's costing you".
+  Autoescaping them would double-encode into &amp;amp; and &#39;. These are
+  build-time authored constants in front matter, never user input.
+#}  <title>{{ pageTitle | safe }}</title>
+  <meta name="description" content="{{ pageDescription | safe }}" />
+{% if noindex or locale.pseudo %}  <meta name="robots" content="noindex" />
+{% endif %}{% if ogTitle %}
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ ogTitle | safe }}" />
+  <meta property="og:description" content="{{ ogDescription | safe }}" />
+  <meta property="og:type" content="{{ ogType | default("website") }}" />
+{% endif %}
+  <!-- Fonts — self-hosted, generated from fonts.yaml by scripts/fetch-fonts.py.
+       locale.fonts points at the local stylesheet, so a non-Latin locale can
+       swap in its own subset without touching this shell. -->
+  <link href="{{ locale.fonts }}" rel="stylesheet" />
+
+  <!-- Brand tokens — generated from branding/<client>/brand.yaml by
+       scripts/branding/build-brand.py. Loaded before home.css so its colour
+       custom properties are defined when home.css consumes them. -->
+  <link rel="stylesheet" href="/css/brand.css" />
+
+{% for sheet in css %}  <link rel="stylesheet" href="/css/{{ sheet }}.css" />
+{% endfor %}  <link rel="icon" href="{{ site.logos.favicon }}" />
+
+  <!-- SEO Tags -->
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+{% if alternates and alternates.length > 1 %}{% for alt in alternates %}  <link rel="alternate" hreflang="{{ alt.hreflang }}" href="{{ site.url }}{{ alt.url }}" />
+{% endfor %}  <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ xDefault }}" />
+{% endif %}
+  <meta property="og:image" content="{{ site.url }}{{ ogImage | default("/assets/about-work.jpg") }}" />
+{% if googleSiteVerification %}  <meta name="google-site-verification" content="{{ googleSiteVerification }}" />
+{% endif %}{% block head %}{% endblock %}
+</head>
+<body>
+  {#
+    Infusion's separated panel mounts here, above the fixed nav. It is empty
+    until src/js/a11y.js loads the bundle on demand; data-* on #a11y-config is
+    how that stub learns the page's locale without any inline script.
+  #}
+  <div class="flc-prefsEditor-separatedPanel fl-prefsEditor-separatedPanel" id="uioPanel">
+    {#
+      Infusion's separated panel does not render this scaffold — it looks for
+      .flc-slidingPanel-panel inside the container and fails construction if it
+      is absent. Two panel bars (small/wide screen) are how the demo preserves
+      tab order; only one is visible at a time.
+    #}
+    <div class="fl-panelBar fl-panelBar-smallScreen">
+      <span class="fl-prefsEditor-buttons">
+        <button class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide">{{ t.common.a11y.showHide | safe }}</button>
+        <button class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span> {{ t.common.a11y.reset | safe }}</button>
+      </span>
+    </div>
+    <div class="flc-slidingPanel-panel"></div>
+    <div class="fl-panelBar fl-panelBar-wideScreen">
+      <span class="fl-prefsEditor-buttons">
+        <button class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide">{{ t.common.a11y.showHide | safe }}</button>
+        <button class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span> {{ t.common.a11y.reset | safe }}</button>
+      </span>
+    </div>
+  </div>
+  <span id="a11y-config" hidden
+        data-uio-locale="{{ locale.uioLocale }}"
+        data-direction="{{ locale.dir }}"
+        data-lang="{{ locale.htmlLang }}"></span>
+
+  <!-- Cursor glow -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+{% if showLoader != false %}  <!-- Page loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__mark"><img src="{{ site.logos.dark }}" alt="{{ t.common.nav.logoAlt | safe }}" /></div>
+    <div class="loader__bar"><span></span></div>
+  </div>
+{% endif %}
+
+{% include "partials/nav.njk" %}
+
+  <nav class="flc-toc-tocContainer toc" aria-label="{{ t.common.a11y.tocLabel | safe }}"></nav>
+
+  <main id="top">
+{% block body %}{% endblock %}
+  </main>
+
+{% include "partials/footer.njk" %}
+
+  <script src="/js/main.js"></script>
+  <script src="/js/a11y.js" defer></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

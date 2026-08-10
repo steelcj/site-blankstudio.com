@@ -1,0 +1,24 @@
+{#
+  Content-page layout for the locale-first content model. Renders a markdown
+  page's body inside the shared shell (nav, footer, head). The front-matter
+  `title` becomes the page heading; the markdown body should start at H2.
+
+  Reuses the article body styles so prose (headings, paragraphs, lists) is
+  styled without a new stylesheet — css: ["home", "article"] is set in the
+  content directory data.
+#}
+{% extends "layouts/base.njk" %}
+
+{% block body %}
+    <article class="article">
+      <div class="container article__wrap">
+        <header class="article__head">
+          <h1 class="article__title">{{ title }}</h1>
+          {% if description %}<p class="article__meta">{{ description }}</p>{% endif %}
+        </header>
+        <div class="article__body">
+          {{ content | safe }}
+        </div>
+      </div>
+    </article>
+{% endblock %}

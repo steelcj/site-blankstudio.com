@@ -1,0 +1,71 @@
+{#
+  The primary navigation, previously duplicated across 8 files and drifted in
+  four different ways. The variations were real, not accidental, so they are
+  parameters rather than something to flatten:
+
+    pageKey         which link gets .is-active; "home" also makes the logo and
+                    Home link scroll to #top instead of reloading the page
+    navCtaHref      the desktop button — free-audit retargets it to #request
+    navCtaLabel     …and its label
+    navCtaCurrent   adds aria-current="page" when the button targets this page
+    mobileCta1/2    the two mobile buttons — contact swaps the second for a
+                    tel: link, free-audit reorders and relabels both
+
+  Labels stay literal English here. Phase 3 moves them into the locale bundles.
+#}
+{#
+  Front matter is plain YAML and cannot evaluate {{ urls.* }}, so a page that
+  needs a button pointed at a different page names the route instead — e.g.
+  mobileCta2Route: "contact" — and the lookup happens here. An explicit
+  *Href still wins, for the off-site and anchor targets.
+#}
+{#
+  Href resolution order, highest first:
+    *Href     an explicit literal — anchors like "#request"
+    *Contact  a key in site.contact — "phoneHref" for the tel: link
+    *Route    a key in urls — "contact"
+    otherwise the partial's own default
+
+  Labels run through a {phone} placeholder so the number lives in one place
+  even when it appears inside a sentence: "Call {phone}".
+#}
+{% set homeHref = "#top" if pageKey == "home" else urls.home %}
+{% set navCtaHref = navCtaHref | default(site.contact[navCtaContact] if navCtaContact else (urls[navCtaRoute] if navCtaRoute else urls.freeAudit)) %}
+{% set navCtaLabel = navCtaLabel | default(t.common.nav.ctaFreeAudit) %}
+{% set mobileCta1Href = mobileCta1Href | default(site.contact[mobileCta1Contact] if mobileCta1Contact else (urls[mobileCta1Route] if mobileCta1Route else urls.contact)) %}
+{% set mobileCta1Label = mobileCta1Label | default(t.common.nav.mobileBookCall) %}
+{% set mobileCta2Href = mobileCta2Href | default(site.contact[mobileCta2Contact] if mobileCta2Contact else (urls[mobileCta2Route] if mobileCta2Route else urls.freeAudit)) %}
+{% set mobileCta2Label = mobileCta2Label | default(t.common.nav.mobileFreeAudit) %}
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="{{ homeHref }}" class="nav__logo" aria-label="{{ t.common.nav.logoAria | safe }}">
+        <img src="{{ site.logos.dark }}" alt="{{ t.common.nav.logoAlt | safe }}" />
+      </a>
+      <nav class="nav__links" aria-label="{{ t.common.nav.primaryAria | safe }}">
+        <a href="{{ homeHref }}"{% if pageKey == "home" %} class="is-active"{% endif %}>{{ t.common.nav.home | safe }}</a>
+        <a href="{{ urls.about }}"{% if pageKey == "about" %} class="is-active"{% endif %}>{{ t.common.nav.about | safe }}</a>
+        <a href="{{ urls.services }}"{% if pageKey == "services" %} class="is-active"{% endif %}>{{ t.common.nav.services | safe }}</a>
+        <a href="{{ urls.blog }}"{% if pageKey == "blog" %} class="is-active"{% endif %}>{{ t.common.nav.blog | safe }}</a>
+        <a href="{{ urls.contact }}"{% if pageKey == "contact" %} class="is-active"{% endif %}>{{ t.common.nav.contact | safe }}</a>
+      </nav>
+      <div class="nav__actions">
+{% set variant = "desktop" %}{% include "partials/lang-switcher.njk" %}
+        <a href="{{ navCtaHref }}" class="btn btn--dark btn--sm"{% if navCtaCurrent %} aria-current="page"{% endif %}>{{ navCtaLabel | replace("{phone}", site.contact.phoneDisplay) | safe }}</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="{{ t.common.nav.toggleAria | safe }}" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="nav__mobile" id="navMobile">
+      <a href="{{ homeHref }}">{{ t.common.nav.home | safe }}</a>
+      <a href="{{ urls.about }}">{{ t.common.nav.about | safe }}</a>
+      <a href="{{ urls.services }}">{{ t.common.nav.services | safe }}</a>
+      <a href="{{ urls.blog }}">{{ t.common.nav.blog | safe }}</a>
+      <a href="{{ urls.contact }}">{{ t.common.nav.contact | safe }}</a>
+{% set variant = "mobile" %}{% include "partials/lang-switcher.njk" %}
+      <a href="{{ mobileCta1Href }}" class="btn btn--primary btn--block">{{ mobileCta1Label | replace("{phone}", site.contact.phoneDisplay) | safe }}</a>
+      <a href="{{ mobileCta2Href }}" class="btn btn--outline btn--block">{{ mobileCta2Label | replace("{phone}", site.contact.phoneDisplay) | safe }}</a>
+    </div>
+  </header>

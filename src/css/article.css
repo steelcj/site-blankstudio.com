@@ -1,0 +1,177 @@
+/* ============================================================
+   ARTICLE (blog post) page — prose layout in the BLNK system
+   ============================================================ */
+
+.article {
+  padding: clamp(96px, 12vw, 150px) 0 clamp(48px, 7vw, 84px);
+  background: var(--bg);
+}
+
+.article__wrap {
+  max-width: 760px;
+}
+
+.article__back {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  margin-bottom: 34px;
+  transition: color 0.2s var(--ease);
+}
+.article__back:hover { color: var(--blue); }
+
+.article__head { margin-bottom: 34px; }
+
+.article__cat {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 18px;
+}
+
+.article__title {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(2.1rem, calc(5.2vw * var(--fl-textSize-factor, 1)), 3.4rem);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  margin: 0 0 20px;
+}
+
+.article__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-mut);
+}
+.article__meta span { position: relative; }
+.article__meta span + span::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: -10px;
+  top: 50%;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--text-mut);
+  transform: translateY(-50%);
+}
+
+.article__cover {
+  margin: 0 0 40px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-band);
+}
+.article__cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---- Prose body (rendered from markdown) ---- */
+.article__body {
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--text);
+}
+.article__body > * + * { margin-top: 1.25em; }
+
+.article__body h2 {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(1.5rem, calc(3.2vw * var(--fl-textSize-factor, 1)), 1.95rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-top: 2em;
+}
+.article__body h3 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-top: 1.6em;
+}
+
+.article__body a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.article__body ul,
+.article__body ol { padding-inline-start: 1.25em; }
+.article__body li + li { margin-top: 0.5em; }
+.article__body li::marker { color: var(--blue); }
+
+.article__body blockquote {
+  border-inline-start: 3px solid var(--blue);
+  padding-block: 4px; padding-inline: 22px 0;
+  margin-inline-start: 0;
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.article__body img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.article__body code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  background: var(--bg-band);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+.article__body hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 2.4em 0;
+}
+
+.article__body strong { color: var(--ink); font-weight: 600; }
+
+/* ---- Inline CTA below the post ---- */
+.article__cta {
+  margin-top: clamp(44px, 6vw, 64px);
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+.article__cta p {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: clamp(1.3rem, calc(3vw * var(--fl-textSize-factor, 1)), 1.7rem);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 22px;
+}
+
+@media (max-width: 600px) {
+  .article__body { font-size: 1rem; }
+}

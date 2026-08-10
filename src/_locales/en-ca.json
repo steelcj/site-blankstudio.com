@@ -1,0 +1,747 @@
+{
+  "routes": {
+    "home": "",
+    "about": "about",
+    "services": "services",
+    "blog": "blog",
+    "contact": "contact",
+    "freeAudit": "free-audit",
+    "privacy": "privacy"
+  },
+  "common": {
+    "nav": {
+      "primaryAria": "Primary",
+      "logoAria": "BLNK Studio home",
+      "logoAlt": "BLNK Studio - Strategy. Design. Impact.",
+      "toggleAria": "Open menu",
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "blog": "Blog",
+      "contact": "Contact",
+      "ctaFreeAudit": "Free Audit",
+      "mobileBookCall": "Book Discovery Call",
+      "mobileFreeAudit": "Get Free Audit",
+      "languageAria": "Language"
+    },
+    "footer": {
+      "blurb": "Strategy-led creative studio building brand, web, SEO, social and content systems for modern businesses.",
+      "exploreHeading": "Explore",
+      "insights": "Insights",
+      "contactHeading": "Get in touch",
+      "whatsapp": "WhatsApp",
+      "muted": "Response within 24 hrs &middot; Mon&ndash;Sat",
+      "legalHeading": "Legal",
+      "privacy": "Privacy Policy",
+      "copyright": "BLNK Studio",
+      "tagline": "Strategy. Design. Impact."
+    },
+    "cta": {
+      "micro": "Response within 24 hours &middot; No sales pressure &middot; Just a conversation"
+    },
+    "form": {
+      "sending": "Sending...",
+      "mailName": "Name: ",
+      "mailEmail": "Email: "
+    },
+    "a11y": {
+      "showHide": "Show/Hide",
+      "reset": "Reset",
+      "tocLabel": "Table of contents"
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy &ndash; BLNK Studio",
+    "intro": "At BLNK Studio, we value your trust and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard the data you share with us through our website, advertising campaigns, and lead forms.",
+    "collect": {
+      "heading": "1. Information We Collect",
+      "lead": "When you interact with us (for example, by filling out a lead form, subscribing to updates, or contacting us), we may collect:",
+      "item1": "Your name, email address, and phone number",
+      "item2": "Organization/College/Business details",
+      "item3": "Marketing and admissions-related requirements",
+      "item4": "Website or social media links you provide",
+      "item5": "Education and coaching institutes (spoken English, NEET, UPSC prep)",
+      "note": "We do not collect sensitive personal information unless voluntarily provided."
+    },
+    "use": {
+      "heading": "2. How We Use Your Information",
+      "lead": "We use your information to:",
+      "item1": "Contact you regarding our services",
+      "item2": "Assess your business needs and provide tailored solutions",
+      "item3": "Share insights, offers, or updates relevant to your business",
+      "item4": "Improve our marketing campaigns and service delivery",
+      "note": "We will never sell or rent your data to third parties."
+    },
+    "sharing": {
+      "heading": "3. Data Sharing",
+      "lead": "We may share your information only with:",
+      "item1": "Internal BLNK Studio team members",
+      "item2": "Trusted partners or service providers who assist us in delivering our services (bound by confidentiality agreements)",
+      "item3": "Authorities, if required by law"
+    },
+    "security": {
+      "heading": "4. Data Security",
+      "body": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, misuse, or disclosure."
+    },
+    "rights": {
+      "heading": "5. Your Rights",
+      "lead": "You have the right to:",
+      "item1": "Access the personal data we hold about you",
+      "item2": "Request correction or deletion of your data",
+      "item3": "Opt out of marketing communications at any time",
+      "contactPrefix": "To exercise these rights, contact us at "
+    },
+    "thirdParty": {
+      "heading": "6. Third-Party Links",
+      "body": "Our website or ads may contain links to external sites. We are not responsible for the privacy practices of those websites."
+    },
+    "updates": {
+      "heading": "7. Updates to This Policy",
+      "body": "We may update this Privacy Policy from time to time. The latest version will always be available at this page."
+    },
+    "contact": {
+      "heading": "8. Contact Us",
+      "lead": "If you have any questions about this Privacy Policy or how we handle your data, please contact us: "
+    },
+    "meta": {
+      "title": "Privacy Policy – BLNK Studio",
+      "description": "Privacy Policy for BLNK Studio."
+    },
+    "a11y": {
+      "heading": "9. Accessibility Preferences",
+      "body": "If you use the accessibility options on this site (text size, contrast, line spacing, fonts, or self-voicing), your choices are stored in a cookie on your own device so the site can apply them on your next visit. This is a functional cookie: it holds only your display preferences, is never used for advertising or analytics, and is not shared with anyone. Clearing your browser cookies removes it."
+    }
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "(00) About BLNK Studio",
+      "sub": "BLNK Studio is a creative and digital growth studio. We help founders and brands go from unclear, inconsistent, or invisible online, to sharp, strategic, and conversion-ready.",
+      "ctaSecondary": "Explore Services",
+      "imageAlt": "A BLNK designer sketching website wireframes on a tablet",
+      "figCaptionLabel": "Inside the studio",
+      "figCaptionValue": "Strategy &middot; Design &middot; Impact",
+      "ctaPrimary": "Work With Us",
+      "body": "We're not a full-service agency that does everything for everyone. We're a focused studio that takes on brands we genuinely believe in, and builds digital foundations that work long after the project ends.",
+      "titleLines": [
+        "We build the systems",
+        "behind how brands <em>grow.</em>"
+      ]
+    },
+    "stats": {
+      "brandsValue": "40+",
+      "brandsLabel": "Brands helped",
+      "growthValue": "+25%",
+      "growthLabel": "Avg organic growth",
+      "regionsValue": "UK&middot;US&middot;IN&middot;Gulf",
+      "regionsLabel": "Where we work",
+      "responseValue": "&lt; 24h",
+      "responseLabel": "Response time"
+    },
+    "story": {
+      "eyebrow": "(01) Why we started",
+      "link": "Explore what we do",
+      "p2": "Their websites were unclear. Their social media was inconsistent. Their brand looked like it was built in a hurry, because it was.",
+      "p3": "BLNK was built to solve that: to bring together strategy, creative, and digital in one place, so brands could stop patching together freelancers and start working from a clear plan.",
+      "heading": "Brands have great products. Most just can't communicate them.",
+      "p1": "The frustration that built BLNK Studio was simple: too many good businesses were invisible online, not because they lacked quality, but because their digital presence didn't reflect it.",
+      "p4": "We're precise, opinionated, and direct about what we think will work. We don't say yes to everything. But when we do take on a project, we take it seriously."
+    },
+    "principles": {
+      "eyebrow": "(02) How we think",
+      "cta": "Start a Project",
+      "p1Title": "Clarity before creativity.",
+      "p2Title": "Consistency builds trust.",
+      "p3Title": "Design must drive action.",
+      "p3Body": "Beautiful is not enough. Every piece of work we produce is measured against one question: does this help the brand grow?",
+      "p4Title": "We are direct.",
+      "heading": "A few things we believe in, and a few we won't compromise on.",
+      "body": "Principles aren't decoration. They're how we decide what to build, what to push back on, and what to walk away from.",
+      "p1Body": "We won't design a logo before we understand your positioning. We won't write copy before we understand your audience. Strategy is not a premium add-on. It's the starting point.",
+      "p2Body": "One great asset won't fix a broken brand. A system will. We build brand systems, visual, verbal, and content, that work together.",
+      "p4Body": "If we think your brief needs rethinking, we'll say so. If the market has shifted and your strategy needs to shift with it, we'll tell you before you waste budget."
+    },
+    "fit": {
+      "eyebrow": "(03) Who we work with",
+      "yesLabel": "A good fit",
+      "yes1": "Founders and early teams getting it right from the start",
+      "yes2": "Service businesses that need their site to generate leads",
+      "yes3": "Funded startups building a credible presence fast",
+      "yes4": "D2C and e-commerce brands ready to scale",
+      "yes5": "Clinics and professional service businesses",
+      "no1": "Brands chasing the cheapest option over the right one",
+      "no2": "Anyone looking for vanity metrics or generic templates",
+      "no3": "Projects with no room for strategy or honest feedback",
+      "no4": "Teams that want a yes-to-everything agency",
+      "heading": "We're a great fit for some brands. Not for others.",
+      "noLabel": "Not for"
+    },
+    "meta": {
+      "title": "About BLNK Studio: The systems behind how brands grow",
+      "description": "BLNK Studio is a creative and digital growth studio helping founders and brands go from invisible to sharp, strategic, and conversion-ready.",
+      "ogTitle": "About BLNK Studio",
+      "ogDescription": "We build the systems behind how brands grow."
+    },
+    "pageCta": {
+      "title": "Let's build the systems behind your <em>growth.</em>",
+      "sub": "Tell us where your digital presence feels stuck. We review every brief personally and come back within 24 hours with initial thoughts and next steps.",
+      "btn1Label": "Work With Us",
+      "btn2Label": "Get a Free Audit"
+    }
+  },
+  "blog": {
+    "hero": {
+      "eyebrow": "(00) BLNK Insights",
+      "title": "Practical thinking on brand, growth, and digital presence.",
+      "sub": "No fluff. No trend-chasing. Just clear, strategic content for founders and brands building something worth finding online."
+    },
+    "filters": {
+      "aria": "Filter articles",
+      "branding": "Branding",
+      "websites": "Websites",
+      "seo": "SEO",
+      "social": "Social Media",
+      "growth": "Growth",
+      "all": "All"
+    },
+    "featured": {
+      "sectionAria": "Featured article",
+      "readLink": "Read article",
+      "badge": "Featured"
+    },
+    "latest": {
+      "eyebrow": "(01) Latest thinking",
+      "heading": "Strategy you can actually use.",
+      "empty": "No articles in this category yet. Check back soon.",
+      "readtimeFallback": "Read",
+      "readLink": "Read &rarr;"
+    },
+    "subscribe": {
+      "heading": "Get the monthly dispatch.",
+      "sub": "Practical thinking on brand, growth, and digital presence, delivered once a month.",
+      "honeypotLabel": "Leave this empty:",
+      "emailPlaceholder": "you@brand.com",
+      "emailAria": "Your email",
+      "micro": "Join 1,000+ founders reading BLNK's monthly dispatch. Unsubscribe any time.",
+      "button": "Subscribe",
+      "thanks": "Thanks, you're on the list."
+    },
+    "meta": {
+      "title": "BLNK Insights: Brand, Growth &amp; Digital Presence | BLNK Studio",
+      "description": "Practical, strategic thinking on brand, websites, SEO, social media, content, and growth, for founders and brands building something worth finding online.",
+      "ogTitle": "BLNK Insights",
+      "ogDescription": "Practical thinking on brand, growth, and digital presence."
+    },
+    "pageCta": {
+      "title": "Reading is good. <em>Fixing</em> it is better.",
+      "sub": "Get a free audit of your digital presence and a clear, prioritised list of what to improve first.",
+      "btn1Label": "Get a Free Audit",
+      "btn2Label": "Explore Services"
+    },
+    "article": {
+      "backLink": "&larr; All articles",
+      "ctaPrompt": "Want this kind of clarity on your own brand?",
+      "ctaButton": "Get a Free Audit"
+    }
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "(00) Start a project",
+      "sub": "Whether you need a full rebrand or just want to understand why your website isn't converting, this is the right place to start.",
+      "body": "Fill in the brief and we'll review it personally, then come back within 24 hours with initial thoughts and next steps.",
+      "micro": "No retainer to start a conversation &middot; No sales pitch on the first call",
+      "titleLines": [
+        "Tell us where your",
+        "digital presence",
+        "feels <em>stuck.</em>"
+      ]
+    },
+    "methods": {
+      "call": "Call",
+      "whatsapp": "WhatsApp",
+      "instagram": "Instagram",
+      "responseKey": "Response",
+      "responseValue": "Within 24 hours &middot; Mon&ndash;Sat",
+      "email": "Email"
+    },
+    "form": {
+      "honeypotLabel": "Leave this empty:",
+      "heading": "Project brief",
+      "step": "01 / 01",
+      "nameLabel": "Your name",
+      "namePlaceholder": "Jane Founder",
+      "emailPlaceholder": "you@brand.com",
+      "companyLabel": "Company / brand",
+      "companyPlaceholder": "Optional",
+      "serviceLabel": "What do you need?",
+      "serviceOpt1": "Not sure yet, help me figure it out",
+      "serviceOpt2": "Brand Identity &amp; Collaterals",
+      "serviceOpt3": "Website Strategy &amp; Design",
+      "serviceOpt4": "Social Media Management",
+      "serviceOpt5": "SEO Strategy",
+      "serviceOpt6": "Content Writing",
+      "serviceOpt7": "Performance Marketing",
+      "serviceOpt8": "Pitch Decks &amp; Presentations",
+      "serviceOpt9": "Multiple services",
+      "messageLabel": "Tell us where things feel stuck",
+      "messagePlaceholder": "A few lines about your brand, your goals, and what's not working right now.",
+      "submit": "Send the brief",
+      "note": "We review every submission personally. Response within 24 hours.",
+      "sent": "Thanks, we've got your brief. We'll be in touch within 24 hours.",
+      "emailLabel": "Email"
+    },
+    "showcase": {
+      "aria": "Just a conversation",
+      "eyebrow": "Just a conversation",
+      "heading": "No pressure. No pitch. Just a clear look at what's next.",
+      "sub": "First calls are free, and there's never any pressure to commit."
+    },
+    "next": {
+      "eyebrow": "(01) What happens next",
+      "heading": "Here's what to expect after you submit.",
+      "s1Title": "We review your brief",
+      "s1Body": "Every submission is read by a real person. We look at your website, your brief, and your goals before we respond.",
+      "s1Time": "Real human review",
+      "s2Title": "You get a response",
+      "s2Body": "Not an automated email. An actual response, with initial thoughts and a suggested next step.",
+      "s2Time": "Within 24 hours",
+      "s3Title": "We book a Discovery Call",
+      "s3Body": "No preparation needed. Just a conversation about your brand, your goals, and whether we're the right fit.",
+      "s3Time": "30-minute call",
+      "s4Title": "You receive a plan",
+      "s4Body": "Depending on your brief, we'll send a tailored proposal or start with a quick audit of your current presence.",
+      "s4Time": "Proposal or audit",
+      "emailLink": "Prefer email? Drop us a line"
+    },
+    "script": {
+      "applyingPrefix": "Applying for: ",
+      "mailSubject": "New project brief: "
+    },
+    "meta": {
+      "title": "Contact BLNK Studio: Start a Project",
+      "description": "Tell us where your digital presence feels stuck. We review every brief personally and reply within 24 hours. Email, call, or WhatsApp BLNK Studio.",
+      "ogTitle": "Contact BLNK Studio",
+      "ogDescription": "Start a project with BLNK Studio. Response within 24 hours."
+    },
+    "pageNav": {
+      "mobileCta2Label": "Call {phone}"
+    },
+    "pageCta": {
+      "title": "Prefer to <em>talk</em> it through?",
+      "sub": "Call or message us directly. We're happy to start with a quick conversation, no brief required.",
+      "btn1Label": "Call {phone}",
+      "btn2Label": "WhatsApp",
+      "micro": "Response within 24 hours &middot; First calls are free &middot; No pressure to commit"
+    }
+  },
+  "freeAudit": {
+    "hero": {
+      "eyebrow": "(00) Free Audit",
+      "sub": "In 48 hours, you'll know exactly what's costing you visibility, trust, and leads, and what to do about it. No sales call. No commitment.",
+      "point1": "3 specific observations on your current presence",
+      "point2": "3 high-impact fixes you can act on immediately",
+      "point3": "A priority score and a recommended next step",
+      "point4": "Delivered by a real strategist, not an automated tool",
+      "micro": "Reviewed personally by the BLNK Studio team &middot; No bots &middot; No generic reports",
+      "titleLines": [
+        "A free 3-point teardown",
+        "of your website, brand,",
+        "or <em>social</em> presence."
+      ]
+    },
+    "form": {
+      "honeypotLabel": "Leave this empty:",
+      "heading": "Request your audit",
+      "badge": "Free",
+      "nameLabel": "Your name",
+      "namePlaceholder": "Jane Founder",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@brand.com",
+      "linkLabel": "Website or social link",
+      "linkPlaceholder": "brand.com or @yourhandle",
+      "auditLabel": "What should we audit?",
+      "auditOpt1": "My website",
+      "auditOpt2": "My brand identity",
+      "auditOpt3": "My social media",
+      "auditOpt4": "My SEO / search visibility",
+      "auditOpt5": "Everything, give me the full picture",
+      "worryLabel": "Anything specific worrying you? (optional)",
+      "worryPlaceholder": "e.g. lots of traffic but almost no enquiries.",
+      "submit": "Request My Free Audit",
+      "note": "Takes 60 seconds &middot; You'll receive your audit within 48 hours",
+      "sent": "Thanks, we've got your request. Your audit lands within 48 hours."
+    },
+    "showcase": {
+      "aria": "Reviewed by humans",
+      "eyebrow": "Reviewed by humans",
+      "heading": "A real teardown, by real strategists.",
+      "sub": "No bots, no generic reports. Just a clear, honest look at what's quietly costing you leads."
+    },
+    "inside": {
+      "eyebrow": "(01) What's in your audit",
+      "heading": "Three observations. Three fixes. One clear next step.",
+      "s1Title": "3 observations",
+      "s1Body": "Three specific things working against you right now, across your site, brand, or social.",
+      "s1Time": "What's wrong",
+      "s2Title": "3 high-impact fixes",
+      "s2Body": "Three changes you can act on immediately, chosen for the difference they'll actually make.",
+      "s2Time": "What to do",
+      "s3Title": "A priority score",
+      "s3Body": "A simple score so you know what to tackle first, and what can safely wait.",
+      "s3Time": "What comes first",
+      "s4Title": "A recommended next step",
+      "s4Body": "One clear recommendation for the single most valuable thing to do next.",
+      "s4Time": "Where to go"
+    },
+    "fit": {
+      "eyebrow": "(02) Is this for you?",
+      "heading": "You're in the right place if any of these sound familiar.",
+      "yes1": "Your website is live but not bringing in enquiries",
+      "yes2": "Your social media is active but not growing",
+      "yes3": "Your brand looks inconsistent across platforms",
+      "yes4": "You're spending on ads but the results don't make sense",
+      "yes5": "You've had the website a while and haven't thought about SEO",
+      "yes6": "You're preparing to launch and want to be set up right",
+      "noLabel": "Not for",
+      "noBody": "This audit isn't for brands looking for vanity reports or generic checklists. It's a real review by real people, which is why we only take 10 audit requests a week.",
+      "micro": "We limit free audits to protect quality &middot; Limited spots each week"
+    },
+    "script": {
+      "mailSubject": "Free Audit Request: ",
+      "mailLink": "Link: "
+    },
+    "meta": {
+      "title": "Free Audit: A 3-Point Teardown of Your Digital Presence | BLNK Studio",
+      "description": "Get a free 3-point teardown of your website, brand, or social presence. In 48 hours you'll know what's costing you visibility, trust, and leads, and what to do about it.",
+      "ogTitle": "BLNK Studio Free Audit",
+      "ogDescription": "A free 3-point teardown of your digital presence. No sales call. No commitment."
+    },
+    "pageNav": {
+      "mobileCta1Label": "Request Free Audit",
+      "mobileCta2Label": "Book Discovery Call"
+    },
+    "pageCta": {
+      "title": "Claim your free audit <em>spot.</em>",
+      "sub": "Sixty seconds to request. Forty-eight hours to a clear, prioritised plan for your digital presence.",
+      "btn1Label": "Request My Free Audit",
+      "btn2Label": "Talk to Us First",
+      "micro": "No sales call &middot; No commitment &middot; Audit delivered within 48 hours"
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Strategy-driven studio",
+      "sub": "BLNK Studio helps modern businesses sharpen how they look, get found, and convert through branding, websites, SEO, social media, and content that actually does something.",
+      "body": "Built for founders, growing teams, and service brands ready to stop guessing and start growing.",
+      "ctaPrimary": "Book a Free Discovery Call",
+      "ctaSecondary": "Get a Free Website Audit",
+      "micro": "No commitment &middot; No agency jargon &middot; Just clarity",
+      "titleLines": [
+        "Your brand should be",
+        "working <em>harder</em> than",
+        "your portfolio."
+      ]
+    },
+    "spec": {
+      "version": "v1.0",
+      "statusKey": "Status",
+      "statusValue": "Booking Q3 2026",
+      "basedKey": "Based",
+      "basedValue": "India &middot; Gulf",
+      "workingKey": "Working",
+      "workingValue": "UK &middot; US &middot; Globally",
+      "responseKey": "Response",
+      "responseValue": "&lt; 24 hours",
+      "shippingKey": "Currently shipping",
+      "shipping1": "Brand systems",
+      "shipping2": "Website rebuilds",
+      "shipping3": "SEO retainers"
+    },
+    "logos": {
+      "heading": "Brands that chose to look the part",
+      "bbkAlt": "Biryani By Kilo",
+      "fenestaAlt": "Fenesta",
+      "goilaAlt": "Goila Butter Chicken",
+      "myhomeAlt": "My Home",
+      "naishaAlt": "Naisha Vasandani Couture",
+      "ziggyAlt": "Ziggy"
+    },
+    "stats": {
+      "growthLabel": "Organic growth",
+      "brandsLabel": "Brands helped",
+      "allInOne": "All-in-one",
+      "oneStudio": "One studio"
+    },
+    "services": {
+      "eyebrow": "(01) Full-service studio",
+      "titleLine1": "Six ways to go from",
+      "titleEm": "invisible",
+      "titleLine2": "to unmissable.",
+      "exploreLink": "Explore all services",
+      "c1Title": "Brand Identity &amp; Collaterals",
+      "c1Body": "Logo, visual language, brochures, product booklets, and positioning that holds across every channel.",
+      "c2Title": "Website Strategy &amp; Design",
+      "c2Body": "A website that converts, not just one that looks good. Strategy, copy, design, and launch, done together.",
+      "c3Title": "Social Media",
+      "c3Body": "Content that builds an audience and drives action. Strategy, direction, and consistent execution.",
+      "c4Title": "SEO Strategy",
+      "c4Body": "Get found by the people already looking for what you offer. Technical, content, and local SEO that compounds.",
+      "c5Title": "Content Writing",
+      "c5Body": "Website copy, blog articles, brand messaging. Written to rank, read, and convert.",
+      "c6Title": "Performance Marketing",
+      "c6Body": "Paid ads that spend smart. Meta, Google, and LinkedIn campaigns built on real strategy, not guesswork.",
+      "c7Title": "Pitch Decks &amp; Presentations",
+      "c7Body": "Investor decks, sales decks, and brand presentations that get you in the room and close the deal.",
+      "enquire": "Enquire"
+    },
+    "why": {
+      "eyebrow": "(02) Why BLNK",
+      "titleLine1": "Strategy comes first.",
+      "titleEm": "Always.",
+      "body": "Most agencies will take your brief and run with it. We ask better questions.",
+      "cta": "Get a Free Audit",
+      "p1Title": "Strategy before design",
+      "p1Body": "We don't open a design file until we understand your audience, positioning, and goals. Every visual decision has a reason.",
+      "p2Title": "Execution that converts",
+      "p2Body": "We don't just make things look good. Every deliverable, from a logo to a landing page, is built to drive a business outcome.",
+      "p3Title": "Content systems that scale",
+      "p3Body": "We build content and brand systems, not one-off assets. So your team can keep going after we're done."
+    },
+    "process": {
+      "eyebrow": "(03) How it works",
+      "heading": "From first call to final launch, here's what to expect.",
+      "s1Title": "Audit",
+      "s1Body": "We review your current brand, website, and digital presence. You get an honest picture of where things stand.",
+      "s1Time": "Within 48 hours",
+      "s2Title": "Strategy",
+      "s2Body": "We map what needs to change, what to build, and in what order. No bloated decks, just a clear plan.",
+      "s2Time": "1&ndash;2 working days",
+      "s3Title": "Build",
+      "s3Body": "Designers, writers, and strategists execute the plan. You review and approve at every stage.",
+      "s3Time": "Project-dependent",
+      "s4Title": "Launch",
+      "s4Body": "We go live correctly, and make sure everything is set up to perform from day one.",
+      "s4Time": "Go time",
+      "s5Title": "Optimise",
+      "s5Body": "For ongoing clients, we track, report, and refine monthly. For project clients, we hand over systems.",
+      "s5Time": "Ongoing",
+      "link": "See our process"
+    },
+    "testimonial": {
+      "eyebrow": "(04) What clients say",
+      "quote": "&ldquo;Before BLNK, our brand looked like four different businesses. Now every touchpoint (website, social, pitch deck) feels like us. The process was sharp, the work was faster than expected, and the results spoke immediately.&rdquo;",
+      "role": "Founder",
+      "company": "D2C Brand",
+      "micro": "40+ brands helped &middot; 5-star reviews &middot; Results within 30 days"
+    },
+    "blog": {
+      "eyebrow": "(05) From the BLNK blog",
+      "heading": "Thinking on brand, growth, and digital presence.",
+      "link": "Read all insights",
+      "c1Tag": "Websites",
+      "c1Title": "Why your website is getting views but not leads",
+      "c1Body": "The gap between traffic and conversion is almost always a messaging problem.",
+      "c2Tag": "Social",
+      "c2Title": "The social media strategy mistake most founders make",
+      "c2Body": "Posting consistently is not the same as posting strategically. Here's the difference.",
+      "c3Tag": "SEO",
+      "c3Title": "SEO for service businesses: where to start",
+      "c3Body": "If you only have time for three things, start here.",
+      "readArticle": "Read Article"
+    },
+    "meta": {
+      "title": "BLNK Studio: Brand, Website, SEO &amp; Content Studio",
+      "description": "BLNK Studio helps modern businesses build premium brand identities, conversion-focused websites, SEO foundations and content systems.",
+      "ogTitle": "BLNK Studio: Strategy. Design. Impact.",
+      "ogDescription": "Strategic brand, website, and content systems for modern businesses."
+    },
+    "pageCta": {
+      "title": "Your digital presence should work <em>harder</em> than your portfolio.",
+      "sub": "If your website, social, or brand isn't bringing in enquiries, something needs to change. Let's find out what.",
+      "btn1Label": "Start a Project",
+      "btn2Label": "Get a Free Audit"
+    }
+  },
+  "services": {
+    "hero": {
+      "eyebrow": "(00) Services",
+      "sub": "From brand identity to SEO to paid ads, we build every layer of your digital presence, strategically and in sequence.",
+      "ctaPrimary": "View Packages",
+      "titleLines": [
+        "Creative services that",
+        "make your brand easier",
+        "to <em>find</em>, trust, choose."
+      ]
+    },
+    "dir": {
+      "aria": "Service directory",
+      "heading": "Services",
+      "brand": "Brand Identity",
+      "website": "Website Strategy",
+      "social": "Social Media",
+      "pitch": "Pitch Decks",
+      "seo": "SEO Strategy",
+      "content": "Content Writing",
+      "ads": "Performance Marketing"
+    },
+    "build": {
+      "eyebrow": "(01) What we build",
+      "titleLine1": "Six services. One studio.",
+      "titleEm": "Zero",
+      "titleLine2": "gaps in your presence.",
+      "c1Title": "Brand Identity &amp; Collaterals",
+      "c1Problem": "Your brand looks inconsistent, or doesn't stand for anything yet.",
+      "c1Build": "Logo, visual system, brochures, product booklets, brand guidelines, tone of voice, messaging framework.",
+      "c1Best": "Startups at launch, rebranding businesses, personal brands.",
+      "c2Title": "Website Strategy &amp; Design",
+      "c2Problem": "Your website gets visitors but doesn't convert them.",
+      "c2Build": "Website strategy, copywriting, UI design, and CMS build, optimised from the first page to the last.",
+      "c2Best": "Brands that need a site that works, not just one that looks good.",
+      "c3Title": "Social Media Management",
+      "c3Problem": "You're posting, but it's not building anything.",
+      "c3Build": "Content strategy, creative direction, caption writing, scheduling, and monthly reporting.",
+      "c3Best": "D2C brands, service businesses, founders building a public presence.",
+      "c4Problem": "You're invisible on Google, and your competitors aren't.",
+      "c4Build": "Technical SEO audit, keyword strategy, on-page optimisation, content planning, and reporting.",
+      "c4Best": "Brands ready to invest in long-term organic visibility.",
+      "c5Problem": "You know what you want to say, you just don't know how to say it.",
+      "c5Build": "Website copy, blog articles, brand messaging, email sequences, and product descriptions.",
+      "c5Best": "Any brand that needs words that actually work.",
+      "c6Problem": "Your paid ads are spending, just not returning.",
+      "c6Build": "Campaign strategy, ad creative, targeting, A/B testing, and monthly optimisation across Meta, Google, and LinkedIn.",
+      "c6Best": "Brands with a product or offer ready to scale with paid traffic.",
+      "c7Title": "Pitch Decks &amp; Presentations",
+      "c7Problem": "Your deck looks like a template, and it reads like one too.",
+      "c7Build": "Investor decks, sales decks, brand presentations, and conference slides, designed to close.",
+      "c7Best": "Founders raising a round, sales teams, and speakers."
+    },
+    "showcase": {
+      "aria": "Inside the studio",
+      "eyebrow": "Inside the studio",
+      "titleLine1": "Strategy-led, design-driven,",
+      "titleLine2": "built to convert.",
+      "sub": "Every engagement runs on the same principle: we understand the business before we touch the design."
+    },
+    "detail": {
+      "eyebrow": "(02) The work, in detail",
+      "heading": "Every service, broken down.",
+      "d1Head": "01 / Brand Identity &amp; Collaterals",
+      "d1Title": "Your brand is not your logo. But your logo is where it starts.",
+      "d1P1": "A brand identity is the visual and verbal system that tells people who you are before you say a word. When it's working, it builds recognition. When it's not, it creates doubt.",
+      "d1P2": "We build brand identities from strategy, not aesthetics. That means we understand your positioning, your competitors, and your audience before a single concept is designed.",
+      "d1Deliverables": "Logo suite &middot; Typography system &middot; Colour palette &middot; Brochures &amp; product booklets &middot; Brand guidelines &middot; Messaging framework &middot; Tone of voice guide",
+      "d1Best": "Founders at launch &middot; Businesses that have outgrown their original brand &middot; Personal brands building authority",
+      "d1Timeline": "3&ndash;5 weeks",
+      "d2Head": "02 / Website Strategy &amp; Design",
+      "d2Title": "A website that converts is built differently than one that just looks good.",
+      "d2P1": "Most websites fail because they're designed before they're strategised. The copy is vague, the structure doesn't guide anyone, and the calls to action are buried.",
+      "d2P2": "We reverse that process. Strategy and copy first, then design. The result is a site that's clear, fast, and built to turn visitors into enquiries.",
+      "d2Deliverables": "Website strategy &middot; Sitemap and wireframes &middot; UX copy and messaging &middot; UI design &middot; CMS build (Webflow, WordPress, Framer) &middot; SEO foundations &middot; Launch-ready QA",
+      "d2Best": "Brands with an outdated or underperforming site &middot; Startups launching for the first time &middot; Service businesses that need their website to generate leads",
+      "d2Timeline": "4&ndash;8 weeks",
+      "d3Head": "03 / Social Media Management",
+      "d3Title": "Posting is not a strategy. This is.",
+      "d3P1": "Social media only works when there's a system behind it. A content strategy that understands the platform, the audience, and the business goal, and creative that actually stops the scroll.",
+      "d3P2": "We run your social media like it's our own, with direction, consistency, and monthly reporting that tells you what's working.",
+      "d3Deliverables": "Platform strategy &middot; Monthly content calendar &middot; Creative direction and design &middot; Caption writing &middot; Scheduling and publishing &middot; Monthly performance report",
+      "d3Best": "D2C brands &middot; Service businesses &middot; Founders building thought leadership &middot; Brands that want to grow an audience that buys",
+      "d3Timeline": "Ongoing monthly retainer",
+      "d4Head": "04 / SEO Strategy",
+      "d4Title": "The best time to invest in SEO was a year ago. The second best is now.",
+      "d4P1": "SEO is the only marketing channel that compounds over time. Done right, it brings in leads while you sleep, without paying per click.",
+      "d4P2": "We combine technical SEO, strategic content, and real keyword research to help you rank for the searches that actually matter to your business.",
+      "d4Deliverables": "Technical SEO audit &middot; Keyword mapping &middot; On-page optimisation &middot; Content strategy and briefs &middot; Link-building guidance &middot; Monthly reporting",
+      "d4Best": "Businesses with a 6&ndash;12 month horizon &middot; Service businesses with local intent &middot; Content-driven brands &middot; Startups building organic pipelines",
+      "d4Timeline": "Minimum 3 months to traction",
+      "d5Head": "05 / Content Writing",
+      "d5Title": "Words that rank, read, and convert.",
+      "d5P1": "Good content writing is invisible. The reader doesn't notice it because it answers their question, sounds right, and leads them somewhere useful. Bad content writing is everywhere.",
+      "d5P2": "We write website copy, blog articles, and brand messaging that serves both the search engine and the human reading it.",
+      "d5Deliverables": "Website copy &middot; Blog articles &middot; Brand messaging &middot; Email sequences &middot; Product descriptions &middot; Landing pages &middot; UX microcopy",
+      "d5Best": "Brands that need consistent content &middot; Founders who hate writing their own copy &middot; Any website that needs to rank and convert",
+      "d5Timeline": "Per project or monthly retainer",
+      "d6Head": "06 / Performance Marketing",
+      "d6Title": "Paid ads should pay. Here's how we make sure they do.",
+      "d6P1": "Running ads without a strategy is how brands burn budget. We build performance campaigns from the offer up, making sure the creative, the targeting, and the landing page are all aligned before a single rupee is spent.",
+      "d6P2": "Platforms: Meta (Facebook/Instagram) &middot; Google Ads &middot; LinkedIn Ads.",
+      "d6Deliverables": "Campaign strategy &middot; Ad copywriting &middot; Creative direction &middot; Audience and targeting setup &middot; A/B testing &middot; Weekly monitoring &middot; Monthly optimisation reports",
+      "d6Best": "Brands with a proven offer ready to scale &middot; E-commerce and D2C brands &middot; B2B brands targeting specific decision-makers",
+      "d6Timeline": "Minimum 60-day commitment",
+      "d7Head": "07 / Pitch Decks &amp; Presentations",
+      "d7Title": "Your deck needs to work in a room where you're not talking.",
+      "d7P1": "Investors, clients, and partners make decisions fast. Your pitch deck needs to communicate clearly, quickly, and memorably, even when you're not in the room.",
+      "d7P2": "We build decks that are strategically structured, beautifully designed, and written for the audience they're going to.",
+      "d7Deliverables": "Narrative structure &middot; Slide-by-slide copywriting &middot; Visual design &middot; Data visualisation &middot; Pitch coaching notes (optional) &middot; Editable master file",
+      "d7Best": "Founders raising a seed or Series A &middot; Sales teams pitching enterprise clients &middot; Brands presenting at events or conferences",
+      "d7Timeline": "1&ndash;2 weeks"
+    },
+    "packages": {
+      "eyebrow": "(03) How to engage",
+      "titleLine1": "Not sure where to start?",
+      "titleEm": "Six",
+      "titleLine2": "ways to work with BLNK.",
+      "p1Name": "Brand Starter",
+      "p1For": "For brands at the beginning.",
+      "p1Body": "Brand strategy, logo, visual identity, and 1-page brand guide.",
+      "badge": "Most Popular",
+      "p2Name": "Digital Presence Build",
+      "p2For": "For brands that need a foundation across all channels.",
+      "p2Body": "Brand identity + website + social setup + SEO foundations.",
+      "p3Name": "Monthly Creative Partner",
+      "p3For": "For brands that need ongoing support without managing a team.",
+      "p3Body": "Social media management + content writing + monthly strategy call.",
+      "p4Name": "Website Sprint",
+      "p4For": "For brands with an existing identity that need a site, fast.",
+      "p4Body": "Strategy + copy + design + build. Live in 4 weeks.",
+      "p5Name": "SEO Foundation",
+      "p5For": "For brands ready to invest in organic.",
+      "p5Body": "Technical audit + keyword strategy + 3-month content plan.",
+      "customName": "Something custom?",
+      "customFor": "Not one-size-fits-all.",
+      "customBody": "Custom scopes are quoted after a Discovery Call, built around exactly what your brand needs.",
+      "customCta": "Book a Call",
+      "note": "Custom scopes are quoted after a Discovery Call. We don't do one-size-fits-all.",
+      "ctaPrimary": "Book a Discovery Call",
+      "ctaWhatsapp": "Chat on WhatsApp"
+    },
+    "faq": {
+      "eyebrow": "(04) FAQ",
+      "heading": "Questions we get a lot.",
+      "q1": "How long does a project typically take?",
+      "a1": "Brand identity: 3&ndash;5 weeks. Websites: 4&ndash;8 weeks. Pitch decks: 1&ndash;2 weeks. Ongoing retainers run month-to-month. We'll always give you a timeline before we start.",
+      "q2": "How many revision rounds are included?",
+      "a2": "All projects include 2 structured revision rounds. Additional rounds are available, and we'll tell you the cost upfront.",
+      "q3": "Do you work with clients outside India?",
+      "a3": "Yes. We work with founders and brands across India, the Gulf, the UK, and the US. All projects are managed remotely.",
+      "q4": "Can I hire BLNK for just one service?",
+      "a4": "Absolutely. You don't have to take everything. Most clients start with one service and expand when they see the results.",
+      "q5": "What do you need from me to get started?",
+      "a5": "A brief (we'll give you a template), a 30-minute discovery call, and an idea of your timeline and goals. We handle everything from there.",
+      "q6": "Do you sign NDAs?",
+      "a6": "Yes, on request. We treat all client information as confidential regardless.",
+      "q7": "What's the payment structure?",
+      "a7": "Projects are typically split 50% upfront, 50% on completion. Retainers are billed monthly in advance.",
+      "callCta": "Still have questions? Call Now"
+    },
+    "common": {
+      "enquire": "Enquire",
+      "problemLabel": "Problem",
+      "buildLabel": "What we build",
+      "bestLabel": "Best for",
+      "deliverablesLabel": "Deliverables",
+      "timelineLabel": "Typical timeline",
+      "startService": "Start This Service"
+    },
+    "meta": {
+      "title": "Services: Brand, Website, SEO, Social &amp; Content | BLNK Studio",
+      "description": "Explore BLNK Studio's brand identity, website design, SEO, social media, content writing, performance marketing and pitch deck services.",
+      "ogTitle": "BLNK Studio Services",
+      "ogDescription": "Creative services that make your brand easier to find, trust, and choose."
+    },
+    "pageCta": {
+      "title": "Let's build the layer your brand is <em>missing.</em>",
+      "sub": "Tell us where your digital presence feels stuck. We'll come back within 24 hours with initial thoughts and next steps.",
+      "btn1Label": "Start a Project",
+      "btn2Label": "Get a Free Audit"
+    }
+  }
+}

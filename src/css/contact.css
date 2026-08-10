@@ -1,0 +1,96 @@
+/* ============================================================
+   BLNK STUDIO - Contact page
+   Extends css/home.css (technical-editorial light system)
+   ============================================================ */
+
+/* ---- Page hero (copy left / form right) ---- */
+.hero--page { padding-top: clamp(128px, 15vw, 178px); padding-bottom: clamp(56px, 7vw, 96px); }
+.hero--contact .hero__inner { grid-template-columns: 1.02fr 0.98fr; align-items: start; }
+.hero--contact .hero__title { font-size: clamp(2rem, calc(4.4vw * var(--fl-textSize-factor, 1)), 3.5rem); margin-bottom: 24px; }
+.page-sub { font-size: clamp(1.04rem, calc(1.5vw * var(--fl-textSize-factor, 1)), 1.2rem); color: var(--text); max-width: 520px; margin-bottom: 16px; }
+.page-body { color: var(--text-dim); max-width: 480px; margin-bottom: 22px; }
+.hero__micro { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-mut); }
+
+/* ---- Contact methods ---- */
+.contact-methods { margin-top: 30px; border-top: 1px solid var(--line); }
+.contact-methods .cm {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 14px 0; border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono); font-size: 0.8rem;
+}
+.contact-methods .cm__k { color: var(--text-mut); letter-spacing: 0.1em; text-transform: uppercase; }
+.contact-methods a.cm__v, .contact-methods .cm__v { color: var(--ink); transition: color 0.3s; }
+.contact-methods a.cm__v:hover { color: var(--blue); }
+
+/* ---- Form card ---- */
+.cform {
+  border: 1px solid var(--line); border-radius: 12px; background: var(--bg-band);
+  padding: clamp(24px, 2.6vw, 36px);
+}
+.cform__head {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text); padding-bottom: 18px; margin-bottom: 22px; border-bottom: 1px solid var(--line);
+}
+.cform__head span:last-child { color: var(--text-mut); }
+.field { margin-bottom: 16px; }
+.field > label {
+  display: block; font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-mut); margin-bottom: 7px;
+}
+.field input, .field select, .field textarea {
+  width: 100%; font-family: var(--font-body); font-size: 0.95rem; color: var(--ink);
+  background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.field input::placeholder, .field textarea::placeholder { color: var(--text-mut); }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(59,110,245,0.12);
+}
+.field textarea { resize: vertical; min-height: 118px; }
+.field--row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cform .btn { width: 100%; margin-top: 6px; }
+.cform__note { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.06em; color: var(--text-mut); margin-top: 14px; text-align: center; }
+.cform__sent { display: none; font-family: var(--font-mono); font-size: 0.8rem; color: var(--blue); margin-top: 14px; text-align: center; }
+.cform.is-sent .cform__sent { display: block; }
+.cform__applying { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); background: rgba(59,110,245,0.08); border: 1px solid rgba(59,110,245,0.25); border-radius: 6px; padding: 8px 12px; margin-bottom: 18px; }
+
+/* ---- Image band (conversation) ---- */
+.showcase {
+  position: relative; min-height: clamp(320px, 40vw, 520px);
+  display: flex; align-items: flex-end; overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(5,13,28,0.74) 0%, rgba(5,13,28,0.34) 46%, rgba(5,13,28,0.12) 100%),
+    linear-gradient(0deg, rgba(5,13,28,0.78) 0%, transparent 52%),
+    url("../assets/contact-talk.jpg");
+  background-size: cover; background-position: center 30%;
+  border-block: 1px solid var(--line);
+}
+.showcase__inner { position: relative; z-index: 2; padding-block: clamp(36px, 5vw, 60px); }
+.showcase .eyebrow { color: #8fb0ff; margin-bottom: 16px; }
+.showcase .eyebrow::before { background: #8fb0ff; }
+.showcase__title {
+  font-family: var(--font-head); font-weight: 700;
+  font-size: clamp(1.6rem, calc(3.4vw * var(--fl-textSize-factor, 1)), 2.6rem); line-height: 1.04; letter-spacing: -0.03em;
+  color: #fff; max-width: 680px; margin-bottom: 12px;
+}
+.showcase__sub { color: rgba(238,240,245,0.82); font-size: clamp(0.98rem, calc(1.4vw * var(--fl-textSize-factor, 1)), 1.1rem); max-width: 520px; }
+
+/* ---- What happens next (4-step grid) ---- */
+.steps--4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ---- Responsive ---- */
+@media (max-width: 1000px) {
+  .hero--contact .hero__inner { grid-template-columns: 1fr; }
+  .cform { max-width: 560px; }
+  .steps--4 { grid-template-columns: repeat(2, 1fr); }
+  .steps--4 > .step { border-bottom: 1px solid var(--line); min-height: 0; }
+  .steps--4 > .step:nth-child(2n) { border-inline-end: none; }
+}
+@media (max-width: 600px) {
+  .field--row { grid-template-columns: 1fr; }
+  .steps--4 { grid-template-columns: 1fr; }
+  .steps--4 > .step { border-inline-end: none; }
+  .contact-methods .cm { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .contact-methods .cm__v { font-size: 0.84rem; }
+}

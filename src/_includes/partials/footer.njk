@@ -1,0 +1,52 @@
+{#
+  The site footer, previously duplicated across 8 files.
+
+  footerMuted controls the "Response within 24 hrs" line, which had drifted to
+  a 4/4 split: present on home, about, services and privacy; absent on contact,
+  free-audit, blog and article. Phase 2 is a pure refactor, so each page keeps
+  exactly what it had and the flag preserves the split. Phase 3 resolves it one
+  way when the copy is actually reviewed.
+
+  Contact and social details are read from _data/site.json, generated from
+  branding/<client>/site.yaml by scripts/branding/build-brand.py. The social
+  links come from the site.social map, so adding a network there makes it
+  appear here with no template change. Note: the same contact facts still
+  appear as literals elsewhere in the source (~95 occurrences); replacing those
+  with these references is the remaining consolidation.
+#}
+{% set homeHref = "#top" if pageKey == "home" else urls.home %}
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer on-dark">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="{{ homeHref }}" class="footer__logo" aria-label="{{ t.common.nav.logoAria | safe }}">
+          <img src="{{ site.logos.light }}" alt="{{ t.common.nav.logoAlt | safe }}" />
+        </a>
+        <p>{{ t.common.footer.blurb | safe }}</p>
+      </div>
+      <div class="footer__col">
+        <h4>{{ t.common.footer.exploreHeading | safe }}</h4>
+        <a href="{{ homeHref }}">{{ t.common.nav.home | safe }}</a>
+        <a href="{{ urls.about }}">{{ t.common.nav.about | safe }}</a>
+        <a href="{{ urls.services }}">{{ t.common.nav.services | safe }}</a>
+        <a href="{{ urls.blog }}">{{ t.common.footer.insights | safe }}</a>
+        <a href="{{ urls.contact }}">{{ t.common.nav.contact | safe }}</a>
+      </div>
+      <div class="footer__col">
+        <h4>{{ t.common.footer.contactHeading | safe }}</h4>
+        <a href="{{ urls.contact }}#email">{{ site.contact.email }}</a>
+        <a href="{{ urls.contact }}#phone">{{ site.contact.phoneDisplay }}</a>
+{% for name, s in site.social %}        <a href="{{ urls.contact }}#{{ name }}">{{ s.label | safe }}</a>
+{% endfor %}
+{% if footerMuted %}        <span class="footer__muted">{{ t.common.footer.muted | safe }}</span>
+{% endif %}      </div>
+      <div class="footer__col">
+        <h4>{{ t.common.footer.legalHeading | safe }}</h4>
+        <a href="{{ urls.privacy }}">{{ t.common.footer.privacy | safe }}</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>&copy; <span id="year"></span> {{ t.common.footer.copyright | safe }}</span>
+      <span>{{ t.common.footer.tagline | safe }}</span>
+    </div>
+  </footer>

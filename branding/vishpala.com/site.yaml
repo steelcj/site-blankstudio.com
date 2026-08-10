@@ -1,0 +1,22 @@
+# site.yaml — client-owned site configuration (client: vishpala.com).
+#
+# A test client. build-brand.py generates src/_data/site.json from this.
+
+url: "https://vishpala.com"
+publicationTimeZone: "America/Toronto"
+
+# SVG logos — possible now that the template reads these paths from config.
+logos:
+  dark: "/assets/logo-lockup-dark.svg"
+  light: "/assets/logo-lockup.svg"
+  favicon: "/assets/favicon.svg"
+
+contact:
+  email: "hello@vishpala.com"
+  phoneDisplay: "+1 416 555 0142"
+  phoneHref: "tel:+14165550142"
+
+social:
+  instagram:
+    url: "https://instagram.com/vishpala"
+    label: "@vishpala"

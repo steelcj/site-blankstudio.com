@@ -1,0 +1,31 @@
+# fonts.yaml — self-hosted webfonts (client: vishpala.com).
+#
+# Uses the template's default families, so the committed src/css/fonts.css and
+# woff2 files already cover it — no fetch needed unless you change these.
+# scripts/branding/fetch-fonts.py reads this and regenerates the stylesheet.
+
+provider: google
+
+display: swap
+
+subsets:
+  - latin
+  - latin-ext
+
+output:
+  fonts_dir: src/assets/fonts
+  css_file: src/css/fonts.css
+  css_href: /assets/fonts
+
+families:
+  - name: Inter Tight
+    weights: [400, 500, 600, 700, 800]
+    styles: [normal]
+
+  - name: Inter
+    weights: [400, 500, 600]
+    styles: [normal]
+
+  - name: Space Mono
+    weights: [400, 700]
+    styles: [normal]

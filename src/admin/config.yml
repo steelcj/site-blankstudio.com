@@ -1,0 +1,86 @@
+# ============================================================
+#  BLNK Studio — Sveltia CMS configuration
+# ============================================================
+#  IMPORTANT: change the "repo" line below to your GitHub
+#  username/repo once you create it, e.g. blnkstudio/blnk-site
+# ------------------------------------------------------------
+
+backend:
+  name: github
+  repo: Farhan-363/blnk-studio-site
+  branch: main
+
+# Where uploaded images are committed, and how they're referenced on the site.
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+
+# Friendly link shown in the dashboard "View site" button.
+display_url: https://theblnkstudio.com
+site_url: https://theblnkstudio.com
+
+collections:
+  - name: "blog_en"
+    label: "Blog Posts (English)"
+    label_singular: "Blog Post"
+    description: "English articles. Click Publish to push them live."
+    folder: "src/content/blog/en-ca"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}  —  {{category}}"
+    sortable_fields: [date, title]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      # Stored as a language-independent slug so the same value works in every
+      # locale; the display label comes from the site's string bundles.
+      - { label: "Category", name: "category", widget: "select", options: ["branding", "websites", "seo", "social", "growth"] }
+      # Stored as a full ISO 8601 instant with the author's offset, e.g.
+      # 2026-05-14T09:30:00-04:00. Only the date is ever shown on the site —
+      # the time is carried for <time datetime> and structured data. picker_utc
+      # is false so the picker uses the author's own clock and records the
+      # offset that actually applied; the byline is then rendered in the
+      # studio's publication zone (src/_data/site.json).
+      - { label: "Publish date", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "DD MMM YYYY", time_format: "HH:mm", picker_utc: false }
+      - { label: "Short summary", name: "excerpt", widget: "text" }
+      - { label: "Read time", name: "readtime", widget: "string", required: false }
+      - { label: "Cover image", name: "image", widget: "image", required: false }
+      - { label: "Feature on this listing?", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Save as draft (hide from site)", name: "draft", widget: "boolean", default: false, required: false }
+      # Links a post to its translations. Every language version of the same
+      # article carries the SAME value; each article has its own. Leave the
+      # generated value alone on an original, and paste the counterpart's value
+      # when writing a translation.
+      - { label: "Translation link (sat:work)", name: "sat:work", widget: "string", required: false, hint: "Copy this value into the French version of the same article to pair them." }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "blog_fr"
+    label: "Articles (Francais)"
+    label_singular: "Article"
+    description: "Articles en francais. Cliquez sur Publier pour les mettre en ligne."
+    folder: "src/content/blog/fr-ca"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}  —  {{category}}"
+    sortable_fields: [date, title]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      # Stored as a language-independent slug so the same value works in every
+      # locale; the display label comes from the site's string bundles.
+      - { label: "Category", name: "category", widget: "select", options: ["branding", "websites", "seo", "social", "growth"] }
+      # Stored as a full ISO 8601 instant with the author's offset, e.g.
+      # 2026-05-14T09:30:00-04:00. Only the date is ever shown on the site —
+      # the time is carried for <time datetime> and structured data. picker_utc
+      # is false so the picker uses the author's own clock and records the
+      # offset that actually applied; the byline is then rendered in the
+      # studio's publication zone (src/_data/site.json).
+      - { label: "Publish date", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "DD MMM YYYY", time_format: "HH:mm", picker_utc: false }
+      - { label: "Short summary", name: "excerpt", widget: "text" }
+      - { label: "Read time", name: "readtime", widget: "string", required: false }
+      - { label: "Cover image", name: "image", widget: "image", required: false }
+      - { label: "Feature on this listing?", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Save as draft (hide from site)", name: "draft", widget: "boolean", default: false, required: false }
+      # Links a post to its translations. Every language version of the same
+      # article carries the SAME value; each article has its own. Leave the
+      # generated value alone on an original, and paste the counterpart's value
+      # when writing a translation.
+      - { label: "Translation link (sat:work)", name: "sat:work", widget: "string", required: false, hint: "Paste the English article's value here so the two are paired." }
+      - { label: "Body", name: "body", widget: "markdown" }

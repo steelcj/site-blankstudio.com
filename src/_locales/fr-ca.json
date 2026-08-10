@@ -1,0 +1,751 @@
+{
+  "routes": {
+    "home": "",
+    "about": "a-propos",
+    "services": "services",
+    "blog": "articles",
+    "contact": "contact",
+    "freeAudit": "audit-gratuit",
+    "privacy": "confidentialite"
+  },
+  "common": {
+    "nav": {
+      "primaryAria": "Principale",
+      "logoAria": "Accueil BLNK Studio",
+      "logoAlt": "BLNK Studio - Strategy. Design. Impact.",
+      "toggleAria": "Ouvrir le menu",
+      "home": "Accueil",
+      "about": "À propos",
+      "services": "Services",
+      "blog": "Blogue",
+      "contact": "Contact",
+      "ctaFreeAudit": "Audit gratuit",
+      "mobileBookCall": "Réserver un appel découverte",
+      "mobileFreeAudit": "Obtenir un audit gratuit",
+      "languageAria": "Langue"
+    },
+    "footer": {
+      "blurb": "Studio créatif axé sur la stratégie, qui bâtit des systèmes de marque, de site web, de SEO, de médias sociaux et de contenu pour les entreprises modernes.",
+      "exploreHeading": "Explorer",
+      "insights": "Perspectives",
+      "contactHeading": "Nous joindre",
+      "whatsapp": "WhatsApp",
+      "muted": "Réponse en moins de 24 h &middot; Lun&ndash;Sam",
+      "legalHeading": "Légal",
+      "privacy": "Politique de confidentialité",
+      "copyright": "BLNK Studio",
+      "tagline": "Strategy. Design. Impact."
+    },
+    "cta": {
+      "micro": "Réponse en moins de 24 heures &middot; Aucune pression de vente &middot; Simplement une conversation"
+    },
+    "form": {
+      "sending": "Envoi en cours...",
+      "mailName": "Nom : ",
+      "mailEmail": "Courriel : "
+    },
+    "a11y": {
+      "showHide": "Afficher/Masquer",
+      "reset": "Réinitialiser",
+      "tocLabel": "Table des matières"
+    }
+  },
+  "privacy": {
+    "title": "Politique de confidentialité &ndash; BLNK Studio",
+    "intro": "Chez BLNK Studio, nous accordons de la valeur à votre confiance et nous nous engageons à protéger vos renseignements personnels. La présente politique de confidentialité explique comment nous recueillons, utilisons et protégeons les données que vous partagez avec nous par l’entremise de notre site web, de nos campagnes publicitaires et de nos formulaires.",
+    "collect": {
+      "heading": "1. Renseignements que nous recueillons",
+      "lead": "Lorsque vous interagissez avec nous (par exemple en remplissant un formulaire, en vous abonnant aux mises à jour ou en nous contactant), nous pouvons recueillir :",
+      "item1": "Votre nom, votre adresse courriel et votre numéro de téléphone",
+      "item2": "Les coordonnées de votre organisation, établissement ou entreprise",
+      "item3": "Vos besoins en marketing et en admissions",
+      "item4": "Les liens vers votre site web ou vos médias sociaux que vous nous fournissez",
+      "item5": "Établissements d’enseignement et de formation (anglais parlé, préparation NEET, UPSC)",
+      "note": "Nous ne recueillons pas de renseignements personnels sensibles à moins qu’ils ne soient fournis volontairement."
+    },
+    "use": {
+      "heading": "2. Utilisation de vos renseignements",
+      "lead": "Nous utilisons vos renseignements pour :",
+      "item1": "Communiquer avec vous au sujet de nos services",
+      "item2": "Évaluer les besoins de votre entreprise et proposer des solutions adaptées",
+      "item3": "Partager des analyses, des offres ou des nouvelles pertinentes pour votre entreprise",
+      "item4": "Améliorer nos campagnes de marketing et la prestation de nos services",
+      "note": "Nous ne vendrons ni ne louerons jamais vos données à des tiers."
+    },
+    "sharing": {
+      "heading": "3. Partage des données",
+      "lead": "Nous pouvons partager vos renseignements uniquement avec :",
+      "item1": "Les membres de l’équipe interne de BLNK Studio",
+      "item2": "Des partenaires ou fournisseurs de confiance qui nous aident à offrir nos services (liés par des ententes de confidentialité)",
+      "item3": "Les autorités, si la loi l’exige"
+    },
+    "security": {
+      "heading": "4. Sécurité des données",
+      "body": "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos renseignements personnels contre tout accès non autorisé, toute utilisation abusive ou toute divulgation."
+    },
+    "rights": {
+      "heading": "5. Vos droits",
+      "lead": "Vous avez le droit de :",
+      "item1": "Accéder aux renseignements personnels que nous détenons à votre sujet",
+      "item2": "Demander la correction ou la suppression de vos données",
+      "item3": "Vous désabonner des communications marketing à tout moment",
+      "contactPrefix": "Pour exercer ces droits, écrivez-nous à "
+    },
+    "thirdParty": {
+      "heading": "6. Liens vers des tiers",
+      "body": "Notre site web ou nos publicités peuvent contenir des liens vers des sites externes. Nous ne sommes pas responsables des pratiques de confidentialité de ces sites."
+    },
+    "updates": {
+      "heading": "7. Mises à jour de la politique",
+      "body": "Nous pouvons mettre à jour la présente politique de confidentialité de temps à autre. La version la plus récente sera toujours disponible sur cette page."
+    },
+    "contact": {
+      "heading": "8. Nous joindre",
+      "lead": "Si vous avez des questions sur cette politique de confidentialité ou sur la façon dont nous traitons vos données, écrivez-nous : "
+    },
+    "meta": {
+      "title": "Politique de confidentialité – BLNK Studio",
+      "description": "Politique de confidentialité de BLNK Studio."
+    },
+    "a11y": {
+      "heading": "9. Préférences d’accessibilité",
+      "body": "Si vous utilisez les options d’accessibilité de ce site (taille du texte, contraste, interligne, polices ou synthèse vocale), vos choix sont conservés dans un témoin sur votre propre appareil afin que le site puisse les appliquer lors de votre prochaine visite. Il s’agit d’un témoin fonctionnel : il ne contient que vos préférences d’affichage, n’est jamais utilisé à des fins publicitaires ou d’analyse, et n’est partagé avec personne. Effacer les témoins de votre navigateur le supprime."
+    }
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "(00) À propos de BLNK Studio",
+      "sub": "BLNK Studio est un studio de création et de croissance numérique. Nous aidons les fondateurs et les marques à passer d’une présence en ligne floue, incohérente ou invisible à une présence nette, stratégique et prête à convertir.",
+      "body": "Nous ne sommes pas une agence à service complet qui fait tout pour tout le monde. Nous sommes un studio ciblé qui accepte les marques auxquelles il croit vraiment, et qui bâtit des fondations numériques qui tiennent longtemps après la fin du projet.",
+      "ctaPrimary": "Travailler avec nous",
+      "ctaSecondary": "Explorer les services",
+      "imageAlt": "Une designer de BLNK esquissant des maquettes de site web sur une tablette",
+      "figCaptionLabel": "Dans le studio",
+      "figCaptionValue": "Stratégie &middot; Design &middot; Impact",
+      "titleLines": [
+        "Nous bâtissons les",
+        "systèmes derrière la",
+        "<em>croissance</em> des marques."
+      ]
+    },
+    "stats": {
+      "brandsValue": "40+",
+      "brandsLabel": "Marques accompagnées",
+      "growthValue": "+25 %",
+      "growthLabel": "Croissance organique moyenne",
+      "regionsValue": "R-U&middot;É-U&middot;IN&middot;Golfe",
+      "regionsLabel": "Où nous travaillons",
+      "responseValue": "&lt; 24 h",
+      "responseLabel": "Temps de réponse"
+    },
+    "story": {
+      "eyebrow": "(01) Pourquoi nous avons commencé",
+      "heading": "Les marques ont d’excellents produits. La plupart n’arrivent simplement pas à les communiquer.",
+      "link": "Découvrir ce que nous faisons",
+      "p1": "La frustration à l’origine de BLNK Studio était simple : trop de bonnes entreprises étaient invisibles en ligne, non pas par manque de qualité, mais parce que leur présence numérique ne la reflétait pas.",
+      "p2": "Leurs sites web manquaient de clarté. Leurs médias sociaux étaient incohérents. Leur marque avait l’air d’avoir été bâtie à la hâte, parce que c’était le cas.",
+      "p3": "BLNK a été créé pour régler cela : réunir la stratégie, la création et le numérique au même endroit, afin que les marques cessent de rapiécer des mandats de pigistes et travaillent à partir d’un plan clair.",
+      "p4": "Nous sommes précis, francs et directs sur ce qui, selon nous, va fonctionner. Nous ne disons pas oui à tout. Mais quand nous acceptons un projet, nous le prenons au sérieux."
+    },
+    "principles": {
+      "eyebrow": "(02) Notre façon de penser",
+      "heading": "Quelques convictions, et quelques principes sur lesquels nous ne transigeons pas.",
+      "body": "Les principes ne sont pas décoratifs. Ce sont eux qui déterminent ce que nous bâtissons, ce que nous remettons en question et ce que nous refusons.",
+      "cta": "Démarrer un projet",
+      "p1Title": "La clarté avant la créativité.",
+      "p1Body": "Nous ne concevons pas de logo avant de comprendre votre positionnement. Nous n’écrivons pas de texte avant de comprendre votre public. La stratégie n’est pas une option de luxe. C’est le point de départ.",
+      "p2Title": "La cohérence bâtit la confiance.",
+      "p2Body": "Un seul bon élément ne réparera pas une marque brisée. Un système, oui. Nous bâtissons des systèmes de marque — visuels, verbaux et de contenu — qui fonctionnent ensemble.",
+      "p3Title": "Le design doit susciter l’action.",
+      "p3Body": "Être beau ne suffit pas. Chaque livrable que nous produisons est évalué à l’aune d’une seule question : est-ce que cela aide la marque à croître ?",
+      "p4Title": "Nous sommes directs.",
+      "p4Body": "Si nous pensons que votre mandat doit être repensé, nous le dirons. Si le marché a changé et que votre stratégie doit changer avec lui, nous vous le dirons avant que vous ne gaspilliez votre budget."
+    },
+    "fit": {
+      "eyebrow": "(03) Avec qui nous travaillons",
+      "heading": "Nous convenons très bien à certaines marques. Pas à d’autres.",
+      "yesLabel": "Un bon jumelage",
+      "yes1": "Les fondateurs et jeunes équipes qui veulent bien faire dès le départ",
+      "yes2": "Les entreprises de services dont le site doit générer des demandes",
+      "yes3": "Les jeunes pousses financées qui bâtissent vite une présence crédible",
+      "yes4": "Les marques D2C et de commerce électronique prêtes à croître",
+      "yes5": "Les cliniques et les entreprises de services professionnels",
+      "noLabel": "Pas pour",
+      "no1": "Les marques qui cherchent l’option la moins chère plutôt que la bonne",
+      "no2": "Ceux qui veulent des mesures de vanité ou des gabarits génériques",
+      "no3": "Les projets sans place pour la stratégie ou la rétroaction honnête",
+      "no4": "Les équipes qui veulent une agence qui dit oui à tout"
+    },
+    "meta": {
+      "title": "À propos de BLNK Studio : les systèmes derrière la croissance des marques",
+      "description": "BLNK Studio est un studio de création et de croissance numérique qui aide les fondateurs et les marques à passer d’invisibles à nets, stratégiques et prêts à convertir.",
+      "ogTitle": "À propos de BLNK Studio",
+      "ogDescription": "Nous bâtissons les systèmes derrière la croissance des marques."
+    },
+    "pageCta": {
+      "title": "Bâtissons les systèmes derrière votre <em>croissance.</em>",
+      "sub": "Dites-nous où votre présence numérique est bloquée. Nous examinons personnellement chaque demande et revenons vers vous en moins de 24 heures avec nos premières réflexions et les prochaines étapes.",
+      "btn1Label": "Travailler avec nous",
+      "btn2Label": "Obtenir un audit gratuit"
+    }
+  },
+  "blog": {
+    "hero": {
+      "eyebrow": "(00) Perspectives BLNK",
+      "title": "Des réflexions concrètes sur la marque, la croissance et la présence numérique.",
+      "sub": "Pas de remplissage. Pas de course aux tendances. Simplement du contenu clair et stratégique pour les fondateurs et les marques qui bâtissent quelque chose qui mérite d’être trouvé en ligne."
+    },
+    "filters": {
+      "aria": "Filtrer les articles",
+      "all": "Tous",
+      "branding": "Image de marque",
+      "websites": "Sites web",
+      "seo": "SEO",
+      "social": "Médias sociaux",
+      "growth": "Croissance"
+    },
+    "featured": {
+      "sectionAria": "Article en vedette",
+      "badge": "En vedette",
+      "readLink": "Lire l’article"
+    },
+    "latest": {
+      "eyebrow": "(01) Dernières réflexions",
+      "heading": "Des stratégies que vous pouvez vraiment appliquer.",
+      "readtimeFallback": "Lire",
+      "readLink": "Lire &rarr;",
+      "empty": "Aucun article dans cette catégorie pour l’instant. Revenez bientôt."
+    },
+    "subscribe": {
+      "heading": "Recevez notre bulletin mensuel.",
+      "sub": "Des réflexions concrètes sur la marque, la croissance et la présence numérique, une fois par mois.",
+      "honeypotLabel": "Laissez ce champ vide :",
+      "emailPlaceholder": "vous@marque.com",
+      "emailAria": "Votre courriel",
+      "button": "S’abonner",
+      "micro": "Rejoignez plus de 1 000 fondateurs qui lisent le bulletin mensuel de BLNK. Désabonnement en tout temps.",
+      "thanks": "Merci, vous êtes inscrit."
+    },
+    "meta": {
+      "title": "Perspectives BLNK : marque, croissance &amp; présence numérique | BLNK Studio",
+      "description": "Des réflexions concrètes et stratégiques sur la marque, les sites web, le SEO, les médias sociaux, le contenu et la croissance, pour les fondateurs et les marques qui bâtissent quelque chose qui mérite d’être trouvé en ligne.",
+      "ogTitle": "Perspectives BLNK",
+      "ogDescription": "Des réflexions concrètes sur la marque, la croissance et la présence numérique."
+    },
+    "pageCta": {
+      "title": "Lire, c’est bien. <em>Corriger</em>, c’est mieux.",
+      "sub": "Obtenez un audit gratuit de votre présence numérique et une liste claire et priorisée de ce qu’il faut améliorer en premier.",
+      "btn1Label": "Obtenir un audit gratuit",
+      "btn2Label": "Explorer les services"
+    },
+    "article": {
+      "backLink": "&larr; Tous les articles",
+      "ctaPrompt": "Vous voulez ce genre de clarté pour votre propre marque ?",
+      "ctaButton": "Obtenir un audit gratuit"
+    }
+  },
+  "_draft": "MACHINE-DRAFT — not reviewed by a translator. See multilingual-plan.md Phase 7.",
+  "contact": {
+    "hero": {
+      "eyebrow": "(00) Démarrer un projet",
+      "sub": "Que vous ayez besoin d’une refonte complète de votre marque ou que vous vouliez simplement comprendre pourquoi votre site ne convertit pas, c’est le bon endroit pour commencer.",
+      "body": "Remplissez le formulaire et nous l’examinerons personnellement, puis nous reviendrons vers vous en moins de 24 heures avec nos premières réflexions et les prochaines étapes.",
+      "micro": "Aucun mandat requis pour amorcer la conversation &middot; Aucun argumentaire de vente au premier appel",
+      "titleLines": [
+        "Dites-nous où votre",
+        "présence numérique",
+        "est <em>bloquée.</em>"
+      ]
+    },
+    "methods": {
+      "email": "Courriel",
+      "call": "Téléphone",
+      "whatsapp": "WhatsApp",
+      "instagram": "Instagram",
+      "responseKey": "Réponse",
+      "responseValue": "En moins de 24 heures &middot; Lun&ndash;Sam"
+    },
+    "form": {
+      "honeypotLabel": "Laissez ce champ vide :",
+      "heading": "Sommaire du projet",
+      "step": "01 / 01",
+      "nameLabel": "Votre nom",
+      "namePlaceholder": "Jeanne Fondatrice",
+      "emailLabel": "Courriel",
+      "emailPlaceholder": "vous@marque.com",
+      "companyLabel": "Entreprise / marque",
+      "companyPlaceholder": "Facultatif",
+      "serviceLabel": "De quoi avez-vous besoin ?",
+      "serviceOpt1": "Je ne sais pas encore, aidez-moi à y voir clair",
+      "serviceOpt2": "Image de marque &amp; supports",
+      "serviceOpt3": "Stratégie &amp; design de site web",
+      "serviceOpt4": "Gestion des médias sociaux",
+      "serviceOpt5": "Stratégie SEO",
+      "serviceOpt6": "Rédaction de contenu",
+      "serviceOpt7": "Marketing de performance",
+      "serviceOpt8": "Présentations &amp; documents de pitch",
+      "serviceOpt9": "Plusieurs services",
+      "messageLabel": "Dites-nous où ça bloque",
+      "messagePlaceholder": "Quelques lignes sur votre marque, vos objectifs et ce qui ne fonctionne pas en ce moment.",
+      "submit": "Envoyer le sommaire",
+      "note": "Nous examinons personnellement chaque soumission. Réponse en moins de 24 heures.",
+      "sent": "Merci, nous avons bien reçu votre sommaire. Nous vous répondrons en moins de 24 heures."
+    },
+    "showcase": {
+      "aria": "Simplement une conversation",
+      "eyebrow": "Simplement une conversation",
+      "heading": "Aucune pression. Aucun argumentaire. Juste un regard clair sur la suite.",
+      "sub": "Les premiers appels sont gratuits, et il n’y a jamais de pression pour vous engager."
+    },
+    "next": {
+      "eyebrow": "(01) Ce qui se passe ensuite",
+      "heading": "Voici à quoi vous attendre après l’envoi.",
+      "s1Title": "Nous examinons votre sommaire",
+      "s1Body": "Chaque soumission est lue par une vraie personne. Nous regardons votre site, votre sommaire et vos objectifs avant de répondre.",
+      "s1Time": "Révision humaine",
+      "s2Title": "Vous recevez une réponse",
+      "s2Body": "Pas un courriel automatisé. Une vraie réponse, avec des premières réflexions et une prochaine étape suggérée.",
+      "s2Time": "En moins de 24 heures",
+      "s3Title": "Nous planifions un appel découverte",
+      "s3Body": "Aucune préparation nécessaire. Simplement une conversation sur votre marque, vos objectifs et notre compatibilité.",
+      "s3Time": "Appel de 30 minutes",
+      "s4Title": "Vous recevez un plan",
+      "s4Body": "Selon votre sommaire, nous vous enverrons une proposition sur mesure ou commencerons par un audit rapide de votre présence actuelle.",
+      "s4Time": "Proposition ou audit",
+      "emailLink": "Vous préférez le courriel ? Écrivez-nous"
+    },
+    "script": {
+      "applyingPrefix": "Demande pour : ",
+      "mailSubject": "Nouveau sommaire de projet : "
+    },
+    "meta": {
+      "title": "Contacter BLNK Studio : démarrer un projet",
+      "description": "Dites-nous où votre présence numérique est bloquée. Nous examinons personnellement chaque demande et répondons en moins de 24 heures. Écrivez, appelez ou clavardez avec BLNK Studio sur WhatsApp.",
+      "ogTitle": "Contacter BLNK Studio",
+      "ogDescription": "Démarrez un projet avec BLNK Studio. Réponse en moins de 24 heures."
+    },
+    "pageNav": {
+      "mobileCta2Label": "Appeler le {phone}"
+    },
+    "pageCta": {
+      "title": "Vous préférez en <em>parler</em> ?",
+      "sub": "Appelez-nous ou écrivez-nous directement. Nous sommes heureux de commencer par une courte conversation, sans document préalable.",
+      "btn1Label": "Appeler le {phone}",
+      "btn2Label": "WhatsApp",
+      "micro": "Réponse en moins de 24 heures &middot; Les premiers appels sont gratuits &middot; Aucune pression pour vous engager"
+    }
+  },
+  "freeAudit": {
+    "hero": {
+      "eyebrow": "(00) Audit gratuit",
+      "sub": "En 48 heures, vous saurez exactement ce qui vous coûte en visibilité, en confiance et en clients potentiels, et quoi faire pour y remédier. Aucun appel de vente. Aucun engagement.",
+      "point1": "3 observations précises sur votre présence actuelle",
+      "point2": "3 correctifs à fort impact que vous pouvez appliquer immédiatement",
+      "point3": "Une note de priorité et une prochaine étape recommandée",
+      "point4": "Réalisé par un vrai stratège, pas par un outil automatisé",
+      "micro": "Révisé personnellement par l’équipe de BLNK Studio &middot; Aucun robot &middot; Aucun rapport générique",
+      "titleLines": [
+        "Une analyse gratuite",
+        "en 3 points de votre site,",
+        "de votre marque ou de",
+        "votre présence <em>sociale</em>."
+      ]
+    },
+    "form": {
+      "honeypotLabel": "Laissez ce champ vide :",
+      "heading": "Demandez votre audit",
+      "badge": "Gratuit",
+      "nameLabel": "Votre nom",
+      "namePlaceholder": "Jeanne Fondatrice",
+      "emailLabel": "Courriel",
+      "emailPlaceholder": "vous@marque.com",
+      "linkLabel": "Lien vers votre site ou vos réseaux",
+      "linkPlaceholder": "marque.com ou @votrecompte",
+      "auditLabel": "Que devons-nous analyser ?",
+      "auditOpt1": "Mon site web",
+      "auditOpt2": "Mon image de marque",
+      "auditOpt3": "Mes médias sociaux",
+      "auditOpt4": "Mon SEO / ma visibilité dans les moteurs",
+      "auditOpt5": "Tout, donnez-moi le portrait complet",
+      "worryLabel": "Quelque chose vous préoccupe en particulier ? (facultatif)",
+      "worryPlaceholder": "p. ex. beaucoup de trafic mais presque aucune demande.",
+      "submit": "Demander mon audit gratuit",
+      "note": "60 secondes à remplir &middot; Vous recevrez votre audit en 48 heures",
+      "sent": "Merci, nous avons bien reçu votre demande. Votre audit arrive d’ici 48 heures."
+    },
+    "showcase": {
+      "aria": "Révisé par des humains",
+      "eyebrow": "Révisé par des humains",
+      "heading": "Une vraie analyse, par de vrais stratèges.",
+      "sub": "Aucun robot, aucun rapport générique. Simplement un regard clair et honnête sur ce qui vous coûte discrètement des clients."
+    },
+    "inside": {
+      "eyebrow": "(01) Ce que contient votre audit",
+      "heading": "Trois observations. Trois correctifs. Une prochaine étape claire.",
+      "s1Title": "3 observations",
+      "s1Body": "Trois éléments précis qui jouent contre vous en ce moment, sur votre site, votre marque ou vos réseaux.",
+      "s1Time": "Ce qui cloche",
+      "s2Title": "3 correctifs à fort impact",
+      "s2Body": "Trois changements que vous pouvez appliquer immédiatement, choisis pour la différence qu’ils feront réellement.",
+      "s2Time": "Quoi faire",
+      "s3Title": "Une note de priorité",
+      "s3Body": "Une note simple pour savoir par quoi commencer, et ce qui peut attendre sans risque.",
+      "s3Time": "Par quoi commencer",
+      "s4Title": "Une prochaine étape recommandée",
+      "s4Body": "Une recommandation claire sur la seule chose la plus utile à faire ensuite.",
+      "s4Time": "Où aller"
+    },
+    "fit": {
+      "eyebrow": "(02) Est-ce pour vous ?",
+      "heading": "Vous êtes au bon endroit si l’un de ces énoncés vous parle.",
+      "yes1": "Votre site est en ligne mais ne génère pas de demandes",
+      "yes2": "Vos médias sociaux sont actifs mais ne croissent pas",
+      "yes3": "Votre marque paraît incohérente d’une plateforme à l’autre",
+      "yes4": "Vous investissez en publicité mais les résultats n’ont pas de sens",
+      "yes5": "Vous avez le site depuis un moment et n’avez jamais pensé au SEO",
+      "yes6": "Vous vous préparez à lancer et voulez partir du bon pied",
+      "noLabel": "Pas pour",
+      "noBody": "Cet audit ne s’adresse pas aux marques qui cherchent des rapports de vanité ou des listes génériques. C’est une vraie révision par de vraies personnes, et c’est pourquoi nous n’acceptons que 10 demandes par semaine.",
+      "micro": "Nous limitons les audits gratuits pour préserver la qualité &middot; Places limitées chaque semaine"
+    },
+    "script": {
+      "mailSubject": "Demande d’audit gratuit : ",
+      "mailLink": "Lien : "
+    },
+    "meta": {
+      "title": "Audit gratuit : une analyse en 3 points de votre présence numérique | BLNK Studio",
+      "description": "Obtenez une analyse gratuite en 3 points de votre site, de votre marque ou de votre présence sociale. En 48 heures, vous saurez ce qui vous coûte en visibilité, en confiance et en clients potentiels, et quoi faire pour y remédier.",
+      "ogTitle": "Audit gratuit de BLNK Studio",
+      "ogDescription": "Une analyse gratuite en 3 points de votre présence numérique. Aucun appel de vente. Aucun engagement."
+    },
+    "pageNav": {
+      "mobileCta1Label": "Demander un audit gratuit",
+      "mobileCta2Label": "Réserver un appel découverte"
+    },
+    "pageCta": {
+      "title": "Réservez votre <em>place</em> pour un audit gratuit.",
+      "sub": "Soixante secondes pour en faire la demande. Quarante-huit heures pour obtenir un plan clair et priorisé pour votre présence numérique.",
+      "btn1Label": "Demander mon audit gratuit",
+      "btn2Label": "Parlons-en d’abord",
+      "micro": "Aucun appel de vente &middot; Aucun engagement &middot; Audit livré en 48 heures"
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Studio axé sur la stratégie",
+      "sub": "BLNK Studio aide les entreprises modernes à affiner leur image, à se faire trouver et à convertir, grâce à l’image de marque, aux sites web, au SEO, aux médias sociaux et à du contenu qui produit vraiment des résultats.",
+      "body": "Conçu pour les fondateurs, les équipes en croissance et les marques de services prêtes à cesser de deviner et à commencer à croître.",
+      "ctaPrimary": "Réserver un appel découverte gratuit",
+      "ctaSecondary": "Obtenir un audit gratuit de votre site",
+      "micro": "Aucun engagement &middot; Aucun jargon d’agence &middot; Simplement de la clarté",
+      "titleLines": [
+        "Votre marque devrait",
+        "travailler <em>plus fort</em>",
+        "que votre portfolio."
+      ]
+    },
+    "spec": {
+      "version": "v1.0",
+      "statusKey": "Statut",
+      "statusValue": "Réservations T3 2026",
+      "basedKey": "Basés",
+      "basedValue": "Inde &middot; Golfe",
+      "workingKey": "Nous servons",
+      "workingValue": "R-U &middot; É-U &middot; Partout",
+      "responseKey": "Réponse",
+      "responseValue": "&lt; 24 heures",
+      "shippingKey": "En cours",
+      "shipping1": "Systèmes de marque",
+      "shipping2": "Refontes de sites web",
+      "shipping3": "Mandats SEO"
+    },
+    "logos": {
+      "heading": "Des marques qui ont choisi d’avoir l’air à la hauteur",
+      "bbkAlt": "Biryani By Kilo",
+      "fenestaAlt": "Fenesta",
+      "goilaAlt": "Goila Butter Chicken",
+      "myhomeAlt": "My Home",
+      "naishaAlt": "Naisha Vasandani Couture",
+      "ziggyAlt": "Ziggy"
+    },
+    "stats": {
+      "growthLabel": "Croissance organique",
+      "brandsLabel": "Marques accompagnées",
+      "allInOne": "Tout-en-un",
+      "oneStudio": "Un seul studio"
+    },
+    "services": {
+      "eyebrow": "(01) Studio à service complet",
+      "titleLine1": "Six façons de passer d’",
+      "titleEm": "invisible",
+      "titleLine2": "à incontournable.",
+      "exploreLink": "Explorer tous les services",
+      "enquire": "Demander",
+      "c1Title": "Image de marque &amp; supports",
+      "c1Body": "Logo, langage visuel, brochures, catalogues de produits et positionnement qui tiennent sur tous les canaux.",
+      "c2Title": "Stratégie &amp; design de site web",
+      "c2Body": "Un site qui convertit, pas seulement un site qui a fière allure. Stratégie, rédaction, design et lancement, menés ensemble.",
+      "c3Title": "Médias sociaux",
+      "c3Body": "Du contenu qui bâtit une audience et suscite l’action. Stratégie, direction et exécution constante.",
+      "c4Title": "Stratégie SEO",
+      "c4Body": "Faites-vous trouver par les gens qui cherchent déjà ce que vous offrez. SEO technique, de contenu et local, dont les effets s’accumulent.",
+      "c5Title": "Rédaction de contenu",
+      "c5Body": "Textes de site, articles de blogue, messages de marque. Écrits pour être bien classés, lus et convertis.",
+      "c6Title": "Marketing de performance",
+      "c6Body": "De la publicité payante qui dépense intelligemment. Des campagnes Meta, Google et LinkedIn bâties sur une vraie stratégie, pas sur des suppositions.",
+      "c7Title": "Présentations &amp; documents de pitch",
+      "c7Body": "Présentations pour investisseurs, documents de vente et présentations de marque qui vous ouvrent les portes et concluent l’entente."
+    },
+    "why": {
+      "eyebrow": "(02) Pourquoi BLNK",
+      "titleLine1": "La stratégie d’abord.",
+      "titleEm": "Toujours.",
+      "body": "La plupart des agences prennent votre mandat et foncent. Nous posons de meilleures questions.",
+      "cta": "Obtenir un audit gratuit",
+      "p1Title": "La stratégie avant le design",
+      "p1Body": "Nous n’ouvrons pas un fichier de design avant de comprendre votre public, votre positionnement et vos objectifs. Chaque décision visuelle a une raison d’être.",
+      "p2Title": "Une exécution qui convertit",
+      "p2Body": "Nous ne faisons pas que rendre les choses belles. Chaque livrable, du logo à la page d’atterrissage, est conçu pour produire un résultat d’affaires.",
+      "p3Title": "Des systèmes de contenu qui évoluent",
+      "p3Body": "Nous bâtissons des systèmes de contenu et de marque, pas des éléments isolés. Pour que votre équipe puisse continuer après notre départ."
+    },
+    "process": {
+      "eyebrow": "(03) Comment ça fonctionne",
+      "heading": "Du premier appel au lancement final, voici à quoi vous attendre.",
+      "s1Title": "Audit",
+      "s1Body": "Nous examinons votre marque, votre site et votre présence numérique actuels. Vous obtenez un portrait honnête de la situation.",
+      "s1Time": "En moins de 48 heures",
+      "s2Title": "Stratégie",
+      "s2Body": "Nous établissons ce qui doit changer, ce qu’il faut bâtir et dans quel ordre. Pas de présentations gonflées, juste un plan clair.",
+      "s2Time": "1&ndash;2 jours ouvrables",
+      "s3Title": "Réalisation",
+      "s3Body": "Designers, rédacteurs et stratèges exécutent le plan. Vous révisez et approuvez à chaque étape.",
+      "s3Time": "Selon le projet",
+      "s4Title": "Lancement",
+      "s4Body": "Nous mettons en ligne correctement et veillons à ce que tout soit configuré pour performer dès le premier jour.",
+      "s4Time": "Jour J",
+      "s5Title": "Optimisation",
+      "s5Body": "Pour les clients récurrents, nous suivons, rapportons et affinons chaque mois. Pour les projets ponctuels, nous vous remettons les systèmes.",
+      "s5Time": "En continu",
+      "link": "Voir notre processus"
+    },
+    "testimonial": {
+      "eyebrow": "(04) Ce que disent nos clients",
+      "quote": "&ldquo;Avant BLNK, notre marque avait l’air de quatre entreprises différentes. Maintenant, chaque point de contact (site web, réseaux sociaux, présentation) nous ressemble. Le processus a été net, le travail plus rapide que prévu, et les résultats ont parlé d’eux-mêmes.&rdquo;",
+      "role": "Fondatrice",
+      "company": "Marque D2C",
+      "micro": "Plus de 40 marques accompagnées &middot; Avis 5 étoiles &middot; Résultats en 30 jours"
+    },
+    "blog": {
+      "eyebrow": "(05) Sur le blogue BLNK",
+      "heading": "Réflexions sur la marque, la croissance et la présence numérique.",
+      "link": "Lire toutes les perspectives",
+      "readArticle": "Lire l’article",
+      "c1Tag": "Sites web",
+      "c1Title": "Pourquoi votre site attire des visites mais pas de clients",
+      "c1Body": "L’écart entre le trafic et la conversion est presque toujours un problème de message.",
+      "c2Tag": "Social",
+      "c2Title": "L’erreur de stratégie sociale que font la plupart des fondateurs",
+      "c2Body": "Publier régulièrement n’est pas la même chose que publier stratégiquement. Voici la différence.",
+      "c3Tag": "SEO",
+      "c3Title": "Le SEO pour les entreprises de services : par où commencer",
+      "c3Body": "Si vous n’avez le temps que pour trois choses, commencez ici."
+    },
+    "meta": {
+      "title": "BLNK Studio : studio de marque, de sites web, de SEO et de contenu",
+      "description": "BLNK Studio aide les entreprises modernes à bâtir des identités de marque haut de gamme, des sites web axés sur la conversion, des fondations SEO et des systèmes de contenu.",
+      "ogTitle": "BLNK Studio : Strategy. Design. Impact.",
+      "ogDescription": "Des systèmes stratégiques de marque, de site web et de contenu pour les entreprises modernes."
+    },
+    "pageCta": {
+      "title": "Votre présence numérique devrait travailler <em>plus fort</em> que votre portfolio.",
+      "sub": "Si votre site, vos réseaux sociaux ou votre marque ne génèrent pas de demandes, quelque chose doit changer. Trouvons quoi.",
+      "btn1Label": "Démarrer un projet",
+      "btn2Label": "Obtenir un audit gratuit"
+    }
+  },
+  "services": {
+    "hero": {
+      "eyebrow": "(00) Services",
+      "sub": "De l’image de marque au SEO en passant par la publicité payante, nous bâtissons chaque couche de votre présence numérique, stratégiquement et dans le bon ordre.",
+      "ctaPrimary": "Voir les forfaits",
+      "titleLines": [
+        "Des services créatifs qui",
+        "rendent votre marque",
+        "plus facile à <em>trouver</em>,",
+        "à apprécier, à choisir."
+      ]
+    },
+    "dir": {
+      "aria": "Répertoire des services",
+      "heading": "Services",
+      "brand": "Image de marque",
+      "website": "Stratégie web",
+      "social": "Médias sociaux",
+      "seo": "Stratégie SEO",
+      "content": "Rédaction de contenu",
+      "ads": "Marketing de performance",
+      "pitch": "Documents de pitch"
+    },
+    "common": {
+      "enquire": "Demander",
+      "problemLabel": "Problème",
+      "buildLabel": "Ce que nous bâtissons",
+      "bestLabel": "Idéal pour",
+      "deliverablesLabel": "Livrables",
+      "timelineLabel": "Échéancier type",
+      "startService": "Démarrer ce service"
+    },
+    "build": {
+      "eyebrow": "(01) Ce que nous bâtissons",
+      "titleLine1": "Six services. Un seul studio.",
+      "titleEm": "Aucune",
+      "titleLine2": "lacune dans votre présence.",
+      "c1Title": "Image de marque &amp; supports",
+      "c1Problem": "Votre marque paraît incohérente, ou ne défend pas encore quoi que ce soit.",
+      "c1Build": "Logo, système visuel, brochures, catalogues de produits, normes graphiques, ton de voix, cadre de messages.",
+      "c1Best": "Jeunes pousses en lancement, entreprises en refonte de marque, marques personnelles.",
+      "c2Title": "Stratégie &amp; design de site web",
+      "c2Problem": "Votre site attire des visiteurs mais ne les convertit pas.",
+      "c2Build": "Stratégie de site, rédaction, design d’interface et intégration CMS, optimisés de la première à la dernière page.",
+      "c2Best": "Les marques qui ont besoin d’un site qui travaille, pas seulement d’un site joli.",
+      "c3Title": "Gestion des médias sociaux",
+      "c3Problem": "Vous publiez, mais ça ne bâtit rien.",
+      "c3Build": "Stratégie de contenu, direction créative, rédaction de légendes, planification et rapports mensuels.",
+      "c3Best": "Marques D2C, entreprises de services, fondateurs qui bâtissent une présence publique.",
+      "c4Problem": "Vous êtes invisible sur Google, et vos concurrents ne le sont pas.",
+      "c4Build": "Audit SEO technique, stratégie de mots-clés, optimisation sur page, planification de contenu et rapports.",
+      "c4Best": "Les marques prêtes à investir dans la visibilité organique à long terme.",
+      "c5Problem": "Vous savez ce que vous voulez dire, vous ne savez juste pas comment le dire.",
+      "c5Build": "Textes de site, articles de blogue, messages de marque, séquences de courriels et descriptions de produits.",
+      "c5Best": "Toute marque qui a besoin de mots qui fonctionnent vraiment.",
+      "c6Problem": "Vos publicités payantes dépensent, sans rapporter.",
+      "c6Build": "Stratégie de campagne, création publicitaire, ciblage, tests A/B et optimisation mensuelle sur Meta, Google et LinkedIn.",
+      "c6Best": "Les marques avec un produit ou une offre prêts à croître avec du trafic payant.",
+      "c7Title": "Présentations &amp; documents de pitch",
+      "c7Problem": "Votre présentation ressemble à un gabarit, et se lit comme tel.",
+      "c7Build": "Présentations pour investisseurs, documents de vente, présentations de marque et diapositives de conférence, conçus pour conclure.",
+      "c7Best": "Fondateurs en levée de fonds, équipes de vente et conférenciers."
+    },
+    "showcase": {
+      "aria": "Dans le studio",
+      "eyebrow": "Dans le studio",
+      "titleLine1": "Guidés par la stratégie, portés par le design,",
+      "titleLine2": "bâtis pour convertir.",
+      "sub": "Chaque mandat repose sur le même principe : nous comprenons l’entreprise avant de toucher au design."
+    },
+    "detail": {
+      "eyebrow": "(02) Le travail, en détail",
+      "heading": "Chaque service, décortiqué.",
+      "d1Head": "01 / Image de marque &amp; supports",
+      "d1Title": "Votre marque n’est pas votre logo. Mais votre logo est le point de départ.",
+      "d1P1": "Une identité de marque est le système visuel et verbal qui dit aux gens qui vous êtes avant même que vous ne parliez. Quand elle fonctionne, elle bâtit la reconnaissance. Quand elle ne fonctionne pas, elle sème le doute.",
+      "d1P2": "Nous bâtissons des identités de marque à partir de la stratégie, pas de l’esthétique. Cela veut dire comprendre votre positionnement, vos concurrents et votre public avant de concevoir le moindre concept.",
+      "d1Deliverables": "Gamme de logos &middot; Système typographique &middot; Palette de couleurs &middot; Brochures &amp; catalogues &middot; Normes graphiques &middot; Cadre de messages &middot; Guide de ton de voix",
+      "d1Best": "Fondateurs en lancement &middot; Entreprises qui ont dépassé leur marque d’origine &middot; Marques personnelles qui bâtissent leur autorité",
+      "d1Timeline": "3&ndash;5 semaines",
+      "d2Head": "02 / Stratégie &amp; design de site web",
+      "d2Title": "Un site qui convertit se bâtit autrement qu’un site qui a simplement fière allure.",
+      "d2P1": "La plupart des sites échouent parce qu’ils sont conçus avant d’être pensés. Le texte est vague, la structure ne guide personne et les appels à l’action sont enfouis.",
+      "d2P2": "Nous inversons ce processus. Stratégie et rédaction d’abord, design ensuite. Le résultat est un site clair, rapide et conçu pour transformer les visiteurs en demandes.",
+      "d2Deliverables": "Stratégie de site &middot; Arborescence et maquettes fil de fer &middot; Rédaction UX et messages &middot; Design d’interface &middot; Intégration CMS (Webflow, WordPress, Framer) &middot; Fondations SEO &middot; Contrôle qualité avant lancement",
+      "d2Best": "Marques avec un site désuet ou peu performant &middot; Jeunes pousses en premier lancement &middot; Entreprises de services dont le site doit générer des demandes",
+      "d2Timeline": "4&ndash;8 semaines",
+      "d3Head": "03 / Gestion des médias sociaux",
+      "d3Title": "Publier n’est pas une stratégie. Ceci en est une.",
+      "d3P1": "Les médias sociaux ne fonctionnent que lorsqu’un système les soutient. Une stratégie de contenu qui comprend la plateforme, le public et l’objectif d’affaires, et une création qui arrête vraiment le défilement.",
+      "d3P2": "Nous gérons vos réseaux comme s’ils étaient les nôtres, avec direction, constance et rapports mensuels qui vous disent ce qui fonctionne.",
+      "d3Deliverables": "Stratégie par plateforme &middot; Calendrier de contenu mensuel &middot; Direction créative et design &middot; Rédaction de légendes &middot; Planification et publication &middot; Rapport de performance mensuel",
+      "d3Best": "Marques D2C &middot; Entreprises de services &middot; Fondateurs qui bâtissent leur leadership d’opinion &middot; Marques qui veulent une audience qui achète",
+      "d3Timeline": "Mandat mensuel continu",
+      "d4Head": "04 / Stratégie SEO",
+      "d4Title": "Le meilleur moment pour investir en SEO, c’était il y a un an. Le deuxième meilleur, c’est maintenant.",
+      "d4P1": "Le SEO est le seul canal marketing dont les effets s’accumulent avec le temps. Bien fait, il génère des demandes pendant votre sommeil, sans payer au clic.",
+      "d4P2": "Nous combinons SEO technique, contenu stratégique et vraie recherche de mots-clés pour vous aider à vous classer sur les recherches qui comptent réellement pour votre entreprise.",
+      "d4Deliverables": "Audit SEO technique &middot; Cartographie des mots-clés &middot; Optimisation sur page &middot; Stratégie et briefs de contenu &middot; Conseils en maillage externe &middot; Rapports mensuels",
+      "d4Best": "Entreprises avec un horizon de 6&ndash;12 mois &middot; Entreprises de services à intention locale &middot; Marques axées sur le contenu &middot; Jeunes pousses qui bâtissent un pipeline organique",
+      "d4Timeline": "Minimum 3 mois avant traction",
+      "d5Head": "05 / Rédaction de contenu",
+      "d5Title": "Des mots qui se classent, se lisent et convertissent.",
+      "d5P1": "Une bonne rédaction est invisible. Le lecteur ne la remarque pas parce qu’elle répond à sa question, sonne juste et le mène quelque part d’utile. La mauvaise rédaction, elle, est partout.",
+      "d5P2": "Nous rédigeons des textes de site, des articles de blogue et des messages de marque qui servent à la fois le moteur de recherche et la personne qui lit.",
+      "d5Deliverables": "Textes de site &middot; Articles de blogue &middot; Messages de marque &middot; Séquences de courriels &middot; Descriptions de produits &middot; Pages d’atterrissage &middot; Microtextes UX",
+      "d5Best": "Marques qui ont besoin de contenu constant &middot; Fondateurs qui détestent rédiger &middot; Tout site qui doit se classer et convertir",
+      "d5Timeline": "Par projet ou mandat mensuel",
+      "d6Head": "06 / Marketing de performance",
+      "d6Title": "La publicité payante devrait rapporter. Voici comment nous nous en assurons.",
+      "d6P1": "Faire de la publicité sans stratégie, c’est ainsi que les marques brûlent leur budget. Nous bâtissons les campagnes à partir de l’offre, en veillant à ce que la création, le ciblage et la page d’atterrissage soient alignés avant qu’un seul dollar ne soit dépensé.",
+      "d6P2": "Plateformes : Meta (Facebook/Instagram) &middot; Google Ads &middot; LinkedIn Ads.",
+      "d6Deliverables": "Stratégie de campagne &middot; Rédaction publicitaire &middot; Direction créative &middot; Configuration des audiences et du ciblage &middot; Tests A/B &middot; Suivi hebdomadaire &middot; Rapports d’optimisation mensuels",
+      "d6Best": "Marques avec une offre éprouvée prête à croître &middot; Marques de commerce électronique et D2C &middot; Marques B2B visant des décideurs précis",
+      "d6Timeline": "Engagement minimum de 60 jours",
+      "d7Head": "07 / Présentations &amp; documents de pitch",
+      "d7Title": "Votre présentation doit fonctionner dans une salle où vous ne parlez pas.",
+      "d7P1": "Investisseurs, clients et partenaires décident vite. Votre présentation doit communiquer clairement, rapidement et de façon mémorable, même quand vous n’êtes pas dans la salle.",
+      "d7P2": "Nous bâtissons des présentations structurées stratégiquement, conçues avec soin et rédigées pour le public auquel elles s’adressent.",
+      "d7Deliverables": "Structure narrative &middot; Rédaction diapositive par diapositive &middot; Design visuel &middot; Visualisation de données &middot; Notes de préparation (facultatif) &middot; Fichier maître modifiable",
+      "d7Best": "Fondateurs en ronde d’amorçage ou série A &middot; Équipes de vente visant des clients d’envergure &middot; Marques qui présentent en événement ou en conférence",
+      "d7Timeline": "1&ndash;2 semaines"
+    },
+    "packages": {
+      "eyebrow": "(03) Comment travailler ensemble",
+      "titleLine1": "Vous ne savez pas par où commencer ?",
+      "titleEm": "Six",
+      "titleLine2": "façons de travailler avec BLNK.",
+      "badge": "Le plus populaire",
+      "p1Name": "Départ de marque",
+      "p1For": "Pour les marques qui débutent.",
+      "p1Body": "Stratégie de marque, logo, identité visuelle et guide de marque d’une page.",
+      "p2Name": "Présence numérique complète",
+      "p2For": "Pour les marques qui ont besoin de fondations sur tous les canaux.",
+      "p2Body": "Image de marque + site web + configuration des réseaux sociaux + fondations SEO.",
+      "p3Name": "Partenaire créatif mensuel",
+      "p3For": "Pour les marques qui veulent un soutien continu sans gérer une équipe.",
+      "p3Body": "Gestion des médias sociaux + rédaction de contenu + appel stratégique mensuel.",
+      "p4Name": "Sprint site web",
+      "p4For": "Pour les marques avec une identité existante qui ont besoin d’un site, vite.",
+      "p4Body": "Stratégie + rédaction + design + intégration. En ligne en 4 semaines.",
+      "p5Name": "Fondation SEO",
+      "p5For": "Pour les marques prêtes à investir dans l’organique.",
+      "p5Body": "Audit technique + stratégie de mots-clés + plan de contenu sur 3 mois.",
+      "customName": "Quelque chose sur mesure ?",
+      "customFor": "Pas de solution unique.",
+      "customBody": "Les mandats sur mesure sont chiffrés après un appel découverte, bâtis autour de ce dont votre marque a exactement besoin.",
+      "customCta": "Réserver un appel",
+      "note": "Les mandats sur mesure sont chiffrés après un appel découverte. Nous ne faisons pas de solution unique.",
+      "ctaPrimary": "Réserver un appel découverte",
+      "ctaWhatsapp": "Clavarder sur WhatsApp"
+    },
+    "faq": {
+      "eyebrow": "(04) FAQ",
+      "heading": "Les questions qu’on nous pose souvent.",
+      "q1": "Combien de temps prend un projet en général ?",
+      "a1": "Image de marque : 3&ndash;5 semaines. Sites web : 4&ndash;8 semaines. Documents de pitch : 1&ndash;2 semaines. Les mandats continus se renouvellent mensuellement. Nous vous donnons toujours un échéancier avant de commencer.",
+      "q2": "Combien de rondes de révision sont incluses ?",
+      "a2": "Tous les projets incluent 2 rondes de révision structurées. Des rondes additionnelles sont possibles, et nous vous en donnons le coût d’avance.",
+      "q3": "Travaillez-vous avec des clients à l’extérieur de l’Inde ?",
+      "a3": "Oui. Nous travaillons avec des fondateurs et des marques en Inde, dans le Golfe, au Royaume-Uni et aux États-Unis. Tous les projets sont gérés à distance.",
+      "q4": "Puis-je embaucher BLNK pour un seul service ?",
+      "a4": "Tout à fait. Vous n’êtes pas obligé de tout prendre. La plupart des clients commencent par un service et élargissent quand ils voient les résultats.",
+      "q5": "De quoi avez-vous besoin de ma part pour commencer ?",
+      "a5": "Un sommaire (nous vous fournissons un gabarit), un appel découverte de 30 minutes et une idée de votre échéancier et de vos objectifs. Nous nous occupons du reste.",
+      "q6": "Signez-vous des ententes de confidentialité ?",
+      "a6": "Oui, sur demande. Nous traitons de toute façon tous les renseignements clients comme confidentiels.",
+      "q7": "Quelle est la structure de paiement ?",
+      "a7": "Les projets sont généralement répartis 50 % au départ et 50 % à la livraison. Les mandats continus sont facturés mensuellement à l’avance.",
+      "callCta": "D’autres questions ? Appelez-nous"
+    },
+    "meta": {
+      "title": "Services : marque, site web, SEO, réseaux sociaux &amp; contenu | BLNK Studio",
+      "description": "Découvrez les services de BLNK Studio : image de marque, design de site web, SEO, médias sociaux, rédaction de contenu, marketing de performance et documents de pitch.",
+      "ogTitle": "Services de BLNK Studio",
+      "ogDescription": "Des services créatifs qui rendent votre marque plus facile à trouver, à apprécier et à choisir."
+    },
+    "pageCta": {
+      "title": "Bâtissons la couche qui <em>manque</em> à votre marque.",
+      "sub": "Dites-nous où votre présence numérique est bloquée. Nous reviendrons vers vous en moins de 24 heures avec nos premières réflexions et les prochaines étapes.",
+      "btn1Label": "Démarrer un projet",
+      "btn2Label": "Obtenir un audit gratuit"
+    }
+  }
+}

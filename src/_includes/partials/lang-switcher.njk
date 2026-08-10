@@ -1,0 +1,39 @@
+{#
+  Language switcher.
+
+  With two locales this is a direct link to the other language rather than a
+  dropdown — one interaction instead of two. The partial branches on the locale
+  count, becoming a <details> disclosure at three or more, which keeps it
+  working with scripting disabled. These are also the links crawlers follow to
+  confirm the hreflang pairs, so they must be real anchors.
+
+  `switcher` is computed per page and already resolves each target through the
+  work index, so a post whose translation does not exist yet points at the
+  other locale's blog index rather than the homepage or a dead link.
+
+  Each link carries lang/hreflang for its OWN language so a screen reader
+  switches pronunciation, and the label is the endonym — "Français", never
+  "French". No flags: flags are countries, not languages.
+
+  data-keep-location is read by main.js, which appends the current query string
+  and hash. Without it, switching language on /contact/?package=Website%20Sprint
+  silently drops the package selection the Services page put there.
+#}
+{% set variant = variant | default("desktop") %}
+{% if switcher and switcher.length %}
+{% if switcher.length == 1 %}
+        <a class="lang-switch lang-switch--{{ variant }}"
+           href="{{ switcher[0].url }}"
+           hreflang="{{ switcher[0].hreflang }}"
+           lang="{{ switcher[0].hreflang }}"
+           data-keep-location
+           {% if switcher[0].fallback %}data-fallback="true"{% endif %}>{{ switcher[0].label }}</a>
+{% else %}
+        <details class="lang-switch lang-switch--menu lang-switch--{{ variant }}">
+          <summary aria-label="{{ t.common.nav.languageAria | safe }}">{{ locale.label }}</summary>
+          <nav aria-label="{{ t.common.nav.languageAria | safe }}">
+{% for alt in switcher %}            <a href="{{ alt.url }}" hreflang="{{ alt.hreflang }}" lang="{{ alt.hreflang }}" data-keep-location{% if alt.fallback %} data-fallback="true"{% endif %}>{{ alt.label }}</a>
+{% endfor %}          </nav>
+        </details>
+{% endif %}
+{% endif %}

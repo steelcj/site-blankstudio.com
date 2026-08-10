@@ -1,0 +1,195 @@
+---
+routeKey: "freeAudit"
+pageKey: "freeAudit"
+css: ["home", "audit"]
+footerMuted: false
+navCtaHref: "#request"
+navCtaCurrent: true
+mobileCta1Href: "#request"
+mobileCta2Route: "contact"
+ctaBtn1Href: "#request"
+ctaBtn2Route: "contact"
+---
+{% extends "layouts/base.njk" %}
+
+{% block body %}
+    <!-- ============ HERO + REQUEST FORM ============ -->
+    <section class="hero hero--page hero--audit" id="hero">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <span class="eyebrow reveal">{{ t.freeAudit.hero.eyebrow | safe }}</span>
+            <h1 class="h-xl hero__title">
+{% for line in t.freeAudit.hero.titleLines %}              <span class="line"><span>{{ line | safe }}</span></span>
+{% endfor %}            </h1>
+            <p class="page-sub reveal" data-delay="1">
+              {{ t.freeAudit.hero.sub | safe }}
+            </p>
+            <ul class="getlist reveal" data-delay="2">
+              <li>{{ t.freeAudit.hero.point1 | safe }}</li>
+              <li>{{ t.freeAudit.hero.point2 | safe }}</li>
+              <li>{{ t.freeAudit.hero.point3 | safe }}</li>
+              <li>{{ t.freeAudit.hero.point4 | safe }}</li>
+            </ul>
+            <p class="trustline reveal" data-delay="3">{{ t.freeAudit.hero.micro | safe }}</p>
+          </div>
+
+          <!-- Request form -->
+          <form class="cform reveal" id="auditForm" name="audit" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-delay="1" novalidate>
+            <input type="hidden" name="form-name" value="audit" />
+            <input type="hidden" name="locale" value="{{ locale.code }}" />
+            <p hidden aria-hidden="true"><label>{{ t.freeAudit.form.honeypotLabel | safe }} <input name="bot-field" /></label></p>
+            <div class="cform__head"><span>{{ t.freeAudit.form.heading | safe }}</span><span>{{ t.freeAudit.form.badge | safe }}</span></div>
+            <div class="field">
+              <label for="a-name">{{ t.freeAudit.form.nameLabel | safe }}</label>
+              <input id="a-name" name="name" type="text" placeholder="{{ t.freeAudit.form.namePlaceholder | safe }}" required />
+            </div>
+            <div class="field">
+              <label for="a-email">{{ t.freeAudit.form.emailLabel | safe }}</label>
+              <input id="a-email" name="email" type="email" placeholder="{{ t.freeAudit.form.emailPlaceholder | safe }}" required />
+            </div>
+            <div class="field">
+              <label for="a-url">{{ t.freeAudit.form.linkLabel | safe }}</label>
+              <input id="a-url" name="url" type="text" placeholder="{{ t.freeAudit.form.linkPlaceholder | safe }}" required />
+            </div>
+            <div class="field">
+              <label for="a-focus">{{ t.freeAudit.form.auditLabel | safe }}</label>
+              <select id="a-focus" name="focus">
+                <option>{{ t.freeAudit.form.auditOpt1 | safe }}</option>
+                <option>{{ t.freeAudit.form.auditOpt2 | safe }}</option>
+                <option>{{ t.freeAudit.form.auditOpt3 | safe }}</option>
+                <option>{{ t.freeAudit.form.auditOpt4 | safe }}</option>
+                <option>{{ t.freeAudit.form.auditOpt5 | safe }}</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="a-note">{{ t.freeAudit.form.worryLabel | safe }}</label>
+              <textarea id="a-note" name="note" placeholder="{{ t.freeAudit.form.worryPlaceholder | safe }}"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg">{{ t.freeAudit.form.submit | safe }}</button>
+            <p class="cform__note">{{ t.freeAudit.form.note | safe }}</p>
+            <p class="cform__sent">{{ t.freeAudit.form.sent | safe }}</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ IMAGE BAND ============ -->
+    <section class="aband" aria-label="{{ t.freeAudit.showcase.eyebrow | safe }}">
+      <div class="container aband__inner">
+        <span class="eyebrow reveal">{{ t.freeAudit.showcase.aria | safe }}</span>
+        <h2 class="aband__title reveal" data-delay="1">{{ t.freeAudit.showcase.heading | safe }}</h2>
+        <p class="aband__sub reveal" data-delay="2">{{ t.freeAudit.showcase.sub | safe }}</p>
+      </div>
+    </section>
+
+    <!-- ============ WHAT'S IN YOUR AUDIT ============ -->
+    <section class="sec" id="whats-inside">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head__main">
+            <span class="eyebrow reveal">{{ t.freeAudit.inside.eyebrow | safe }}</span>
+            <h2 class="section-title reveal" data-delay="1">{{ t.freeAudit.inside.heading | safe }}</h2>
+          </div>
+        </div>
+
+        <div class="grid-table">
+          <div class="deliver">
+            <div class="cell reveal">
+              <span class="cell__no">01</span>
+              <h3>{{ t.freeAudit.inside.s1Title | safe }}</h3>
+              <p>{{ t.freeAudit.inside.s1Body | safe }}</p>
+              <span class="cell__tag">{{ t.freeAudit.inside.s1Time | safe }}</span>
+            </div>
+            <div class="cell reveal" data-delay="1">
+              <span class="cell__no">02</span>
+              <h3>{{ t.freeAudit.inside.s2Title | safe }}</h3>
+              <p>{{ t.freeAudit.inside.s2Body | safe }}</p>
+              <span class="cell__tag">{{ t.freeAudit.inside.s2Time | safe }}</span>
+            </div>
+            <div class="cell reveal" data-delay="2">
+              <span class="cell__no">03</span>
+              <h3>{{ t.freeAudit.inside.s3Title | safe }}</h3>
+              <p>{{ t.freeAudit.inside.s3Body | safe }}</p>
+              <span class="cell__tag">{{ t.freeAudit.inside.s3Time | safe }}</span>
+            </div>
+            <div class="cell reveal" data-delay="3">
+              <span class="cell__no">04</span>
+              <h3>{{ t.freeAudit.inside.s4Title | safe }}</h3>
+              <p>{{ t.freeAudit.inside.s4Body | safe }}</p>
+              <span class="cell__tag">{{ t.freeAudit.inside.s4Time | safe }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ IS THIS FOR YOU ============ -->
+    <section class="sec section--warm" id="for-you">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head__main">
+            <span class="eyebrow reveal">{{ t.freeAudit.fit.eyebrow | safe }}</span>
+            <h2 class="section-title reveal" data-delay="1">{{ t.freeAudit.fit.heading | safe }}</h2>
+          </div>
+        </div>
+
+        <div class="foryou">
+          <div class="check-card reveal">
+            <ul>
+              <li>{{ t.freeAudit.fit.yes1 | safe }}</li>
+              <li>{{ t.freeAudit.fit.yes2 | safe }}</li>
+              <li>{{ t.freeAudit.fit.yes3 | safe }}</li>
+              <li>{{ t.freeAudit.fit.yes4 | safe }}</li>
+              <li>{{ t.freeAudit.fit.yes5 | safe }}</li>
+              <li>{{ t.freeAudit.fit.yes6 | safe }}</li>
+            </ul>
+          </div>
+          <div class="notfor reveal" data-delay="1">
+            <p class="notfor__label">{{ t.freeAudit.fit.noLabel | safe }}</p>
+            <p>{{ t.freeAudit.fit.noBody | safe }}</p>
+            <div class="notfor__urgency"><span class="dot"></span> {{ t.freeAudit.fit.micro | safe }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% include "partials/final-cta.njk" %}
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    (function () {
+      var f = document.getElementById("auditForm");
+      if (!f) return;
+      var g = function (n) { var el = f.elements[n]; return el ? String(el.value).trim() : ""; };
+      f.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!g("name") || !g("email") || !g("url")) {
+          [["name","a-name"],["email","a-email"],["url","a-url"]].forEach(function (p) {
+            var el = document.getElementById(p[1]);
+            if (el && !g(p[0])) el.style.borderColor = "#e0564f";
+          });
+          return;
+        }
+        var btn = f.querySelector("button[type=submit]");
+        if (btn) { btn.disabled = true; btn.textContent = {{ t.common.form.sending | dump | safe }}; }
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(new FormData(f)).toString()
+        }).then(function (r) {
+          if (!r.ok) throw new Error("submit failed");
+          f.classList.add("is-sent");
+          f.reset();
+        }).catch(function () {
+          if (btn) { btn.disabled = false; btn.textContent = {{ t.freeAudit.form.submit | dump | safe }}; }
+          window.location.href =
+            "mailto:{{ site.contact.email }}?subject=" + encodeURIComponent({{ t.freeAudit.script.mailSubject | dump | safe }} + g("name")) +
+            "&body=" + encodeURIComponent({{ t.common.form.mailName | dump | safe }} + g("name") + "\n" + {{ t.common.form.mailEmail | dump | safe }} + g("email") + "\n" + {{ t.freeAudit.script.mailLink | dump | safe }} + g("url"));
+        });
+      });
+    })();
+  </script>
+{% endblock %}

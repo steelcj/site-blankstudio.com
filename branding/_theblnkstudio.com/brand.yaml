@@ -1,0 +1,40 @@
+# brand.yaml — the site's brand colour palette (client: theblnkstudio.com).
+#
+# This is the active client copy that scripts/branding/build-brand.py reads to
+# generate src/css/brand.css. It is client-owned: it never exists in canonical
+# (canonical ships only branding/_template/), so it cannot conflict on a
+# `git merge upstream`. Edit values here, re-run `npm run build:brand`, and
+# commit the regenerated src/css/brand.css.
+#
+# Each entry becomes a CSS custom property: `blue` -> `--blue`. Values are
+# quoted because an unquoted `#hex` would be read as a YAML comment.
+
+colors:
+  # Brand
+  brand:
+    blue: "#3b6ef5"
+    blue-bright: "#3b82ff"
+    beige: "#eae3da"
+
+  # Surfaces
+  surfaces:
+    bg: "#fbfaf7"          # warm near-white page base
+    bg-band: "#f1efe9"     # subtle warm band (proof / testimonial)
+    ink: "#050d1c"         # deep navy / near-black (dark sections)
+    ink-2: "#0a1322"       # footer
+    card: "#fbfaf7"
+
+  # Text
+  text:
+    text: "#11141c"
+    text-dim: "#565d6b"
+    text-mut: "#8b919d"    # mono labels
+    on-dark: "#eef0f5"
+    on-dark-dim: "#99a0b0"
+    on-dark-mut: "#5d6577"
+
+  # Lines
+  lines:
+    line: "rgba(5, 13, 28, 0.12)"
+    line-2: "rgba(5, 13, 28, 0.20)"
+    line-dark: "rgba(238, 240, 245, 0.13)"

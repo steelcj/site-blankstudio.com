@@ -1,0 +1,48 @@
+{#
+  Blog post layout. Everything outside the article body — head, nav, footer,
+  closing CTA — now comes from the shared shell, which incidentally fixes two
+  bugs the hand-maintained copy carried:
+
+    * two <a href="contact.html"> links with no leading slash, which resolved
+      to /blog/<slug>/contact.html on every post
+    * a hardcoded canonical of /article.html on every post, so all ten posts
+      declared the same non-existent canonical URL
+
+  Head values are computed per post in content/blog/blog.11tydata.js.
+#}
+{% extends "layouts/base.njk" %}
+
+{% block body %}
+    <!-- ============ ARTICLE ============ -->
+    <article class="article">
+      <div class="container article__wrap">
+        <a href="{{ urls.blog }}" class="article__back">{{ t.blog.article.backLink | safe }}</a>
+
+        <header class="article__head">
+          <span class="article__cat">{{ t.blog.filters[category] | safe }}</span>
+          <h1 class="article__title">{{ title }}</h1>
+          <p class="article__meta">
+            {% if readtime %}<span>{{ readtime }}</span>{% endif %}
+            {% if date %}<time datetime="{{ date | isoDate }}">{{ date | readableDate(locale.htmlLang) }}</time>{% endif %}
+          </p>
+        </header>
+
+        {% if image %}
+        <figure class="article__cover">
+          <img src="{{ image }}" alt="{{ title }}" />
+        </figure>
+        {% endif %}
+
+        <div class="article__body">
+          {{ content | safe }}
+        </div>
+
+        <div class="article__cta">
+          <p>{{ t.blog.article.ctaPrompt | safe }}</p>
+          <a href="{{ urls.freeAudit }}" class="btn btn--primary btn--lg">{{ t.blog.article.ctaButton | safe }}</a>
+        </div>
+      </div>
+    </article>
+
+{% include "partials/final-cta.njk" %}
+{% endblock %}

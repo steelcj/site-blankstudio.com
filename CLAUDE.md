@@ -6,6 +6,7 @@ Read this before starting any work.
 
 ## Rules in force
 
+- Ask all questions as plain text instead of via the tool
 - Every directive in `en/docs/automa/ai-collaboration/defaults/` applies to this session.
 - Every markdown rule in `en/docs/automa/markdown/defaults/` applies to everything you write here.
 - License sections come from the templates in `en/docs/automa/licenses/`.

@@ -1,6 +1,10 @@
 # Dependencies
 node_modules/
 
+# dist used by releases
+
+dist/
+
 # Eleventy build output (Netlify rebuilds this)
 _site/
 

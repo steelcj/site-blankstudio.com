@@ -1,0 +1,19 @@
+/*
+   Styles        blocks/feed/post-grid.njk
+   Copied from   src/css/home.css lines 474-487, at repo version 0.2.1
+   Depends on    the custom properties in src/css/brand.css and _shared/foundations.css
+ */
+/* ============================================================
+   INSIGHTS  (bordered cards)
+   ============================================================ */
+.insights__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.i-card {
+  padding: 32px 30px; border: 1px solid var(--line); border-radius: 10px;
+  display: flex; flex-direction: column; background: var(--card);
+  transition: transform 0.45s var(--ease), border-color 0.4s, box-shadow 0.45s;
+}
+.i-card:hover { transform: translateY(-5px); border-color: var(--line-2); box-shadow: 0 22px 50px -28px rgba(5,13,28,0.3); }
+.i-card__tag { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 22px; }
+.i-card h3 { font-family: var(--font-head); font-weight: 600; font-size: 1.28rem; line-height: 1.22; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 12px; }
+.i-card p { color: var(--text-dim); font-size: 0.94rem; flex: 1; margin-bottom: 26px; }
+

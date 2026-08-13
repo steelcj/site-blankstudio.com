@@ -1,0 +1,41 @@
+{#
+  Block         split-pillars
+  Role          Position — why this studio, in three pillars
+  Kind          section (drop-in)
+  Surface       dark (.sec--dark.on-dark)
+  Motion        reveal stagger
+  Data          t.home.why.*, urls.freeAudit
+  Anchor        #about (named for a page, not for what the block does)
+  Styles        split-pillars.css, plus _shared/foundations.css, _shared/section.css, _shared/motion.css, _shared/reduced-motion.css, _shared/responsive.css
+  Known issues  Pillar count fixed at three by the bundle keys p1..p3.
+  Note          Same pattern runs on src/pages/about.njk as #principles.
+  Copied from   src/pages/index.njk lines 155-182, at repo version 0.2.1
+#}
+    <!-- ============ WHY BLNK (dark) ============ -->
+    <section class="sec sec--dark on-dark why" id="about">
+      <div class="container why__grid">
+        <div class="why__intro">
+          <span class="eyebrow reveal">{{ t.home.why.eyebrow | safe }}</span>
+          <h2 class="section-title reveal" data-delay="1">{{ t.home.why.titleLine1 | safe }} <em>{{ t.home.why.titleEm | safe }}</em></h2>
+          <p class="reveal" data-delay="2">{{ t.home.why.body | safe }}</p>
+          <a href="{{ urls.freeAudit }}" class="btn btn--outline reveal" data-delay="2">{{ t.home.why.cta | safe }}</a>
+        </div>
+        <div class="why__list">
+          <div class="pillar reveal">
+            <span class="pillar__no">P/01</span>
+            <h3>{{ t.home.why.p1Title | safe }}</h3>
+            <p>{{ t.home.why.p1Body | safe }}</p>
+          </div>
+          <div class="pillar reveal" data-delay="1">
+            <span class="pillar__no">P/02</span>
+            <h3>{{ t.home.why.p2Title | safe }}</h3>
+            <p>{{ t.home.why.p2Body | safe }}</p>
+          </div>
+          <div class="pillar reveal" data-delay="2">
+            <span class="pillar__no">P/03</span>
+            <h3>{{ t.home.why.p3Title | safe }}</h3>
+            <p>{{ t.home.why.p3Body | safe }}</p>
+          </div>
+        </div>
+      </div>
+    </section>

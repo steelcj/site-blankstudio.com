@@ -1,22 +1,18 @@
 {
   "url": "https://vishpala.com",
   "publicationTimeZone": "America/Toronto",
+  "name": "Vishpala",
+  "tagline": "Technology, design, and infrastructure for greater agency.",
+  "description": "We are a studio of practitioners in technology, design, and infrastructure — working with individuals and organisations who want to operate with greater agency.",
   "logos": {
-    "dark": "/assets/logo-lockup-dark.svg",
-    "light": "/assets/logo-lockup.svg",
-    "favicon": "/assets/favicon.svg"
+    "dark": "/assets/imgs/logos/logo-lockup-dark.svg",
+    "light": "/assets/imgs/logos/logo-lockup.svg",
+    "favicon": "/assets/imgs/logos/favicon.svg"
   },
   "contact": {
     "email": "hello@vishpala.com",
-    "phoneDisplay": "+1 416 555 0142",
-    "phoneHref": "tel:+14165550142",
-    "instagram": "https://instagram.com/vishpala",
-    "instagramHandle": "@vishpala"
+    "phoneDisplay": null,
+    "phoneHref": null
   },
-  "social": {
-    "instagram": {
-      "url": "https://instagram.com/vishpala",
-      "label": "@vishpala"
-    }
-  }
+  "social": {}
 }

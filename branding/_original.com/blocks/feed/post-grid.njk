@@ -1,0 +1,46 @@
+{#
+  Block         post-grid
+  Role          Feed — recent writing, as three cards
+  Kind          section (drop-in)
+  Surface       light, bordered cards
+  Motion        reveal stagger
+  Data          t.home.blog.c1..c3*, urls.blog
+  Anchor        #insights
+  Styles        post-grid.css, plus _shared/foundations.css, _shared/section.css, _shared/motion.css, _shared/reduced-motion.css, _shared/responsive.css
+  Known issues  Card copy and post URLs are hand-written rather than read from the posts collection, and the three hrefs are pre-locale paths (/blog/<slug>/), so a French reader is redirected to the English post.
+  Note          src/pages/blog.njk renders the same shape from collections.posts_<locale>.
+  Copied from   src/pages/index.njk lines 251-283, at repo version 0.2.1
+#}
+    <!-- ============ INSIGHTS ============ -->
+    <section class="sec insights" id="insights">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head__main">
+            <span class="eyebrow reveal">{{ t.home.blog.eyebrow | safe }}</span>
+            <h2 class="section-title reveal" data-delay="1">{{ t.home.blog.heading | safe }}</h2>
+          </div>
+          <a href="{{ urls.blog }}" class="link-arrow reveal" data-delay="1">{{ t.home.blog.link | safe }} <span>&rarr;</span></a>
+        </div>
+
+        <div class="insights__grid">
+          <article class="i-card reveal">
+            <span class="i-card__tag">{{ t.home.blog.c1Tag | safe }}</span>
+            <h3>{{ t.home.blog.c1Title | safe }}</h3>
+            <p>{{ t.home.blog.c1Body | safe }}</p>
+            <a href="/blog/website-views-but-no-leads/" class="s-card__link">{{ t.home.blog.readArticle | safe }} <span>&rarr;</span></a>
+          </article>
+          <article class="i-card reveal" data-delay="1">
+            <span class="i-card__tag">{{ t.home.blog.c2Tag | safe }}</span>
+            <h3>{{ t.home.blog.c2Title | safe }}</h3>
+            <p>{{ t.home.blog.c2Body | safe }}</p>
+            <a href="/blog/social-media-strategy-mistake/" class="s-card__link">{{ t.home.blog.readArticle | safe }} <span>&rarr;</span></a>
+          </article>
+          <article class="i-card reveal" data-delay="2">
+            <span class="i-card__tag">{{ t.home.blog.c3Tag | safe }}</span>
+            <h3>{{ t.home.blog.c3Title | safe }}</h3>
+            <p>{{ t.home.blog.c3Body | safe }}</p>
+            <a href="/blog/seo-for-service-businesses/" class="s-card__link">{{ t.home.blog.readArticle | safe }} <span>&rarr;</span></a>
+          </article>
+        </div>
+      </div>
+    </section>

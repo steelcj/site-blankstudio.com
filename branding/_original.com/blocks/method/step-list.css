@@ -1,0 +1,16 @@
+/*
+   Styles        blocks/method/step-list.njk
+   Copied from   src/css/home.css lines 443-453, at repo version 0.2.1
+   Depends on    the custom properties in src/css/brand.css and _shared/foundations.css
+ */
+/* ============================================================
+   PROCESS  (bordered 5-col grid, big blue numbers)
+   ============================================================ */
+.steps { display: grid; grid-template-columns: repeat(5, 1fr); }
+.step { padding: 30px 26px 30px; border-inline-end: 1px solid var(--line); display: flex; flex-direction: column; min-height: 290px; }
+.steps > .step:last-child { border-inline-end: none; }
+.step__no { font-family: var(--font-head); font-weight: 700; font-size: 2.6rem; line-height: 1; letter-spacing: -0.04em; color: var(--blue); margin-bottom: 24px; }
+.step h3 { font-family: var(--font-head); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 12px; }
+.step p { color: var(--text-dim); font-size: 0.9rem; flex: 1; }
+.step__time { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mut); margin-top: 22px; }
+

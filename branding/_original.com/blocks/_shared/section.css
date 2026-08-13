@@ -1,0 +1,17 @@
+/*
+   Shared        .sec, .sec--dark, .sec-head, .section-title, .section-foot, .grid-table — the shell most blocks sit in.
+   Copied from   src/css/home.css lines 357-369, at repo version 0.2.1
+ */
+/* ============================================================
+   SECTION SHARED
+   ============================================================ */
+section { position: relative; z-index: 2; }
+.sec { padding-block: clamp(80px, 10vw, 140px); }
+.sec--dark { background: var(--ink); color: var(--on-dark); }
+.sec-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; flex-wrap: wrap; margin-bottom: 60px; }
+.sec-head__main { max-width: 760px; }
+.sec-head .section-title { margin-top: 4px; }
+.section-sub { margin-top: 20px; font-size: 1.08rem; color: var(--text-dim); max-width: 560px; }
+.on-dark .section-title { color: #fff; }
+.on-dark .section-sub { color: var(--on-dark-dim); }
+

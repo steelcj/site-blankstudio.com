@@ -168,11 +168,90 @@ def render_site(cfg: dict) -> str:
     out = {
         "url": cfg["url"],
         "publicationTimeZone": cfg["publicationTimeZone"],
+        # The name in the copyright line, and the tagline beside it. Both are
+        # facts about the brand rather than translatable template copy, which is
+        # why they live in the client's config and not in the locale bundles.
+        #
+        # `tagline` is passed through in whichever shape it was authored: a
+        # plain string when one line serves every language, or a map keyed by
+        # locale when it does not. The footer resolves it per page.
+        "name": cfg.get("name"),
+        "tagline": cfg.get("tagline"),
+        "description": cfg.get("description"),
         "logos": logos,
         "contact": contact,
         "social": social,
     }
+
+    # Menu spine, read by src/_data/menu.js. Passed through as authored and
+    # omitted when absent, so a client that never declares one gets the
+    # template's default (home first, contact last, sections in between).
+    nav = cfg.get("nav")
+    if nav:
+        out["nav"] = nav
+
     return json.dumps(out, indent=2, ensure_ascii=False) + "\n"
+
+
+# ── fonts.yaml -> the type tokens in brand.css ───────────────────────────────
+
+# What the template is set in. A client that declares no `tokens` block gets
+# these, so the generated stylesheet always defines all three and home.css can
+# consume them without a fallback.
+DEFAULT_TYPE = {
+    "head": '"Inter Tight", "Inter", system-ui, sans-serif',
+    "body": '"Inter", system-ui, sans-serif',
+    "mono": '"Space Mono", ui-monospace, "SFMono-Regular", monospace',
+}
+
+
+def type_tokens(fonts_yaml: str) -> list:
+    """The (group, name, value) rows for --font-head, --font-body, --font-mono.
+
+    Type belongs with the palette in brand.css rather than in home.css: whether
+    a site is set in a downloaded webfont or in the reader's own system fonts is
+    a client decision, and home.css has to stay byte-identical to canonical for
+    `git merge upstream` to keep working. fonts.yaml already says WHICH fonts a
+    client uses; `tokens` says how they are stacked.
+    """
+    declared = {}
+    if os.path.isfile(fonts_yaml):
+        with open(fonts_yaml, "r", encoding="utf-8") as fh:
+            declared = (yaml.safe_load(fh) or {}).get("tokens") or {}
+
+    return [("type", f"font-{slot}", str(declared.get(slot) or DEFAULT_TYPE[slot]))
+            for slot in ("head", "body", "mono")]
+
+
+# ── guards ───────────────────────────────────────────────────────────────────
+
+# Values the template ships with. A generated file holding one of these is a
+# site nobody has configured yet; a generated file holding none of them is one
+# somebody has, and is not worth losing to a re-stamp.
+PLACEHOLDERS = ("example.com", "555 000 0000", "+15550000000")
+
+
+def has_placeholder(text: str) -> str:
+    for marker in PLACEHOLDERS:
+        if marker in text:
+            return marker
+    return ""
+
+
+def placeholder_clash(rendered: str) -> str:
+    """The placeholder about to overwrite a filled-in site.json, if any.
+
+    Returns "" when there is nothing to protect: no generated file yet, one that
+    is itself still full of placeholders, or a rendering that has none.
+    """
+    if not os.path.isfile(SITE_OUTPUT):
+        return ""
+    marker = has_placeholder(rendered)
+    if not marker:
+        return ""
+    with open(SITE_OUTPUT, "r", encoding="utf-8") as fh:
+        current = fh.read()
+    return "" if has_placeholder(current) else marker
 
 
 # ── main ─────────────────────────────────────────────────────────────────────
@@ -187,6 +266,11 @@ def main() -> None:
         action="store_true",
         help="print what would be written, and write nothing",
     )
+    ap.add_argument(
+        "--force",
+        action="store_true",
+        help="write even when the client's config still holds template placeholders",
+    )
     args = ap.parse_args()
 
     client_dir = find_client_dir()
@@ -194,6 +278,7 @@ def main() -> None:
 
     brand_yaml = os.path.join(client_dir, "brand.yaml")
     site_yaml = os.path.join(client_dir, "site.yaml")
+    fonts_yaml = os.path.join(client_dir, "fonts.yaml")
 
     # brand.yaml is required; site.yaml is optional (a client may not have
     # consolidated its site config yet).
@@ -204,7 +289,7 @@ def main() -> None:
     colors = brand_cfg.get("colors")
     if not colors:
         sys.exit(f"{brand_yaml} has no `colors:` block to render.")
-    css = render_css(flatten(colors))
+    css = render_css(flatten(colors) + type_tokens(fonts_yaml))
 
     site_json = None
     if os.path.isfile(site_yaml):
@@ -219,6 +304,34 @@ def main() -> None:
             print(f"# would write src/_data/site.json from branding/{client}/site.yaml\n")
             print(site_json)
         return
+
+    # Refuse to stamp a half-filled config over a finished one. A freshly
+    # stamped site.yaml still carries the template's TODO values, and this
+    # generator runs from `prebuild` on every build — so a client directory that
+    # has been reset, or a new one nobody has filled in yet, would quietly
+    # replace a working site.json (and brand.css beside it) with example.com.
+    # Writing nothing at all keeps the two generated files in step.
+    if site_json is not None and not args.force:
+        stale = placeholder_clash(site_json)
+        if stale:
+            # Skip rather than fail: the generated files already on disk are the
+            # correct ones, so a build that keeps using them is right, and a
+            # build that stops is a deploy nobody asked to break. Both outputs
+            # are skipped together — a client directory that has been reset has
+            # a template brand.yaml too, and half-regenerating would leave the
+            # palette and the site config describing different sites.
+            print(
+                f"[build-brand] SKIPPED — branding/{client}/site.yaml still holds "
+                f"template placeholders ({stale}), while src/_data/site.json is "
+                "filled in.\n"
+                "[build-brand] Nothing was written: src/css/brand.css and "
+                "src/_data/site.json keep the values they already have.\n"
+                f"[build-brand] Fill in the TODO values in branding/{client}/, or "
+                "pass --force if the placeholders really are what this site should "
+                "publish.",
+                file=sys.stderr,
+            )
+            return
 
     os.makedirs(os.path.dirname(CSS_OUTPUT), exist_ok=True)
     with open(CSS_OUTPUT, "w", encoding="utf-8") as fh:

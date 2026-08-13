@@ -11,6 +11,10 @@ _site/
 # OS / editor cruft
 .DS_Store
 Thumbs.db
+__pycache__/
+
+# A working copy of src/ kept on disk while the site was rebuilt from content.
+src-old/
 
 # Source/working files that should NOT be published to the web
 site/

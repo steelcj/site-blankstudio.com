@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page not found | BLNK Studio</title>
+  <title>Page not found</title>
   <meta name="robots" content="noindex" />
   <!-- Self-hosted fonts, generated from fonts.yaml (see scripts/fetch-fonts.py). -->
   <link rel="stylesheet" href="/css/fonts.css" />
@@ -17,7 +17,7 @@ eleventyExcludeFromCollections: true
     .nf { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 22px;
       background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(59,110,245,0.07), transparent 60%), var(--bg); }
     .nf img { height: 56px; width: auto; margin-bottom: 40px; }
-    .nf__code { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue-ink); margin-bottom: 18px; }
+    .nf__code { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-mut); margin-bottom: 18px; }
     .nf__title { font-family: var(--font-head); font-weight: 700; font-size: clamp(2.2rem, 6vw, 4rem); letter-spacing: -0.035em; color: var(--ink); line-height: 1.02; margin-bottom: 18px; }
     .nf__sub { color: var(--text-dim); max-width: 460px; margin: 0 auto 36px; }
     .nf__links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
@@ -26,9 +26,9 @@ eleventyExcludeFromCollections: true
     .nf > div { margin-bottom: 0; }
   </style>
 
-  <!-- SEO Tags -->
-  <link rel="canonical" href="https://www.theblnkstudio.com/404.html" />
-  <meta property="og:image" content="https://www.theblnkstudio.com/assets/about-work.jpg" />
+  <!-- SEO Tags. The canonical follows the client's own URL; there is no
+       og:image, because a 404 is not a page anyone shares. -->
+  <link rel="canonical" href="{{ site.url }}/404.html" />
 </head>
 <body>
   <!--
@@ -36,30 +36,34 @@ eleventyExcludeFromCollections: true
     domain, whatever locale the visitor was in, so it cannot use the locale
     templates and must speak both languages. Each block carries its own lang
     attribute so screen readers switch pronunciation mid-page.
+
+    The wording is deliberately plain and unbranded. This is the one page that
+    has to work when everything else is missing, and it is template code rather
+    than a client's content — a studio that wants its own voice here wants a
+    designed 404, not a config string.
   -->
   <main class="nf">
-    <a href="/en-ca/" aria-label="BLNK Studio home"><img src="{{ site.logos.dark }}" alt="BLNK Studio" /></a>
+    <a href="/{{ locales.default }}/" aria-label="Home"><img src="{{ site.logos.dark }}" alt="" /></a>
     <p class="nf__code">Error 404</p>
 
     <div lang="en-CA">
-      <h1 class="nf__title">This page went blank.</h1>
-      <p class="nf__sub">The page you're looking for doesn't exist or has moved. Let's get you back on track.</p>
+      <h1 class="nf__title">Page not found</h1>
+      <p class="nf__sub">There is no page at this address. It may have moved, or the link may be wrong.</p>
       <div class="nf__links">
         <a href="/en-ca/" class="btn btn--primary btn--lg">Back to Home</a>
-        <a href="/en-ca/contact/" class="btn btn--outline btn--lg">Contact Us</a>
       </div>
     </div>
 
-    <hr class="nf__rule" aria-hidden="true" />
+{% if menu["fr-ca"] and menu["fr-ca"].length %}    <hr class="nf__rule" aria-hidden="true" />
 
     <div lang="fr-CA">
-      <h2 class="nf__title nf__title--alt">Cette page est vide.</h2>
-      <p class="nf__sub">La page que vous cherchez n'existe pas ou a été déplacée. Reprenons du bon pied.</p>
+      <h2 class="nf__title nf__title--alt">Page introuvable</h2>
+      <p class="nf__sub">Il n'y a pas de page à cette adresse. Elle a peut-être été déplacée, ou le lien est erroné.</p>
       <div class="nf__links">
         <a href="/fr-ca/" class="btn btn--primary btn--lg">Retour à l'accueil</a>
-        <a href="/fr-ca/contact/" class="btn btn--outline btn--lg">Nous joindre</a>
       </div>
     </div>
+{% endif %}
   </main>
 </body>
 </html>

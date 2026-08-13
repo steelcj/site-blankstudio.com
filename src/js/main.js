@@ -32,10 +32,6 @@
     setTimeout(() => loader.classList.add("is-done"), 700);
   });
 
-  /* ---------- Current year ---------- */
-  const year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
-
   /* Language switcher: carry the current query string and hash across the
      switch. The Services page links to /contact/?package=Website%20Sprint and
      the contact page reads that param to pre-fill the brief — a plain href

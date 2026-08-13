@@ -1,0 +1,17 @@
+/*
+   Styles        blocks/position/split-pillars.njk
+   Copied from   src/css/home.css lines 431-442, at repo version 0.2.1
+   Depends on    the custom properties in src/css/brand.css and _shared/foundations.css
+ */
+/* ============================================================
+   WHY  (dark, intro + divided list)
+   ============================================================ */
+.why__grid { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: clamp(40px, 6vw, 90px); align-items: start; }
+.why__intro .section-title { margin-bottom: 22px; }
+.why__intro p { color: var(--on-dark-dim); font-size: 1.05rem; max-width: 380px; margin-bottom: 34px; }
+.why__list { border-top: 1px solid var(--line-dark); }
+.pillar { padding: 30px 0; border-bottom: 1px solid var(--line-dark); }
+.pillar__no { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.1em; color: #6f97ff; margin-bottom: 14px; display: block; }
+.pillar h3 { font-family: var(--font-head); font-weight: 600; font-size: 1.4rem; letter-spacing: -0.02em; color: #fff; margin-bottom: 12px; }
+.pillar p { color: var(--on-dark-dim); font-size: 0.98rem; max-width: 560px; }
+

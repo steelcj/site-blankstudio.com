@@ -1,0 +1,34 @@
+/*
+   Styles        blocks/statement/spec-list.njk
+   Copied from   src/css/home.css lines 328-356, at repo version 0.2.1
+   Depends on    the custom properties in src/css/brand.css and _shared/foundations.css
+ */
+/* Spec panel */
+.spec {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: linear-gradient(145deg, #0f172a, #020617);
+  box-shadow: 0 24px 48px -12px rgba(5, 13, 28, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  padding: 30px 32px 34px;
+  font-family: var(--font-mono);
+  color: #e2e8f0;
+}
+.spec__head {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: #fff; padding-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.spec__head span:last-child { color: #94a3b8; }
+.spec__row {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 16px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.76rem; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.spec__row dt { color: #94a3b8; }
+.spec__row dd { color: #f8fafc; font-weight: 700; }
+.spec__row dd.ok { color: #38bdf8; text-shadow: 0 0 12px rgba(56, 189, 248, 0.4); }
+.spec__ship { padding-top: 22px; }
+.spec__ship-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #94a3b8; margin-bottom: 14px; }
+.spec__ship li { list-style: none; font-size: 0.86rem; color: #f1f5f9; padding: 5px 0; }
+.spec__ship li::before { content: "\21B3"; color: #38bdf8; margin-inline-end: 10px; }
+

@@ -16,6 +16,20 @@
 /blog/:slug/         /en-ca/blog/:slug/    301
 /blog/:slug          /en-ca/blog/:slug/    301
 
+# --- Content sections that moved under /about/ ---
+#
+# The Foundations and Legal sections were published at the top of the locale
+# before they became subsections of About. Splat rules cover every page in each
+# section — /en-ca/legal/privacy/ -> /en-ca/about/legal/privacy/ — and the two
+# bare-section rules above them catch the index, which :splat matches as empty.
+#
+# English only: the French tree keeps mentions-legales/ at the top of the
+# locale, so its URLs did not move.
+/en-ca/foundations/          /en-ca/about/foundations/          301
+/en-ca/legal/                /en-ca/about/legal/                301
+/en-ca/foundations/*         /en-ca/about/foundations/:splat    301
+/en-ca/legal/*               /en-ca/about/legal/:splat          301
+
 # --- Top-level pages ---
 /index.html          /en-ca/               301
 /about.html          /en-ca/about/         301

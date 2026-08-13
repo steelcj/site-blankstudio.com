@@ -1,0 +1,29 @@
+{#
+  Block         spec-list
+  Role          Facts panel — status, base, hours, response, what ships
+  Kind          fragment (needs a section wrapper)
+  Surface       dark panel on a light section
+  Motion        reveal, data-delay 2
+  Data          t.home.spec.*
+  Anchor        none
+  Styles        spec-list.css, plus _shared/foundations.css, _shared/section.css, _shared/motion.css, _shared/reduced-motion.css, _shared/responsive.css
+  Known issues  Studio name is hardcoded ('BLNK Studio' in .spec__head), not read from config.
+  Note          Lives inside statement/hero-split on the original page.
+  Copied from   src/pages/index.njk lines 34-49, at repo version 0.2.1
+#}
+        <!-- Spec panel -->
+        <dl class="spec reveal" data-delay="2">
+          <div class="spec__head"><span>BLNK Studio</span><span>{{ t.home.spec.version | safe }}</span></div>
+          <div class="spec__row"><dt>{{ t.home.spec.statusKey | safe }}</dt><dd class="ok">{{ t.home.spec.statusValue | safe }}</dd></div>
+          <div class="spec__row"><dt>{{ t.home.spec.basedKey | safe }}</dt><dd>{{ t.home.spec.basedValue | safe }}</dd></div>
+          <div class="spec__row"><dt>{{ t.home.spec.workingKey | safe }}</dt><dd>{{ t.home.spec.workingValue | safe }}</dd></div>
+          <div class="spec__row"><dt>{{ t.home.spec.responseKey | safe }}</dt><dd>{{ t.home.spec.responseValue | safe }}</dd></div>
+          <div class="spec__ship">
+            <p class="spec__ship-label">{{ t.home.spec.shippingKey | safe }}</p>
+            <ul>
+              <li>{{ t.home.spec.shipping1 | safe }}</li>
+              <li>{{ t.home.spec.shipping2 | safe }}</li>
+              <li>{{ t.home.spec.shipping3 | safe }}</li>
+            </ul>
+          </div>
+        </dl>

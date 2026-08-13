@@ -5,8 +5,8 @@
 // one implementation and differ only by their locale code. Everything under a
 // root is that language's content, and its URL mirrors its file path:
 //
-//   src/content/en-ca/legal/privacy.md          -> /en-ca/legal/privacy/
-//   src/content/fr-ca/mentions-legales/…/…​.md   -> /fr-ca/mentions-legales/…/
+//   src/content/en-ca/about/legal/privacy.md   -> /en-ca/about/legal/privacy/
+//   src/content/fr-ca/mentions-legales/…/….md  -> /fr-ca/mentions-legales/…/
 //
 // Translations are paired by sat:work through _data/contentWorkIndex.js, not by
 // matching paths — the mirrored model from the multilingual vocabulary.
@@ -63,13 +63,20 @@ module.exports = function localeTree(code) {
       switcher: (data) => {
         const work = data["sat:work"];
         const expr = (work && data.contentWorkIndex[work]) || {};
+        // Only languages this work actually exists in. The fallback that used
+        // to point at `/<locale>/` assumed every language had a home page to
+        // land on; a language with no content built has no such page, and the
+        // switcher would have offered a link to nothing. A reader is better
+        // served by the switcher not appearing than by one that 404s.
         return locales.real
-          .filter((l) => l.code !== code)
-          .map((l) =>
-            expr[l.code]
-              ? { code: l.code, label: l.label, hreflang: l.htmlLang, url: expr[l.code], fallback: false }
-              : { code: l.code, label: l.label, hreflang: l.htmlLang, url: `/${l.code}/`, fallback: true }
-          );
+          .filter((l) => l.code !== code && expr[l.code])
+          .map((l) => ({
+            code: l.code,
+            label: l.label,
+            hreflang: l.htmlLang,
+            url: expr[l.code],
+            fallback: false,
+          }));
       },
 
       xDefault: (data) => {

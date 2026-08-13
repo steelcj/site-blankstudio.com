@@ -1,22 +1,83 @@
-# site.yaml — client-owned site configuration (client: vishpala.com).
+# site.yaml — client-owned site configuration (template default).
 #
-# A test client. build-brand.py generates src/_data/site.json from this.
+# scripts/branding/new-client.js copies this directory to branding/<client>/;
+# edit the copy, not this file. build-brand.py reads the active client's
+# site.yaml and generates src/_data/site.json. Run `npm run build:brand` after
+# changing a value, and commit the regenerated site.json (never edit it by hand).
+#
+# `contact` holds the direct-contact facts the templates read. `social` is a
+# map of accounts; the footer renders a link for each one present, so adding a
+# network (github, facebook, linkedin, x, youtube, …) makes it appear with no
+# template change. Each social entry is { url, label }.
+
+name: "Vishpala"
+
+# One line for every language today. Swap the string for a map keyed by locale
+# (en-ca:, fr-ca:, …) when the French and Spanish roots are unparked.
+tagline: "Technology, design, and infrastructure for greater agency."
+
+# The footer paragraph. Taken from this site's own About page rather than
+# written for the config, so the two say the same thing. Swap the string for a
+# map keyed by locale (en-ca:, fr-ca:, …) when the other roots are unparked.
+description: "We are a studio of practitioners in technology, design, and infrastructure — working with individuals and organisations who want to operate with greater agency."
 
 url: "https://vishpala.com"
-publicationTimeZone: "America/Toronto"
+publicationTimeZone: "America/Toronto"    # TODO: the client's publication timezone
 
-# SVG logos — possible now that the template reads these paths from config.
+# The logo/favicon paths, as URLs. This client's assets/ directory is published
+# at /assets/, so a file at assets/imgs/logos/favicon.svg is served from
+# /assets/imgs/logos/favicon.svg — the paths mirror wherever the files are kept.
 logos:
-  dark: "/assets/logo-lockup-dark.svg"
-  light: "/assets/logo-lockup.svg"
-  favicon: "/assets/favicon.svg"
+  dark: "/assets/imgs/logos/logo-lockup-dark.svg"   # dark mark, light backgrounds
+  light: "/assets/imgs/logos/logo-lockup.svg"       # light mark, dark footer
+  favicon: "/assets/imgs/logos/favicon.svg"
+
+# Optional — the primary menu. The menu items themselves are the sections in
+# this client's content tree (src/content/<locale>/ under this directory), so a
+# new section is a new directory, not a template edit. This block only says
+# where the designed landing pages sit around them, and in what order the known
+# sections appear. Anything not listed in `order` is appended, alphabetically.
+# nav:
+#   before: ["home"]                         # pages pinned ahead of the sections
+#   after: ["contact"]                       # …and after them
+#   order: ["about", "services", "blog"]     # display order of the sections
 
 contact:
   email: "hello@vishpala.com"
-  phoneDisplay: "+1 416 555 0142"
-  phoneHref: "tel:+14165550142"
+  # Optional — no phone declared for this client yet. Uncomment both lines to
+  # add one: the templates show `phoneDisplay` and dial `phoneHref`.
+  # phoneDisplay: "+1 416 555 0142"       # as a reader reads it
+  # phoneHref: "tel:+14165550142"         # as a phone dials it, no spaces
 
 social:
-  instagram:
-    url: "https://instagram.com/vishpala"
-    label: "@vishpala"
+  # Social accounts. Every entry present here becomes a footer link, in the
+  # order they appear, so a network is added by uncommenting it — no template
+  # change. `url` is where the link goes; `label` is what it reads.
+  #
+  # whatsapp has a second life: build-brand also exposes its url as
+  # site.contact.whatsapp, for the templates that name that key directly.
+
+  # instagram:
+  #   url: "https://instagram.com/example"
+  #   label: "@example"
+  # facebook:
+  #   url: "https://facebook.com/example"
+  #   label: "Example on Facebook"
+  # linkedin:
+  #   url: "https://linkedin.com/company/example"
+  #   label: "Example on LinkedIn"
+  # x:
+  #   url: "https://x.com/example"
+  #   label: "@example"
+  # youtube:
+  #   url: "https://youtube.com/@example"
+  #   label: "Example on YouTube"
+  # github:
+  #   url: "https://github.com/example"
+  #   label: "github.com/example"
+  # mastodon:
+  #   url: "https://mastodon.social/@example"
+  #   label: "@example@mastodon.social"
+  # whatsapp:
+  #   url: "https://wa.me/14165550142"
+  #   label: "WhatsApp"

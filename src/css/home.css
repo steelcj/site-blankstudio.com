@@ -25,10 +25,10 @@
      out of this file is what keeps home.css byte-identical to canonical so a
      git merge upstream stays clean. */
 
-  /* Type */
-  --font-head: "Inter Tight", "Inter", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  --font-mono: "Space Mono", ui-monospace, "SFMono-Regular", monospace;
+  /* Type is generated too, from the `tokens` block in the client's fonts.yaml
+     into src/css/brand.css beside the colours. A client whose site is set in
+     system fonts and one set in Inter differ by a config file, not by an edit
+     here. Do not add --font-* properties to this file. */
 
   /* Layout */
   --container: 1240px;

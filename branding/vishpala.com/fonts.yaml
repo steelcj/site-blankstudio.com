@@ -1,8 +1,23 @@
-# fonts.yaml — self-hosted webfonts (client: vishpala.com).
+# fonts.yaml — the type this site is set in (client: vishpala.com).
 #
-# Uses the template's default families, so the committed src/css/fonts.css and
-# woff2 files already cover it — no fetch needed unless you change these.
-# scripts/branding/fetch-fonts.py reads this and regenerates the stylesheet.
+# Imported from the Hugo site at hugo-website-vishpala.com, whose stylesheet
+# sets the whole site in `system-ui, sans-serif` — the reader's own interface
+# font — with monospace where a monospace face is meant. That is a deliberate
+# position, and the same one the site argues for in its own resources/system-
+# fonts page: nothing to download, nothing to wait for, and text that matches
+# the device it is read on.
+#
+# So this site fetches no webfonts at all. `families` is empty, and
+# `npm run build:fonts` writes a stylesheet that declares nothing rather than
+# a 404 — locales.js points every locale at /css/fonts.css, so the file has to
+# exist even when it has nothing to say.
+#
+# The Hugo site also self-hosted Atkinson Hyperlegible for a reader-operated
+# font switcher. That capability is already in this template and is NOT a
+# webfont decision: the Infusion accessibility bar ships Atkinson Hyperlegible,
+# OpenDyslexic and two more faces under /assets/lib/, loaded on demand when a
+# reader opens the panel. Declaring Atkinson here as well would ship the same
+# typeface twice, to every reader, whether or not they ever ask for it.
 
 provider: google
 
@@ -13,19 +28,19 @@ subsets:
   - latin-ext
 
 output:
-  fonts_dir: src/assets/fonts
-  css_file: src/css/fonts.css
-  css_href: /assets/fonts
+  fonts_dir: src/assets/fonts   # woff2 files; served at /assets/fonts/
+  css_file: src/css/fonts.css   # generated @font-face sheet; served at /css/fonts.css
+  css_href: /assets/fonts       # URL prefix the @font-face `src:` points at
 
-families:
-  - name: Inter Tight
-    weights: [400, 500, 600, 700, 800]
-    styles: [normal]
+# The type tokens, generated into src/css/brand.css beside the colours.
+#
+# `system-ui` resolves to the platform's interface face — Segoe UI on Windows,
+# San Francisco on macOS and iOS, Roboto on Android, the desktop-environment
+# font on Linux — with a sans-serif fallback for anything that does not answer.
+tokens:
+  head: 'system-ui, sans-serif'
+  body: 'system-ui, sans-serif'
+  mono: 'ui-monospace, SFMono-Regular, Menlo, monospace'
 
-  - name: Inter
-    weights: [400, 500, 600]
-    styles: [normal]
-
-  - name: Space Mono
-    weights: [400, 700]
-    styles: [normal]
+# Nothing to download. See the note above about Atkinson Hyperlegible.
+families: []

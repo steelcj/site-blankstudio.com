@@ -1,0 +1,53 @@
+{#
+  Block         hero-split
+  Role          Statement — the claim, and the two primary actions
+  Kind          section (drop-in)
+  Surface       light
+  Motion        load-in (js/main.js adds .is-in after 300ms), reveal stagger on children
+  Data          t.home.hero.*, t.home.spec.*, urls.contact, urls.freeAudit
+  Anchor        #hero
+  Styles        hero-split.css, plus _shared/foundations.css, _shared/section.css, _shared/motion.css, _shared/reduced-motion.css, _shared/responsive.css
+  Known issues  none
+  Note          Contains the Facts panel; statement/spec-list is the same markup on its own.
+  Copied from   src/pages/index.njk lines 12-51, at repo version 0.2.1
+#}
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="eyebrow reveal">{{ t.home.hero.eyebrow | safe }}</span>
+          <h1 class="h-xl hero__title">
+{% for line in t.home.hero.titleLines %}              <span class="line"><span>{{ line | safe }}</span></span>
+{% endfor %}            </h1>
+          <p class="hero__sub reveal" data-delay="1">
+            {{ t.home.hero.sub | safe }}
+          </p>
+          <p class="hero__body reveal" data-delay="2">
+            {{ t.home.hero.body | safe }}
+          </p>
+          <div class="hero__cta reveal" data-delay="3">
+            <a href="{{ urls.contact }}" class="btn btn--primary btn--lg">{{ t.home.hero.ctaPrimary | safe }}</a>
+            <a href="{{ urls.freeAudit }}" class="btn btn--outline btn--lg">{{ t.home.hero.ctaSecondary | safe }}</a>
+          </div>
+          <p class="hero__micro reveal" data-delay="4">{{ t.home.hero.micro | safe }}</p>
+        </div>
+
+        <!-- Spec panel -->
+        <dl class="spec reveal" data-delay="2">
+          <div class="spec__head"><span>BLNK Studio</span><span>{{ t.home.spec.version | safe }}</span></div>
+          <div class="spec__row"><dt>{{ t.home.spec.statusKey | safe }}</dt><dd class="ok">{{ t.home.spec.statusValue | safe }}</dd></div>
+          <div class="spec__row"><dt>{{ t.home.spec.basedKey | safe }}</dt><dd>{{ t.home.spec.basedValue | safe }}</dd></div>
+          <div class="spec__row"><dt>{{ t.home.spec.workingKey | safe }}</dt><dd>{{ t.home.spec.workingValue | safe }}</dd></div>
+          <div class="spec__row"><dt>{{ t.home.spec.responseKey | safe }}</dt><dd>{{ t.home.spec.responseValue | safe }}</dd></div>
+          <div class="spec__ship">
+            <p class="spec__ship-label">{{ t.home.spec.shippingKey | safe }}</p>
+            <ul>
+              <li>{{ t.home.spec.shipping1 | safe }}</li>
+              <li>{{ t.home.spec.shipping2 | safe }}</li>
+              <li>{{ t.home.spec.shipping3 | safe }}</li>
+            </ul>
+          </div>
+        </dl>
+      </div>
+    </section>

@@ -1,0 +1,30 @@
+{#
+  Block         metric-row
+  Role          Credibility — the counted numbers alone
+  Kind          fragment (needs a section wrapper)
+  Surface       inherits
+  Motion        count-up on intersection (js/main.js reads data-target, data-prefix, data-suffix)
+  Data          t.home.logos.heading, t.home.stats.*
+  Anchor        none
+  Styles        metric-row.css, plus _shared/foundations.css, _shared/section.css, _shared/motion.css, _shared/reduced-motion.css, _shared/responsive.css
+  Known issues  Targets hardcoded in the markup.
+  Note          The third metric is a word, not a count — no .count class on it.
+  Copied from   src/pages/index.njk lines 56-72, at repo version 0.2.1
+#}
+        <div class="proof__top">
+          <p class="proof__label reveal">{{ t.home.logos.heading | safe }}</p>
+          <div class="proof__metrics reveal" data-delay="1">
+            <div class="proof__metric">
+              <b><span class="count" data-target="25" data-prefix="+" data-suffix="%">+0%</span></b>
+              <span>{{ t.home.stats.growthLabel | safe }}</span>
+            </div>
+            <div class="proof__metric">
+              <b><span class="count" data-target="40" data-suffix="+">0+</span></b>
+              <span>{{ t.home.stats.brandsLabel | safe }}</span>
+            </div>
+            <div class="proof__metric">
+              <b>{{ t.home.stats.allInOne | safe }}</b>
+              <span>{{ t.home.stats.oneStudio | safe }}</span>
+            </div>
+          </div>
+        </div>

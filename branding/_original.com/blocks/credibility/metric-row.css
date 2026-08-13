@@ -1,0 +1,12 @@
+/*
+   Styles        blocks/credibility/metric-row.njk
+   Copied from   src/css/home.css lines 374-380, at repo version 0.2.1
+   Depends on    the custom properties in src/css/brand.css and _shared/foundations.css
+ */
+.proof__top { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 30px; }
+.proof__label { font-family: var(--font-mono); font-size: 1.1rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-mut); }
+.proof__metrics { display: flex; gap: 44px; }
+.proof__metric { display: flex; flex-direction: column; gap: 6px; }
+.proof__metric b { font-family: var(--font-head); font-weight: 700; font-size: 3.2rem; letter-spacing: -0.02em; color: var(--ink); line-height: 1; }
+.proof__metric span { font-family: var(--font-mono); font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mut); }
+

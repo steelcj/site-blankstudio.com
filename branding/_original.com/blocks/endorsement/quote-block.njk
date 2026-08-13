@@ -1,0 +1,29 @@
+{#
+  Block         quote-block
+  Role          Endorsement — a third party vouches
+  Kind          section (drop-in)
+  Surface       light
+  Motion        reveal stagger
+  Data          t.home.testimonial.*
+  Anchor        none — the only block on the page without an id
+  Styles        quote-block.css, plus _shared/foundations.css, _shared/section.css, _shared/motion.css, _shared/reduced-motion.css, _shared/responsive.css
+  Known issues  The avatar is an empty decorative span, not an image.
+  Copied from   src/pages/index.njk lines 233-249, at repo version 0.2.1
+#}
+    <!-- ============ TESTIMONIAL ============ -->
+    <section class="sec testimonial">
+      <div class="container">
+        <span class="eyebrow reveal">{{ t.home.testimonial.eyebrow | safe }}</span>
+        <blockquote class="testimonial__quote reveal" data-delay="1">
+          {{ t.home.testimonial.quote | safe }}
+        </blockquote>
+        <div class="testimonial__by reveal" data-delay="2">
+          <span class="testimonial__avatar" aria-hidden="true"></span>
+          <div>
+            <div class="testimonial__name">{{ t.home.testimonial.role | safe }}</div>
+            <div class="testimonial__role">{{ t.home.testimonial.company | safe }}</div>
+          </div>
+        </div>
+        <p class="testimonial__proof reveal" data-delay="3">{{ t.home.testimonial.micro | safe }}</p>
+      </div>
+    </section>

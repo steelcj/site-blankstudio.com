@@ -41,9 +41,20 @@ output:
   css_file: src/css/fonts.css   # generated @font-face sheet; served at /css/fonts.css
   css_href: /assets/fonts       # URL prefix the @font-face `src:` points at
 
-# The families the site actually uses, mirroring the CSS custom properties in
-# home.css:
-#   --font-head  "Inter Tight"   --font-body  "Inter"   --font-mono  "Space Mono"
+# The type tokens the stylesheets consume, generated into src/css/brand.css by
+# build-brand.py beside the colours. This is where a client says what the site
+# is SET in; `families` below says what has to be downloaded to set it.
+#
+# A site in the reader's own system fonts declares the stack here and leaves
+# `families` empty — nothing is fetched, and nothing is served.
+tokens:
+  head: '"Inter Tight", "Inter", system-ui, sans-serif'
+  body: '"Inter", system-ui, sans-serif'
+  mono: '"Space Mono", ui-monospace, "SFMono-Regular", monospace'
+
+# The families to download, matching the tokens above. `weights` and `styles`
+# are the exact permutations requested — nothing more is downloaded, so the
+# payload stays minimal.
 # `weights` and `styles` are the exact permutations requested — nothing more is
 # downloaded, so the payload stays minimal.
 families:

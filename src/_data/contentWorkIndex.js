@@ -2,7 +2,7 @@
 // locale-first content tree (src/content/<locale>/…), the sibling of
 // _data/workIndex.js which does the same for the blog.
 //
-//   { "legal-privacy": { "en-ca": "/en-ca/legal/privacy/",
+//   { "legal-privacy": { "en-ca": "/en-ca/about/legal/privacy/",
 //                        "fr-ca": "/fr-ca/mentions-legales/confidentialite/" } }
 //
 // This is the mechanism the content model's language switcher and hreflang use
@@ -32,8 +32,8 @@ function walk(dir) {
   return out;
 }
 
-// .../src/content/en-ca/legal/privacy.md  ->  /en-ca/legal/privacy/
-// .../src/content/en-ca/legal/index.md    ->  /en-ca/legal/
+// .../src/content/en-ca/about/legal/privacy.md  ->  /en-ca/about/legal/privacy/
+// .../src/content/en-ca/about/legal/index.md    ->  /en-ca/about/legal/
 function urlFor(file) {
   const rel = path.relative(CONTENT_DIR, file).replace(/\\/g, "/");
   let stem = "/" + rel.replace(/\.md$/, "");

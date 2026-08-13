@@ -1,0 +1,52 @@
+{#
+  Block         proof-band
+  Role          Credibility — numbers and client marks, in one band
+  Kind          section (drop-in)
+  Surface       band (--bg-band), ruled top and bottom
+  Motion        count-up on intersection, marquee 40s linear infinite (pauses on hover)
+  Data          t.home.logos.*, t.home.stats.*, /assets/logos/*.png
+  Anchor        #proof
+  Styles        proof-band.css, plus _shared/foundations.css, _shared/section.css, _shared/motion.css, _shared/reduced-motion.css, _shared/responsive.css
+  Known issues  Metric targets are hardcoded in the markup (data-target 25 and 40), not config. The six logo files ship in branding/_theblnkstudio.com/assets/logos/ only.
+  Note          Two patterns fused: credibility/metric-row and credibility/logo-marquee.
+  Copied from   src/pages/index.njk lines 53-91, at repo version 0.2.1
+#}
+    <!-- ============ PROOF BAND ============ -->
+    <section class="proof" id="proof">
+      <div class="container">
+        <div class="proof__top">
+          <p class="proof__label reveal">{{ t.home.logos.heading | safe }}</p>
+          <div class="proof__metrics reveal" data-delay="1">
+            <div class="proof__metric">
+              <b><span class="count" data-target="25" data-prefix="+" data-suffix="%">+0%</span></b>
+              <span>{{ t.home.stats.growthLabel | safe }}</span>
+            </div>
+            <div class="proof__metric">
+              <b><span class="count" data-target="40" data-suffix="+">0+</span></b>
+              <span>{{ t.home.stats.brandsLabel | safe }}</span>
+            </div>
+            <div class="proof__metric">
+              <b>{{ t.home.stats.allInOne | safe }}</b>
+              <span>{{ t.home.stats.oneStudio | safe }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="marquee reveal" data-delay="1">
+          <div class="marquee__track">
+            <div class="logo-tile"><img src="/assets/logos/bbk.png" alt="{{ t.home.logos.bbkAlt | safe }}" /></div>
+            <div class="logo-tile"><img src="/assets/logos/fenesta.png" alt="{{ t.home.logos.fenestaAlt | safe }}" /></div>
+            <div class="logo-tile"><img src="/assets/logos/goila.png" alt="{{ t.home.logos.goilaAlt | safe }}" /></div>
+            <div class="logo-tile"><img src="/assets/logos/myhome.png" alt="{{ t.home.logos.myhomeAlt | safe }}" /></div>
+            <div class="logo-tile"><img src="/assets/logos/naisha.png" alt="{{ t.home.logos.naishaAlt | safe }}" /></div>
+            <div class="logo-tile"><img src="/assets/logos/ziggy.png" alt="{{ t.home.logos.ziggyAlt | safe }}" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/bbk.png" alt="" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/fenesta.png" alt="" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/goila.png" alt="" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/myhome.png" alt="" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/naisha.png" alt="" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/ziggy.png" alt="" /></div>
+          </div>
+        </div>
+      </div>
+    </section>

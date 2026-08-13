@@ -1,0 +1,37 @@
+{#
+  Block         cta-band
+  Role          Conversion — the closing ask
+  Kind          section (drop-in, already a partial)
+  Surface       dark (.on-dark)
+  Motion        reveal stagger
+  Data          ctaTitle, ctaSub, ctaBtn1/2Label, ctaMicro, ctaId (front matter or locale bundle)
+  Anchor        whatever ctaId sets — #contact on the home page
+  Styles        cta-band.css, plus _shared/foundations.css, _shared/section.css, _shared/motion.css, _shared/reduced-motion.css, _shared/responsive.css
+  Known issues  none
+  Note          Copied from src/_includes/partials/final-cta.njk, the one block already shared across five pages.
+  Copied from   src/_includes/partials/final-cta.njk lines 1-25, at repo version 0.2.1
+#}
+{#
+  The closing call-to-action. Structurally identical on five pages but with
+  different copy and different buttons on every one, so this partial owns the
+  markup and each page supplies its own text. Phase 3 replaces these front
+  matter strings with locale bundle keys; the markup does not change again.
+
+  ctaTitle is rendered with | safe because every variant contains an <em>.
+#}
+{% set ctaBtn1Href = ctaBtn1Href | default(site.contact[ctaBtn1Contact] if ctaBtn1Contact else (urls[ctaBtn1Route] if ctaBtn1Route else urls.contact)) %}
+{% set ctaBtn2Href = ctaBtn2Href | default(site.contact[ctaBtn2Contact] if ctaBtn2Contact else (urls[ctaBtn2Route] if ctaBtn2Route else urls.freeAudit)) %}
+{% set ctaBtn2Attrs = ctaBtn2Attrs | default("") %}
+{% set ctaMicro = ctaMicro | default(t.common.cta.micro) %}
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta on-dark"{% if ctaId %} id="{{ ctaId }}"{% endif %}>
+      <div class="container">
+        <h2 class="final-cta__title reveal">{{ ctaTitle | safe }}</h2>
+        <p class="final-cta__sub reveal" data-delay="1">{{ ctaSub | safe }}</p>
+        <div class="final-cta__btns reveal" data-delay="2">
+          <a href="{{ ctaBtn1Href }}" class="btn btn--primary btn--lg">{{ ctaBtn1Label | replace("{phone}", site.contact.phoneDisplay) | safe }}</a>
+          <a href="{{ ctaBtn2Href }}"{{ ctaBtn2Attrs | safe }} class="btn btn--outline btn--lg">{{ ctaBtn2Label | replace("{phone}", site.contact.phoneDisplay) | safe }}</a>
+        </div>
+        <p class="final-cta__micro reveal" data-delay="3">{{ ctaMicro | safe }}</p>
+      </div>
+    </section>

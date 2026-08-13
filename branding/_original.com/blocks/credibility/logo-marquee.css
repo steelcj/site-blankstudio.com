@@ -1,0 +1,19 @@
+/*
+   Styles        blocks/credibility/logo-marquee.njk
+   Copied from   src/css/home.css lines 382-395, at repo version 0.2.1
+   Depends on    the custom properties in src/css/brand.css and _shared/foundations.css
+ */
+.marquee__track { display: inline-flex; align-items: center; gap: 16px; white-space: nowrap; animation: marquee 40s linear infinite; will-change: transform; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+.logo-tile {
+  flex: 0 0 auto; height: 110px; min-width: 160px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 26px; overflow: hidden;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  transition: transform 0.4s var(--ease), border-color 0.4s;
+}
+/* normalize logos by HEIGHT so wide & square marks read at equal weight */
+.logo-tile img { height: 75px; width: auto; max-width: 240px; object-fit: contain; }
+.logo-tile:hover { transform: translateY(-3px); border-color: var(--line-2); }
+

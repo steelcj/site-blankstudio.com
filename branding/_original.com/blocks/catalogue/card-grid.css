@@ -1,0 +1,40 @@
+/*
+   Styles        blocks/catalogue/card-grid.njk
+   Copied from   src/css/home.css lines 396-430, at repo version 0.2.1
+   Depends on    the custom properties in src/css/brand.css and _shared/foundations.css
+ */
+/* ============================================================
+   SERVICES  (bordered table grid)
+   ============================================================ */
+.grid-table { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.services__grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.s-card {
+  position: relative;
+  padding: 34px 32px 30px;
+  border-inline-end: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: flex; flex-direction: column;
+  background: transparent;
+  transition: background 0.45s var(--ease);
+}
+.services__grid > .s-card:nth-child(3n) { border-inline-end: none; }
+.s-card:hover { background: rgba(5,13,28,0.025); }
+.s-card__no { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; color: var(--text-mut); margin-bottom: 30px; }
+.s-card h3 { font-family: var(--font-head); font-weight: 600; font-size: 1.3rem; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 12px; }
+.s-card p { color: var(--text-dim); font-size: 0.95rem; flex: 1; }
+.s-card__link {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 26px;
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-mut); transition: color 0.3s, gap 0.3s var(--ease);
+}
+.s-card__link span { color: var(--blue); transition: transform 0.3s var(--ease); }
+.s-card:hover .s-card__link { color: var(--ink); }
+.s-card__link:hover { gap: 13px; }
+.s-card__link:hover span { transform: translateX(4px); }
+/* wide row card */
+.s-card--wide { grid-column: 1 / -1; border-inline-end: none; }
+.s-card--wide .s-card__inner { display: flex; align-items: baseline; gap: 40px; flex-wrap: wrap; }
+.s-card--wide h3 { flex: 0 0 300px; margin-bottom: 0; }
+.s-card--wide p { flex: 1 1 320px; }
+.s-card--wide .s-card__link { margin-top: 0; align-self: center; }
+

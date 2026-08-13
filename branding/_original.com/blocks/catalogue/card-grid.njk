@@ -1,0 +1,74 @@
+{#
+  Block         card-grid
+  Role          Catalogue — what a visitor can buy
+  Kind          section (drop-in)
+  Surface       light, bordered table grid
+  Motion        reveal stagger (data-delay 0,1,2 per row)
+  Data          t.home.services.c1..c7*, urls.services, site.contact.whatsapp
+  Anchor        #services
+  Styles        card-grid.css, plus _shared/foundations.css, _shared/section.css, _shared/motion.css, _shared/reduced-motion.css, _shared/responsive.css
+  Known issues  Every card links to site.contact.whatsapp, which is undefined unless the client's site.yaml declares a whatsapp social entry — it renders as href="". The card count is fixed at seven by the bundle keys c1..c7 and by the '01 / 07' labels.
+  Note          The seventh card is .s-card--wide and wraps its content in .s-card__inner.
+  Copied from   src/pages/index.njk lines 93-153, at repo version 0.2.1
+#}
+    <!-- ============ SERVICES ============ -->
+    <section class="sec services" id="services">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head__main">
+            <span class="eyebrow reveal">{{ t.home.services.eyebrow | safe }}</span>
+            <h2 class="section-title reveal" data-delay="1">{{ t.home.services.titleLine1 | safe }} <em>{{ t.home.services.titleEm | safe }}</em> {{ t.home.services.titleLine2 | safe }}</h2>
+          </div>
+          <a href="{{ urls.services }}" class="link-arrow reveal" data-delay="1">{{ t.home.services.exploreLink | safe }} <span>&rarr;</span></a>
+        </div>
+
+        <div class="grid-table">
+          <div class="services__grid">
+            <article class="s-card reveal">
+              <span class="s-card__no">01 / 07</span>
+              <h3>{{ t.home.services.c1Title | safe }}</h3>
+              <p>{{ t.home.services.c1Body | safe }}</p>
+              <a href="{{ site.contact.whatsapp }}" class="s-card__link">{{ t.home.services.enquire | safe }} <span>&rarr;</span></a>
+            </article>
+            <article class="s-card reveal" data-delay="1">
+              <span class="s-card__no">02 / 07</span>
+              <h3>{{ t.home.services.c2Title | safe }}</h3>
+              <p>{{ t.home.services.c2Body | safe }}</p>
+              <a href="{{ site.contact.whatsapp }}" class="s-card__link">{{ t.home.services.enquire | safe }} <span>&rarr;</span></a>
+            </article>
+            <article class="s-card reveal" data-delay="2">
+              <span class="s-card__no">03 / 07</span>
+              <h3>{{ t.home.services.c3Title | safe }}</h3>
+              <p>{{ t.home.services.c3Body | safe }}</p>
+              <a href="{{ site.contact.whatsapp }}" class="s-card__link">{{ t.home.services.enquire | safe }} <span>&rarr;</span></a>
+            </article>
+            <article class="s-card reveal">
+              <span class="s-card__no">04 / 07</span>
+              <h3>{{ t.home.services.c4Title | safe }}</h3>
+              <p>{{ t.home.services.c4Body | safe }}</p>
+              <a href="{{ site.contact.whatsapp }}" class="s-card__link">{{ t.home.services.enquire | safe }} <span>&rarr;</span></a>
+            </article>
+            <article class="s-card reveal" data-delay="1">
+              <span class="s-card__no">05 / 07</span>
+              <h3>{{ t.home.services.c5Title | safe }}</h3>
+              <p>{{ t.home.services.c5Body | safe }}</p>
+              <a href="{{ site.contact.whatsapp }}" class="s-card__link">{{ t.home.services.enquire | safe }} <span>&rarr;</span></a>
+            </article>
+            <article class="s-card reveal" data-delay="2">
+              <span class="s-card__no">06 / 07</span>
+              <h3>{{ t.home.services.c6Title | safe }}</h3>
+              <p>{{ t.home.services.c6Body | safe }}</p>
+              <a href="{{ site.contact.whatsapp }}" class="s-card__link">{{ t.home.services.enquire | safe }} <span>&rarr;</span></a>
+            </article>
+            <article class="s-card s-card--wide reveal">
+              <span class="s-card__no">07 / 07</span>
+              <div class="s-card__inner">
+                <h3>{{ t.home.services.c7Title | safe }}</h3>
+                <p>{{ t.home.services.c7Body | safe }}</p>
+                <a href="{{ site.contact.whatsapp }}" class="s-card__link">{{ t.home.services.enquire | safe }} <span>&rarr;</span></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>

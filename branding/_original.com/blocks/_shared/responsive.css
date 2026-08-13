@@ -1,0 +1,36 @@
+/*
+   Shared        One media-query stack covering several blocks at once (hero, spec, why, services, process, insights, proof). Not separable per block without splitting selectors.
+   Copied from   src/css/home.css lines 534-565, at repo version 0.2.1
+ */
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1000px) {
+  .hero__inner { grid-template-columns: 1fr; gap: 44px; }
+  .spec { max-width: 460px; }
+  .why__grid { grid-template-columns: 1fr; gap: 36px; }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .step { border-bottom: 1px solid var(--line); min-height: 0; }
+  .steps > .step:nth-child(2n) { border-inline-end: none; }
+}
+@media (max-width: 980px) {
+  .nav__links, .nav__actions { display: none; }
+  .nav__toggle { display: flex; }
+  .services__grid, .insights__grid { grid-template-columns: 1fr 1fr; }
+  .services__grid > .s-card:nth-child(3n) { border-inline-end: 1px solid var(--line); }
+  .services__grid > .s-card:nth-child(2n) { border-inline-end: none; }
+}
+@media (max-width: 640px) {
+  .services__grid, .insights__grid, .steps { grid-template-columns: 1fr; }
+  .services__grid > .s-card { border-inline-end: none !important; }
+  .steps > .step { border-inline-end: none; }
+  .s-card--wide .s-card__inner { flex-direction: column; gap: 14px; }
+  .s-card--wide h3 { flex-basis: auto; }
+  .footer__inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .proof__top { flex-direction: column; align-items: flex-start; }
+  .hero__cta .btn, .final-cta__btns .btn { width: 100%; }
+}
+@media (max-width: 460px) {
+  .footer__inner { grid-template-columns: 1fr; }
+  .proof__metrics { gap: 24px; }
+}

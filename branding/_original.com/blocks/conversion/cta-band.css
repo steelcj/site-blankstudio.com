@@ -1,0 +1,22 @@
+/*
+   Styles        blocks/conversion/cta-band.njk
+   Copied from   src/css/home.css lines 488-504, at repo version 0.2.1
+   Depends on    the custom properties in src/css/brand.css and _shared/foundations.css
+ */
+/* ============================================================
+   FINAL CTA  (dark, centered)
+   ============================================================ */
+.final-cta {
+  text-align: center; position: relative; overflow: hidden;
+  padding-block: clamp(96px, 13vw, 168px);
+  background:
+    radial-gradient(ellipse 55% 60% at 50% 0%, rgba(59,110,245,0.24), transparent 62%),
+    var(--ink);
+  color: var(--on-dark);
+}
+.final-cta__title { font-family: var(--font-head); font-weight: 700; font-size: clamp(2.2rem, calc(5.5vw * var(--fl-textSize-factor, 1)), 4.3rem); line-height: 1.02; letter-spacing: -0.04em; color: #fff; max-width: 920px; margin: 0 auto 24px; }
+.final-cta__title em { color: #6f97ff; }
+.final-cta__sub { font-size: clamp(1.02rem, calc(1.8vw * var(--fl-textSize-factor, 1)), 1.22rem); color: var(--on-dark-dim); max-width: 600px; margin: 0 auto 38px; }
+.final-cta__btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 26px; }
+.final-cta__micro { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #6f97ff; }
+

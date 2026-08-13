@@ -17,15 +17,27 @@
   from the source — "SEO &amp; Content", "you'll know what's costing you".
   Autoescaping them would double-encode into &amp;amp; and &#39;. These are
   build-time authored constants in front matter, never user input.
-#}  <title>{{ pageTitle | safe }}</title>
-  <meta name="description" content="{{ pageDescription | safe }}" />
+#}{#
+  A page describes itself where it can, and falls back to the site's own
+  description where it cannot — a page that ships an empty description tag is
+  one a search engine or a link preview has to guess at, and the guess is
+  usually the first sentence of navigation. `site.description` is read the same
+  way the footer reads it: a locale key if the client declared a map, the string
+  if they declared one line.
+
+  Open Graph gets the same treatment, and now renders for every page rather than
+  only those that declared an ogTitle of their own. A shared link without a
+  title and description is a bare URL in the preview card.
+#}{% set siteDescription = site.description[locale.code] | default(site.description) %}
+{% set metaDescription = pageDescription | default(siteDescription) %}
+  <title>{{ pageTitle | safe }}</title>
+  <meta name="description" content="{{ metaDescription | safe }}" />
 {% if noindex or locale.pseudo %}  <meta name="robots" content="noindex" />
-{% endif %}{% if ogTitle %}
-  <!-- Open Graph -->
-  <meta property="og:title" content="{{ ogTitle | safe }}" />
-  <meta property="og:description" content="{{ ogDescription | safe }}" />
-  <meta property="og:type" content="{{ ogType | default("website") }}" />
 {% endif %}
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ ogTitle | default(pageTitle) | safe }}" />
+  <meta property="og:description" content="{{ ogDescription | default(metaDescription) | safe }}" />
+  <meta property="og:type" content="{{ ogType | default("website") }}" />
   <!-- Fonts — self-hosted, generated from fonts.yaml by scripts/fetch-fonts.py.
        locale.fonts points at the local stylesheet, so a non-Latin locale can
        swap in its own subset without touching this shell. -->

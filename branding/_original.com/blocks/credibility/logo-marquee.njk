@@ -1,0 +1,28 @@
+{#
+  Block         logo-marquee
+  Role          Credibility — the client logo strip
+  Kind          fragment (needs a section wrapper)
+  Surface       inherits
+  Motion        CSS marquee, 40s linear infinite, pauses on hover, flattened by reduced-motion
+  Data          /assets/logos/*.png, t.home.logos.*Alt
+  Anchor        none
+  Styles        logo-marquee.css, plus _shared/foundations.css, _shared/section.css, _shared/motion.css, _shared/reduced-motion.css, _shared/responsive.css
+  Known issues  Logo files are not in every branding directory. Six tiles are duplicated with aria-hidden to make the loop seamless — a different count needs the duplicate set and the -50% keyframe kept in step.
+  Copied from   src/pages/index.njk lines 74-89, at repo version 0.2.1
+#}
+        <div class="marquee reveal" data-delay="1">
+          <div class="marquee__track">
+            <div class="logo-tile"><img src="/assets/logos/bbk.png" alt="{{ t.home.logos.bbkAlt | safe }}" /></div>
+            <div class="logo-tile"><img src="/assets/logos/fenesta.png" alt="{{ t.home.logos.fenestaAlt | safe }}" /></div>
+            <div class="logo-tile"><img src="/assets/logos/goila.png" alt="{{ t.home.logos.goilaAlt | safe }}" /></div>
+            <div class="logo-tile"><img src="/assets/logos/myhome.png" alt="{{ t.home.logos.myhomeAlt | safe }}" /></div>
+            <div class="logo-tile"><img src="/assets/logos/naisha.png" alt="{{ t.home.logos.naishaAlt | safe }}" /></div>
+            <div class="logo-tile"><img src="/assets/logos/ziggy.png" alt="{{ t.home.logos.ziggyAlt | safe }}" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/bbk.png" alt="" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/fenesta.png" alt="" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/goila.png" alt="" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/myhome.png" alt="" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/naisha.png" alt="" /></div>
+            <div class="logo-tile" aria-hidden="true"><img src="/assets/logos/ziggy.png" alt="" /></div>
+          </div>
+        </div>

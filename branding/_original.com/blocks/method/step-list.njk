@@ -1,0 +1,61 @@
+{#
+  Block         step-list
+  Role          Method — how the work runs, start to finish
+  Kind          section (drop-in)
+  Surface       light, bordered 5-column grid
+  Motion        reveal stagger (data-delay 0..4)
+  Data          t.home.process.s1..s5*
+  Anchor        #work (named for a page, not for what the block does)
+  Styles        step-list.css, plus _shared/foundations.css, _shared/section.css, _shared/motion.css, _shared/reduced-motion.css, _shared/responsive.css
+  Known issues  Step count fixed at five by the bundle keys and by the 5-column grid.
+  Note          Closes with .section-foot, an arrow link to the page's CTA anchor.
+  Copied from   src/pages/index.njk lines 184-231, at repo version 0.2.1
+#}
+    <!-- ============ PROCESS ============ -->
+    <section class="sec process" id="work">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head__main">
+            <span class="eyebrow reveal">{{ t.home.process.eyebrow | safe }}</span>
+            <h2 class="section-title reveal" data-delay="1">{{ t.home.process.heading | safe }}</h2>
+          </div>
+        </div>
+
+        <div class="grid-table">
+          <div class="steps">
+            <div class="step reveal">
+              <span class="step__no">01</span>
+              <h3>{{ t.home.process.s1Title | safe }}</h3>
+              <p>{{ t.home.process.s1Body | safe }}</p>
+              <span class="step__time">{{ t.home.process.s1Time | safe }}</span>
+            </div>
+            <div class="step reveal" data-delay="1">
+              <span class="step__no">02</span>
+              <h3>{{ t.home.process.s2Title | safe }}</h3>
+              <p>{{ t.home.process.s2Body | safe }}</p>
+              <span class="step__time">{{ t.home.process.s2Time | safe }}</span>
+            </div>
+            <div class="step reveal" data-delay="2">
+              <span class="step__no">03</span>
+              <h3>{{ t.home.process.s3Title | safe }}</h3>
+              <p>{{ t.home.process.s3Body | safe }}</p>
+              <span class="step__time">{{ t.home.process.s3Time | safe }}</span>
+            </div>
+            <div class="step reveal" data-delay="3">
+              <span class="step__no">04</span>
+              <h3>{{ t.home.process.s4Title | safe }}</h3>
+              <p>{{ t.home.process.s4Body | safe }}</p>
+              <span class="step__time">{{ t.home.process.s4Time | safe }}</span>
+            </div>
+            <div class="step reveal" data-delay="4">
+              <span class="step__no">05</span>
+              <h3>{{ t.home.process.s5Title | safe }}</h3>
+              <p>{{ t.home.process.s5Body | safe }}</p>
+              <span class="step__time">{{ t.home.process.s5Time | safe }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-foot"><a href="#contact" class="link-arrow reveal">{{ t.home.process.link | safe }} <span>&rarr;</span></a></div>
+      </div>
+    </section>

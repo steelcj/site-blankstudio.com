@@ -10,8 +10,11 @@
     "build:brand": "python3 scripts/branding/build-brand.py",
     "build:fonts": "python3 scripts/branding/fetch-fonts.py",
     "check:brand": "python3 scripts/branding/check-brand.py",
+    "check:blocks": "python3 scripts/branding/check-blocks.py",
     "new-client": "python3 scripts/branding/new-client.py",
-    "prebuild": "python3 scripts/branding/build-brand.py && python3 scripts/branding/check-brand.py",
+    "ingress": "python3 scripts/content/ingress.py",
+    "test:ingress": "python3 scripts/content/test_ingress.py",
+    "prebuild": "python3 scripts/branding/check-brand.py && python3 scripts/branding/build-brand.py",
     "build:pseudo": "PSEUDO=1 eleventy --serve"
   },
   "devDependencies": {

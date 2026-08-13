@@ -1,0 +1,11 @@
+/*
+   Shared        Flattens every animation, transition and reveal under prefers-reduced-motion. Ship this with any block that moves.
+   Copied from   src/css/home.css lines 566-572, at repo version 0.2.1
+ */
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+  .hero__title .line > span { transform: none; }
+}

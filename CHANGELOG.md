@@ -10,6 +10,8 @@ Repository versions are independent of the document versions under
 
 ## [Unreleased]
 
+## [0.2.2] - 2026-08-12
+
 ### Added
 
 - Menu derived from the client's content tree. `src/_data/menu.js` reads the

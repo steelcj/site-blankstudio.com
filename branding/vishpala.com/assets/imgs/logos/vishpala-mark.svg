@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
+<svg aria-labelledby="mark-title" xml:lang="en"
    width="100%"
    viewBox="0 0 456.8 456.8"
    role="img"
@@ -15,6 +15,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title id="mark-title">Vishpala</title>
   <defs
      id="defs4" />
   <sodipodi:namedview

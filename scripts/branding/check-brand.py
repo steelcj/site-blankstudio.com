@@ -16,6 +16,8 @@ Errors (exit 1, fail the build):
 Warnings (reported, do not fail the build):
   - a file site.yaml's `logos` block points at is absent from the client's
     assets directory
+  - fonts.yaml's `tokens` and `families` disagree: a face the site is set in
+    that nothing downloads, or a download nothing is set in
 
 Optional fields (phone numbers, social accounts) are not required: the footer
 and contact page render whatever is present, so their absence is never an error.
@@ -271,6 +273,112 @@ def check_assets(client_dir: str, site_cfg: dict, warnings: list) -> None:
             )
 
 
+# ── fonts.yaml: do the type tokens and the download list agree? ──────────────
+
+# Family names that need no `families` entry: the CSS generic keywords, and the
+# faces a reader's own device already supplies. A token naming one of these is a
+# deliberate choice — the system-fonts recipe in branding/_template/assets/
+# README.md is exactly this — not a forgotten download.
+#
+# Some entries here (Roboto, Ubuntu, Noto Sans, …) are also downloadable from
+# Google. They stay on the list because they are load-bearing in the canonical
+# system stack `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, …`, and
+# warning about that stack would be wrong far more often than right. The cost is
+# that a client who means to *download* one of them and forgets is not warned;
+# the reader still gets the face on the platforms that ship it.
+SYSTEM_FAMILIES = {
+    # CSS generic families and keywords
+    "serif", "sans-serif", "monospace", "cursive", "fantasy", "math", "emoji",
+    "fangsong", "system-ui", "ui-serif", "ui-sans-serif", "ui-monospace",
+    "ui-rounded", "inherit", "initial", "revert", "unset",
+    # platform UI faces
+    "-apple-system", "blinkmacsystemfont", "segoe ui", "segoe ui variable",
+    "roboto", "ubuntu", "cantarell", "oxygen", "fira sans", "droid sans",
+    "noto sans", "helvetica neue", "helvetica", "arial", "arial black",
+    "lucida grande", "tahoma", "verdana", "trebuchet ms", "impact",
+    "comic sans ms", "georgia", "times new roman", "times", "palatino",
+    "garamond", "cambria",
+    # monospace faces
+    "sfmono-regular", "sf mono", "menlo", "monaco", "consolas", "courier new",
+    "courier", "liberation mono", "andale mono", "dejavu sans mono",
+    "roboto mono", "lucida console",
+    # emoji faces, which appear at the tail of many stacks
+    "apple color emoji", "segoe ui emoji", "segoe ui symbol",
+    "noto color emoji",
+}
+
+
+def _norm(name: str) -> str:
+    """Fold a family name for comparison: case and inner spacing do not matter.
+
+    Browsers match font-family names case-insensitively, so `Inter Tight` and
+    `inter tight` name the same face and neither is a bug worth reporting. A
+    wrong-cased name in `families` is a different matter, but it fails loudly at
+    the provider when build:fonts runs, which is where it belongs.
+    """
+    return " ".join(str(name).split()).casefold()
+
+
+def stack_families(stack) -> list:
+    """The family names in one CSS font stack, in order, quotes stripped."""
+    return [part.strip().strip("'\"").strip()
+            for part in str(stack or "").split(",")
+            if part.strip().strip("'\"").strip()]
+
+
+def check_fonts_yaml(client_dir: str, warnings: list) -> None:
+    """Warn when what the site is SET in and what it DOWNLOADS disagree.
+
+    fonts.yaml answers two questions — `tokens` (the CSS stacks, generated into
+    brand.css by build-brand.py) and `families` (what fetch-fonts.py downloads).
+    Nothing else compares them, and neither way of getting it wrong announces
+    itself: an undownloaded face silently falls through to the next font in the
+    stack, and an unnamed download ships to every reader unused.
+
+    Warnings rather than errors, because a token naming a face nobody downloads
+    is legitimate — that is what a system-font site is.
+    """
+    path = os.path.join(client_dir, "fonts.yaml")
+    if not os.path.isfile(path):
+        # build-brand.py falls back to the template's Inter/Space Mono stacks,
+        # which nothing then downloads — the silent-fallback case, by omission.
+        warnings.append(
+            "fonts.yaml is missing; the type tokens fall back to the template's "
+            "webfont stacks, which no `families` entry downloads"
+        )
+        return
+
+    with open(path, "r", encoding="utf-8") as fh:
+        cfg = yaml.safe_load(fh) or {}
+
+    downloaded = {}
+    for entry in cfg.get("families") or []:
+        if isinstance(entry, dict) and entry.get("name"):
+            downloaded[_norm(entry["name"])] = entry["name"]
+
+    tokens = cfg.get("tokens") or {}
+    set_in = {}
+    for slot in ("head", "body", "mono"):
+        for name in stack_families(tokens.get(slot)):
+            if _norm(name) not in SYSTEM_FAMILIES:
+                set_in.setdefault(_norm(name), (name, slot))
+
+    for key, (name, slot) in sorted(set_in.items()):
+        if key not in downloaded:
+            warnings.append(
+                f"fonts.yaml tokens.{slot} is set in {name!r}, but no `families` "
+                "entry downloads it — readers get the next font in the stack "
+                "instead, and the page looks fine while being wrong"
+            )
+
+    for key, name in sorted(downloaded.items()):
+        if key not in set_in:
+            warnings.append(
+                f"fonts.yaml downloads {name!r}, but no `tokens` stack names it "
+                "— every reader pays for a face the site never shows"
+            )
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Validate the active client's branding config.")
     ap.add_argument("--no-prompt", action="store_true",
@@ -291,6 +399,7 @@ def main() -> int:
     check_brand_yaml(client_dir, errors)
     site_cfg = check_site_yaml(client_dir, errors)
     check_assets(client_dir, site_cfg, warnings)
+    check_fonts_yaml(client_dir, warnings)
 
     for w in warnings:
         print(f"[check:brand] warning ({client}): {w}")

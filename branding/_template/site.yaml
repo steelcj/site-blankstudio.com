@@ -10,10 +10,27 @@
 # network (github, facebook, linkedin, x, youtube, …) makes it appear with no
 # template change. Each social entry is { url, label }.
 
+# ── The verbal identity ──────────────────────────────────────────────────────
+#
+# The three fields below are what this organisation calls itself, and they are
+# the only place any of it is written down. Everything that shows a name, a
+# slogan or a boilerplate sentence reads them from here: the copyright line, the
+# footer paragraph, a page with no meta description of its own, and the text
+# alternative on the logo.
+#
+# The rule that keeps them honest is that nothing copies them. A slogan pasted
+# into a locale bundle, or drawn into an SVG, is a second copy that this file
+# can no longer correct — which is exactly how a rebranded site went on calling
+# itself by its old name in the one string a screen reader reads aloud. If you
+# find a name or a slogan written anywhere else, that place is the defect.
+#
+# See `assets/README.md` for what this means for a logo file specifically.
+
 name: "Example Studio"                    # TODO: the name in the copyright line
 
-# The line beside the copyright. One string when the same words serve every
-# language — most taglines are a brand asset, not a sentence to translate:
+# The slogan — the line beside the copyright. One string when the same words
+# serve every language — most taglines are a brand asset, not a sentence to
+# translate:
 #
 #   tagline: "Strategy. Design. Impact."
 #
@@ -36,13 +53,41 @@ description: "Example Studio builds things for people who need them."
 url: "https://www.example.com"            # TODO: the client's canonical site URL
 publicationTimeZone: "America/Toronto"    # TODO: the client's publication timezone
 
+# Optional — the loading screen: the logo and progress bar that cover the page
+# on first paint, then fade. It is decorative, not a real progress indicator —
+# it dismisses on a fixed timer once the page has loaded — so it is a brand
+# choice, not a performance one. Defaults to true when omitted.
+#
+# Set false to drop it site-wide; the markup is then never emitted, so there is
+# no hidden overlay left behind. A single page can go the other way with
+# `showLoader: true` (or false) in its own front matter, which wins over this.
+showLoader: false
+
 # Optional — override the logo/favicon paths (any filename or format: SVG, PNG,
 # …). Defaults to the .png slots below if omitted. Files live in this client's
 # assets/ directory.
+#
+# `alt` is the mark's text alternative — what a screen reader speaks for the
+# logo link, and what a reader sees when the image does not load. Leave it out
+# and the header and footer build the string themselves, from `name` above and
+# the locale bundle's pattern: "Example Studio home" in English, "Accueil
+# Example Studio" in French. That is the right answer for a mark that reads as
+# the organisation's name, which is nearly all of them.
+#
+# Declare it only when the mark carries words the name does not — an
+# abbreviation, a former name, a mark with a slogan drawn into it. Takes the
+# same two shapes as `tagline`: one string, or a map keyed by locale.
+#
+#   alt: "ES — Example Studio"
+#
+#   alt:
+#     en-ca: "Example Studio, home"
+#     fr-ca: "Example Studio, accueil"
 # logos:
 #   dark: "/assets/logo-lockup-dark.png"     # dark mark, light backgrounds
 #   light: "/assets/logo-lockup.png"         # light mark, dark footer
 #   favicon: "/assets/favicon.png"
+#   alt: "Example Studio"
 
 # Optional — the primary menu. The menu items themselves are the sections in
 # this client's content tree (src/content/<locale>/ under this directory), so a

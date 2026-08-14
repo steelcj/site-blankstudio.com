@@ -1,0 +1,44 @@
+{#
+  Block         split-pillars
+  Role          Position — what the studio holds to
+  Kind          section (drop-in)
+  Surface       dark (.sec--dark.on-dark) — the page's one dark block
+  Motion        reveal stagger
+  Data          home.why.*, whyCtaUrl
+  Anchor        #position
+  Styles        src/css/home.css
+
+  Copied from   branding/_original.com/blocks/position/split-pillars.njk at repo
+                version 0.2.2, with three changes:
+
+                1. Copy reads `home.why.*` off the page's front matter rather
+                   than `t.home.why.*` off the locale bundle.
+                2. The pillars are a loop. The library block fixes the count at
+                   three through the bundle keys p1..p3; the page states four
+                   commitments, and .why__list is a bordered stack that takes
+                   any number.
+                3. The button URL is passed in rather than read from
+                   `urls.freeAudit`, which is not a page that is built.
+
+  The anchor is #position, not the library block's #about. The old id was named
+  for a page rather than for what the block does, and /en-ca/about/ is now a
+  real page — an in-page anchor sharing its name is a trap for the next reader.
+#}
+    <!-- ============ POSITION (dark) ============ -->
+    <section class="sec sec--dark on-dark why" id="position">
+      <div class="container why__grid">
+        <div class="why__intro">
+          <span class="eyebrow reveal">{{ home.why.eyebrow | safe }}</span>
+          <h2 class="section-title reveal" data-delay="1">{{ home.why.titleLine1 | safe }} <em>{{ home.why.titleEm | safe }}</em></h2>
+          <p class="reveal" data-delay="2">{{ home.why.body | safe }}</p>
+{% if whyCtaUrl %}          <a href="{{ whyCtaUrl }}" class="btn btn--outline reveal" data-delay="2">{{ home.why.cta | safe }}</a>
+{% endif %}        </div>
+        <div class="why__list">
+{% for pillar in home.why.pillars %}          <div class="pillar reveal"{% if not loop.first %} data-delay="{{ loop.index0 }}"{% endif %}>
+            <span class="pillar__no">P/{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+            <h3>{{ pillar.title | safe }}</h3>
+            <p>{{ pillar.body | safe }}</p>
+          </div>
+{% endfor %}        </div>
+      </div>
+    </section>

@@ -50,8 +50,29 @@
   <!-- ============ NAVIGATION ============ -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
-      <a href="{{ homeHref }}" class="nav__logo" aria-label="{{ t.common.nav.logoAria | safe }}">
-        <img src="{{ site.logos.dark }}" alt="{{ t.common.nav.logoAlt | safe }}" />
+{#
+  The logo link's text alternative — one string, where there were two.
+
+  An aria-label on this link used to sit beside the image's alt. The label wins:
+  it replaces the accessible name the link's contents would give it, so the alt
+  was never spoken and the two strings could disagree with nobody noticing. The
+  alt alone now names the link, and it is also what a reader sees if the image
+  does not load.
+
+  The brand supplies the name, the bundle supplies the words around it. They
+  cannot be joined by the template, because the two languages do not order them
+  the same way: "Vishpala home", but "Accueil Vishpala". So the bundle holds the
+  pattern and {name} is substituted, the way final-cta.njk substitutes {phone}.
+
+  A client whose mark reads something other than its name overrides the whole
+  string with `logos.alt` in site.yaml — one line, or a map keyed by locale.
+
+  Not marked | safe: this is an attribute value, so a name containing & or a
+  quote must be escaped rather than passed through.
+#}
+{% set logoAlt = site.logos.alt[locale.code] | default(site.logos.alt) | default(t.common.nav.logoHome | replace("{name}", site.name)) %}
+      <a href="{{ homeHref }}" class="nav__logo">
+        <img src="{{ site.logos.dark }}" alt="{{ logoAlt }}" />
       </a>
       <nav class="nav__links" aria-label="{{ t.common.nav.primaryAria | safe }}">
 {% for item in menu[locale.code] %}{% set label = t.common.nav[item.labelKey] if item.labelKey else item.label %}{% set href = homeHref if item.key == "home" else item.url %}{% set isActive = (pageKey and (item.key == pageKey or item.routeKey == pageKey)) or (item.url != urls.home and page.url.startsWith(item.url)) %}        <a href="{{ href }}"{% if isActive %} class="is-active"{% endif %}>{{ label | safe }}</a>

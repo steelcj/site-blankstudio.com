@@ -1,0 +1,60 @@
+{#
+  Block         hero-split
+  Role          Statement — the claim, and the two primary actions
+  Kind          section (drop-in)
+  Surface       light
+  Motion        load-in (js/main.js adds .is-in after 300ms), reveal stagger on children
+  Data          home.hero.*, home.spec.*, heroCta1Url, heroCta2Url
+  Anchor        #hero
+  Styles        src/css/home.css
+
+  Copied from   branding/_original.com/blocks/statement/hero-split.njk at repo
+                version 0.2.2, with three changes and no change to the markup:
+
+                1. Copy reads `home.*` off the page's front matter rather than
+                   `t.home.*` off the locale bundle. The bundle is not part of
+                   the content tree — ingress does not carry it and the CMS
+                   cannot reach it — so a home page whose words live there is
+                   not content driven in the way the rest of the site is.
+                2. The two button URLs are passed in rather than read from
+                   `urls.contact` and `urls.freeAudit`. Those routes still
+                   resolve to /en-ca/contact/ and /en-ca/free-audit/, neither
+                   of which is built any more.
+                3. The studio name in the facts panel reads `site.name` rather
+                   than the literal "BLNK Studio".
+#}
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="eyebrow reveal">{{ home.hero.eyebrow | safe }}</span>
+          <h1 class="h-xl hero__title">
+{% for line in home.hero.titleLines %}              <span class="line"><span>{{ line | safe }}</span></span>
+{% endfor %}            </h1>
+          <p class="hero__sub reveal" data-delay="1">
+            {{ home.hero.sub | safe }}
+          </p>
+          <p class="hero__body reveal" data-delay="2">
+            {{ home.hero.body | safe }}
+          </p>
+          <div class="hero__cta reveal" data-delay="3">
+            <a href="{{ heroCta1Url }}" class="btn btn--primary btn--lg">{{ home.hero.ctaPrimary | safe }}</a>
+            <a href="{{ heroCta2Url }}" class="btn btn--outline btn--lg">{{ home.hero.ctaSecondary | safe }}</a>
+          </div>
+          <p class="hero__micro reveal" data-delay="4">{{ home.hero.micro | safe }}</p>
+        </div>
+
+        <!-- Spec panel -->
+        <dl class="spec reveal" data-delay="2">
+          <div class="spec__head"><span>{{ site.name }}</span><span>{{ home.spec.version | safe }}</span></div>
+{% for row in home.spec.rows %}          <div class="spec__row"><dt>{{ row.key | safe }}</dt><dd{% if loop.first %} class="ok"{% endif %}>{{ row.value | safe }}</dd></div>
+{% endfor %}          <div class="spec__ship">
+            <p class="spec__ship-label">{{ home.spec.shippingKey | safe }}</p>
+            <ul>
+{% for item in home.spec.shipping %}              <li>{{ item | safe }}</li>
+{% endfor %}            </ul>
+          </div>
+        </dl>
+      </div>
+    </section>

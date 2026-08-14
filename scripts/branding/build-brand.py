@@ -164,10 +164,27 @@ def render_site(cfg: dict) -> str:
         "light": logos_in.get("light", "/assets/logo-lockup.png"),
         "favicon": logos_in.get("favicon", "/assets/favicon.png"),
     }
+    # The mark's text alternative, when the mark does not read as the name.
+    #
+    # Omitted by nearly every client: the header and footer then name the logo
+    # link from the locale bundle's pattern with `name` substituted into it —
+    # "Vishpala home" in English, "Accueil Vishpala" in French. A client needs
+    # this field only when the mark carries words its name does not, and then
+    # the string here replaces the pattern outright.
+    #
+    # Passed through in whichever shape it was authored, like `tagline`: one
+    # string when the mark reads the same to every reader, or a map keyed by
+    # locale when it does not.
+    if logos_in.get("alt"):
+        logos["alt"] = logos_in["alt"]
 
     out = {
         "url": cfg["url"],
         "publicationTimeZone": cfg["publicationTimeZone"],
+        # The full-screen logo splash on first paint. Site-wide default; a page
+        # overrides it with `showLoader:` in its front matter. Defaults to on,
+        # which is what the template shipped before it was a setting.
+        "showLoader": bool(cfg.get("showLoader", True)),
         # The name in the copyright line, and the tagline beside it. Both are
         # facts about the brand rather than translatable template copy, which is
         # why they live in the client's config and not in the locale bundles.

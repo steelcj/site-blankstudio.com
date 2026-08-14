@@ -159,6 +159,45 @@ module.exports = function (eleventyConfig) {
     });
   }
 
+  // One content collection per locale: every page in that language's tree.
+  // The blocks on a designed page read this rather than a hand-written list,
+  // so adding a directory under content/<locale>/ adds a card — the same rule
+  // that already governs the menu.
+  for (const locale of locales.list) {
+    eleventyConfig.addCollection(`content_${locale.code}`, function (api) {
+      return api
+        .getFilteredByGlob(`src/content/${locale.code}/**/*.md`)
+        .filter((p) => p.data.draft !== true);
+    });
+  }
+
+  // The page at a path inside a locale tree, e.g. "areas" or "about/contact".
+  // Templates ask for a place in the content tree and get whatever URL that
+  // place resolves to, so a localized slug never has to be written into a
+  // template. Returns undefined when the page is not built, which is what lets
+  // a caller leave a link out rather than emit one that 404s.
+  eleventyConfig.addFilter("byPath", function (pages, relPath) {
+    if (!pages || !relPath) return undefined;
+    const tail = `/${relPath.replace(/^\/|\/$/g, "")}/`;
+    return pages.find((p) => p.url && p.url.endsWith(tail));
+  });
+
+  // The pages one level below a parent URL — the children of a section, not
+  // its whole subtree. Ordered by an optional `order` in front matter, then by
+  // title, so a section can fix its own sequence without the template knowing
+  // anything about it.
+  eleventyConfig.addFilter("childrenOf", function (pages, parentUrl) {
+    if (!pages || !parentUrl) return [];
+    return pages
+      .filter((p) => p.url && p.url !== parentUrl && p.url.startsWith(parentUrl))
+      .filter((p) => !p.url.slice(parentUrl.length).replace(/\/$/, "").includes("/"))
+      .sort(
+        (a, b) =>
+          (a.data.order || 0) - (b.data.order || 0) ||
+          (a.data.title || "").localeCompare(b.data.title || "")
+      );
+  });
+
   // Pick the post flagged "featured" in the dashboard, else the newest.
   eleventyConfig.addFilter("pickFeatured", function (posts) {
     if (!posts || !posts.length) return null;

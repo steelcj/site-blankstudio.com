@@ -95,9 +95,18 @@
   <!-- Cursor glow -->
   <div class="cursor-glow" aria-hidden="true"></div>
 
-{% if showLoader != false %}  <!-- Page loader -->
+{# Loader: site.showLoader is the site-wide default; a page can override it
+   with `showLoader: true/false` in its front matter. #}
+{% set loaderOn = showLoader if showLoader is defined else site.showLoader %}
+{% if loaderOn %}  <!-- Page loader -->
   <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader__mark"><img src="{{ site.logos.dark }}" alt="{{ t.common.nav.logoAlt | safe }}" /></div>
+{#
+      The splash mark is decorative: the whole loader is aria-hidden, so no
+      alt text here is ever announced, and the page's real logo is in the nav
+      immediately below it. alt="" is the honest answer, and it keeps the
+      studio's name from being written down a third time.
+    #}
+    <div class="loader__mark"><img src="{{ site.logos.dark }}" alt="" /></div>
     <div class="loader__bar"><span></span></div>
   </div>
 {% endif %}

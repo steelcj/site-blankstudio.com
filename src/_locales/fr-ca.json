@@ -11,8 +11,7 @@
   "common": {
     "nav": {
       "primaryAria": "Principale",
-      "logoAria": "Accueil BLNK Studio",
-      "logoAlt": "BLNK Studio - Strategy. Design. Impact.",
+      "logoHome": "Accueil {name}",
       "toggleAria": "Ouvrir le menu",
       "home": "Accueil",
       "about": "À propos",

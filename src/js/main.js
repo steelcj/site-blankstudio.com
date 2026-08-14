@@ -1,5 +1,5 @@
 /* ============================================================
-   BLNK STUDIO - Home interactions
+   VISHPALA STUDIO - Home interactions
    ============================================================ */
 (function () {
   "use strict";

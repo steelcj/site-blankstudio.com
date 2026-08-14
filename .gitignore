@@ -1,6 +1,10 @@
 # Dependencies
 node_modules/
 
+# resume file
+
+resume.md
+
 # dist used by releases
 
 dist/
@@ -12,6 +16,11 @@ _site/
 .DS_Store
 Thumbs.db
 __pycache__/
+
+# Claude Code's working directory: machine-local settings, session notes, and
+# generated summaries. Local to whoever is at the keyboard, not part of the site.
+.claude/
+CLAUDE.md*
 
 # A working copy of src/ kept on disk while the site was rebuilt from content.
 src-old/

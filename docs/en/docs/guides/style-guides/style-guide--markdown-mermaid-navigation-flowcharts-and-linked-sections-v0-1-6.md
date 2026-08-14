@@ -1,6 +1,6 @@
 ---
 dc:title: "Style Guide: Markdown Mermaid Navigation Flowcharts and Linked Sections"
-dcterms:version: "0.1.2"
+dcterms:version: "0.1.6"
 dc:creator: "Christopher Steel"
 dc:contributor: "Claude (Anthropic)"
 dc:subject:
@@ -30,7 +30,7 @@ sat:uuid: ""
 sat:version_at_creation: ""
 sat:migration_status: pre-sat
 sat:changelog:
-  - version: "0.1.2"
+  - version: "0.1.6"
     date: "2026-08-14"
     author: "Christopher Steel"
     notes: >
@@ -74,7 +74,7 @@ sat:changelog:
 
 # Style Guide: Markdown Mermaid Navigation Flowcharts and Linked Sections
 
-Version: 0.1.2
+Version: 0.1.6
 Status: Draft
 Style Guide: style-guide--plain-language-for-general-audiences
 
@@ -562,6 +562,6 @@ Is the way you feel as a result of the quality of all three of these relations w
 
 | Version | Status | Notes |
 |---------|--------|-------|
-| 0.1.2 | Draft | Removed explicit `<a name>` anchors for headings and the chart throughout, relying on the renderer's auto-generated heading anchors instead; reworked the chart-heading and section-heading sections, the three parts, the sync checklist, the Accessibility notes paragraph, and the complete example; kept explicit anchors only for the two APA citation-pair anchors |
+| 0.1.6 | Draft | Removed explicit `<a name>` anchors for headings and the chart throughout, relying on the renderer's auto-generated heading anchors instead; reworked the chart-heading and section-heading sections, the three parts, the sync checklist, the Accessibility notes paragraph, and the complete example; kept explicit anchors only for the two APA citation-pair anchors |
 | 0.1.1 | Draft | Reformatted chart examples to show the Mermaid source then a rendered chart; reworked the chart-anchor and complete examples; converted the click-target snippet to a source-only block to avoid a parse error; added a Chart Example Resources group with working targets and return links; renamed to the markdown-mermaid identifier and bumped the version |
 | 0.1.0 | Draft | Initial draft; codifies the clickable navigation flowchart pattern from framework/dimensions.md and the shape of the sections it links to |

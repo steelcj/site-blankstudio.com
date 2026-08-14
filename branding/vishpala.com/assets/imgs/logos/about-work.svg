@@ -1,4 +1,6 @@
-<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vishpala — De Stijl composition">
+<svg aria-labelledby="about-work-title about-work-desc" xml:lang="en" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title id="about-work-title">Vishpala</title>
+  <desc id="about-work-desc">A De Stijl composition: rectangles of blue, yellow and red, divided by black rules.</desc>
   <rect width="1600" height="900" fill="#ffffff"/>
   <rect x="0" y="0" width="620" height="540" fill="#0033cc"/>
   <rect x="0" y="560" width="380" height="340" fill="#f2c200"/>

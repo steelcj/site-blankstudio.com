@@ -1,0 +1,63 @@
+{#
+  Block         card-grid
+  Role          Catalogue — the pages under one section
+  Kind          section (drop-in, used more than once per page)
+  Surface       light, bordered table grid
+  Motion        reveal stagger (data-delay 0,1,2 per row)
+  Anchor        cardsId
+  Styles        src/css/home.css
+
+  Set these before including, since a Nunjucks include shares the page's
+  context and this block appears twice on the home page:
+
+    cardsId          the section anchor
+    cardsEyebrow     the small label above the heading
+    cardsTitleLine1  heading, before the emphasised words
+    cardsTitleEm     heading, the emphasised words
+    cardsTitleLine2  heading, after the emphasised words (may be empty)
+    cardsLinkLabel   the arrow link in the section head
+    cardsLinkUrl     where that arrow link goes
+    cardsItems       the pages to card, from `childrenOf`
+    cardsCta         the per-card link label
+
+  Copied from   branding/_original.com/blocks/catalogue/card-grid.njk at repo
+                version 0.2.2, with the card list rewritten:
+
+                1. The seven hand-written cards are a loop. The library block
+                   fixes the count at seven through the bundle keys c1..c7 and
+                   the literal "01 / 07" labels; the content tree decides the
+                   count here, and the labels count themselves.
+                2. A card links to the page it describes. Every card in the
+                   library block links to `site.contact.whatsapp`, which is
+                   undefined for a client whose site.yaml declares no whatsapp
+                   entry and renders as href="".
+                3. Title and text come from the page's own `title` and
+                   `description`, so a card cannot fall out of step with the
+                   page it points at.
+                4. The .s-card--wide seventh card is dropped. It existed to
+                   close a row of seven in a three-column grid; a loop of any
+                   length has no seventh card to special-case.
+#}
+    <!-- ============ {{ cardsId | upper }} ============ -->
+    <section class="sec services" id="{{ cardsId }}">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-head__main">
+            <span class="eyebrow reveal">{{ cardsEyebrow | safe }}</span>
+            <h2 class="section-title reveal" data-delay="1">{{ cardsTitleLine1 | safe }} <em>{{ cardsTitleEm | safe }}</em> {{ cardsTitleLine2 | safe }}</h2>
+          </div>
+{% if cardsLinkUrl %}          <a href="{{ cardsLinkUrl }}" class="link-arrow reveal" data-delay="1">{{ cardsLinkLabel | safe }} <span>&rarr;</span></a>
+{% endif %}        </div>
+
+        <div class="grid-table">
+          <div class="services__grid">
+{% for item in cardsItems %}            <article class="s-card reveal"{% if loop.index0 % 3 %} data-delay="{{ loop.index0 % 3 }}"{% endif %}>
+              <span class="s-card__no">{% if loop.index < 10 %}0{% endif %}{{ loop.index }} / {% if cardsItems.length < 10 %}0{% endif %}{{ cardsItems.length }}</span>
+              <h3>{{ item.data.title | safe }}</h3>
+              <p>{{ item.data.description | safe }}</p>
+              <a href="{{ item.url }}" class="s-card__link">{{ cardsCta | safe }} <span>&rarr;</span></a>
+            </article>
+{% endfor %}          </div>
+        </div>
+      </div>
+    </section>

@@ -34,7 +34,7 @@ to promote the change up into canonical, not to hand-edit it here.
 | --- | --- | --- |
 | `brand.yaml` | The colour palette (grouped tokens) | `src/css/brand.css` |
 | `fonts.yaml` | Webfont families, weights, subsets | `src/css/fonts.css` + `src/assets/fonts/` |
-| `site.yaml` | URL, timezone, contact, social | `src/_data/site.json` |
+| `site.yaml` | URL, timezone, contact, social, loading screen | `src/_data/site.json` |
 | `assets/` | Logo, favicon, imagery, proof logos | copied to `/assets/` |
 
 Required values are `url`, `publicationTimeZone`, and `contact.email`, plus the full colour palette. Phones and social accounts are optional — templates render whatever is present. See the [Asset Specification](../docs/en/docs/guides/branding/asset-specification--branding-images-slots-and-social-v0-1-0.md) for the image slots.

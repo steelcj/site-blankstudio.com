@@ -19,8 +19,15 @@
   <footer class="footer on-dark">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <a href="{{ homeHref }}" class="footer__logo" aria-label="{{ t.common.nav.logoAria | safe }}">
-          <img src="{{ site.logos.light }}" alt="{{ t.common.nav.logoAlt | safe }}" />
+{#
+  The same one string as the header logo, resolved the same way — see the note
+  in nav.njk for why the aria-label went and why {name} is substituted rather
+  than joined. Two links to the same page carrying the same accessible name is
+  the intended result: WCAG asks for consistent identification, not variety.
+#}
+{% set logoAlt = site.logos.alt[locale.code] | default(site.logos.alt) | default(t.common.nav.logoHome | replace("{name}", site.name)) %}
+        <a href="{{ homeHref }}" class="footer__logo">
+          <img src="{{ site.logos.light }}" alt="{{ logoAlt }}" />
         </a>
 {#
   What the organisation does, from the client's config — the same string a page

@@ -1,0 +1,25 @@
+---
+dc:title: "About"
+dc:creator:
+  - "Christopher Steel"
+dc:subject:
+  - "company"
+  - "team"
+dc:description: "Who we are and what we do."
+dc:publisher: "UniversalCake"
+dc:contributor: []
+dc:date.created: "2026-08-14"
+dc:date.modified: "2026-08-14"
+dc:date.valid: ""
+dc:type: "Text"
+dc:format: "text/markdown"
+dc:identifier:
+  - "urn:uuid:550e8400-e29b-41d4-a716-446655440000"
+  - "about"
+sat:work: "urn:uuid:6f9619ff-8b86-d011-b42d-00c04fc964ff"
+dc:source: ""
+dc:language: "en-CA"
+dc:relation: []
+dc:coverage: ""
+dc:rights: "Copyright 2026 Christopher Steel / UniversalCake."
+---

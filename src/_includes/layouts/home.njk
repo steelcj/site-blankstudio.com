@@ -1,0 +1,84 @@
+{#
+  The designed home page: the block composition, and nothing else.
+
+  A page opts into this layout instead of layouts/page.njk. The words are not
+  here — they are in the `home:` block of the page's own front matter, so the
+  home page is a content file like every other page in the tree, and a second
+  locale gets a second content file rather than a second template.
+
+  Nothing in this file names a URL. Sections are looked up in the locale's
+  content collection by their place in the tree (`byPath`), and their cards are
+  the pages one level below them (`childrenOf`). Adding a directory under
+  content/<locale>/areas/ adds a card, which is the rule the menu already
+  follows. A section that is not built resolves to undefined, and the block that
+  needs it is skipped rather than rendering a link to nothing.
+
+  Blocks are copies taken from branding/_original.com/blocks/. Nothing keeps the
+  two in step; each copy's header records what was changed and why.
+#}
+{% extends "layouts/base.njk" %}
+
+{% block body %}
+{# The locale's own pages. Every lookup below runs against this one list. #}
+{% set pages = collections["content_" + locale.code] %}
+
+{% set areasPage = pages | byPath("areas") %}
+{% set resourcesPage = pages | byPath("resources") %}
+{% set projectsPage = pages | byPath("projects") %}
+{% set aboutPage = pages | byPath("about") %}
+{% set contactPage = pages | byPath("about/contact") %}
+
+{# ── Statement ─────────────────────────────────────────────────────────── #}
+{% set heroCta1Url = contactPage.url %}
+{% set heroCta2Url = areasPage.url %}
+{% include "blocks/statement/hero-split.njk" %}
+
+{# ── Catalogue: the disciplines ────────────────────────────────────────── #}
+{% if areasPage %}
+{% set cardsId = "areas" %}
+{% set cardsEyebrow = home.areas.eyebrow %}
+{% set cardsTitleLine1 = home.areas.titleLine1 %}
+{% set cardsTitleEm = home.areas.titleEm %}
+{% set cardsTitleLine2 = home.areas.titleLine2 %}
+{% set cardsLinkLabel = home.areas.link %}
+{% set cardsLinkUrl = areasPage.url %}
+{% set cardsCta = home.areas.cardCta %}
+{% set cardsItems = pages | childrenOf(areasPage.url) %}
+{% include "blocks/catalogue/card-grid.njk" %}
+{% endif %}
+
+{# ── Position ──────────────────────────────────────────────────────────── #}
+{% set whyCtaUrl = aboutPage.url %}
+{% include "blocks/position/split-pillars.njk" %}
+
+{# ── Catalogue: what the practice publishes ────────────────────────────── #}
+{% if resourcesPage %}
+{% set cardsId = "resources" %}
+{% set cardsEyebrow = home.resources.eyebrow %}
+{% set cardsTitleLine1 = home.resources.titleLine1 %}
+{% set cardsTitleEm = home.resources.titleEm %}
+{% set cardsTitleLine2 = home.resources.titleLine2 %}
+{% set cardsLinkLabel = home.resources.link %}
+{% set cardsLinkUrl = resourcesPage.url %}
+{% set cardsCta = home.resources.cardCta %}
+{% set cardsItems = pages | childrenOf(resourcesPage.url) %}
+{% include "blocks/catalogue/card-grid.njk" %}
+{% endif %}
+
+{# ── Conversion ────────────────────────────────────────────────────────── #}
+{#
+  final-cta.njk is the one block that was already a shared partial, so this
+  page includes it where it stands rather than taking a second copy. Both
+  button URLs are passed explicitly: the partial's own defaults fall back to
+  urls.contact and urls.freeAudit, neither of which is a page that is built.
+#}
+{% set ctaId = "contact" %}
+{% set ctaTitle = home.cta.title %}
+{% set ctaSub = home.cta.sub %}
+{% set ctaBtn1Label = home.cta.btn1Label %}
+{% set ctaBtn1Href = contactPage.url %}
+{% set ctaBtn2Label = home.cta.btn2Label %}
+{% set ctaBtn2Href = projectsPage.url %}
+{% set ctaMicro = home.cta.micro %}
+{% include "partials/final-cta.njk" %}
+{% endblock %}

@@ -1,0 +1,59 @@
+# src/content/en-ca/about.md
+---
+dc:title: "About"
+dc:creator:
+  - "Christopher Steel"
+dc:subject:
+  - "company"
+  - "team"
+dc:description: "Who we are and what we do."
+dc:publisher: "UniversalCake"
+dc:contributor:
+  - "Claude (Anthropic)"
+dc:date:
+  created: "2026-08-14"
+  modified: "2026-08-14"
+  valid: ""
+dc:type: "Text"
+dc:format: "text/markdown"
+dc:identifier:
+  - "urn:uuid:550e8400-e29b-41d4-a716-446655440000"
+  - "about"
+dc:source: "urn:uuid:8f14e45f-ceea-467e-bd82-fceaa1315a26"
+dc:language: "en-CA"
+dc:relation:
+  sat:
+    work: "urn:uuid:6f9619ff-8b86-d011-b42d-00c04fc964ff"
+dc:coverage: ""
+dc:rights: "Copyright 2026 Christopher Steel / UniversalCake."
+---
+
+# src/content/fr-ca/a-propos.md
+---
+dc:title: "À propos"
+dc:creator:
+  - "Christopher Steel"
+dc:subject:
+  - "entreprise"
+  - "équipe"
+dc:description: "Qui nous sommes et ce que nous faisons."
+dc:publisher: "UniversalCake"
+dc:contributor:
+  - "Claude (Anthropic)"
+dc:date:
+  created: "2026-08-14"
+  modified: "2026-08-14"
+  valid: ""
+dc:type: "Text"
+dc:format: "text/markdown"
+dc:identifier:
+  - "urn:uuid:a1b2c3d4-1234-5678-9abc-def012345678"
+  - "a-propos"
+dc:source: "urn:uuid:2c1a9e3d-6b47-4f8a-9c3e-7d5b1a8f4e21"
+dc:language: "fr-CA"
+dc:relation:
+  sat:
+    work: "urn:uuid:6f9619ff-8b86-d011-b42d-00c04fc964ff"
+dc:coverage: ""
+dc:rights: "Copyright 2026 Christopher Steel / UniversalCake."
+---
